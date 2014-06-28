@@ -149,9 +149,9 @@ class Gen_compressed(threading.Thread):
   def run(self):
     self.gen_core()
     self.gen_blocks()
-    self.gen_generator('javascript')
+    # self.gen_generator('javascript')
     self.gen_generator('python')
-    self.gen_generator('dart')
+    # self.gen_generator('dart')
 
   def gen_core(self):
     target_filename = 'blockly_compressed.js'
@@ -418,8 +418,21 @@ http://code.google.com/p/blockly/wiki/Closure""")
   # Run both tasks in parallel threads.
   # Uncompressed is limited by processor speed.
   # Compressed is limited by network and server speed.
-  Gen_uncompressed(search_paths).start()
-  Gen_compressed(search_paths).start()
+  threads = []
+  threads.append(Gen_uncompressed(search_paths))
+  threads.append(Gen_compressed(search_paths))
 
   # This is run locally in a separate thread.
-  Gen_langfiles().start()
+  threads.append(Gen_langfiles())
+
+  # Run the threads.
+  for thread in threads:
+    thread.start()
+  for thread in threads:
+    thread.join()
+
+  # Cat the generated files together.
+  with open('combined.js', 'w') as fout:
+    for path in glob.glob('*_compressed.js') + glob.glob('msg/js/*.js'):
+      with open(path, 'rU') as fin:
+        fout.write(fin.read())
