@@ -39,14 +39,17 @@ Blockly.Python = new Blockly.Generator('Python');
  * @private
  */
 Blockly.Python.addReservedWords(
-    // import keyword
-    // print ','.join(keyword.kwlist)
-    // http://docs.python.org/reference/lexical_analysis.html#keywords
-    'and,as,assert,break,class,continue,def,del,elif,else,except,exec,finally,for,from,global,if,import,in,is,lambda,not,or,pass,print,raise,return,try,while,with,yield,' +
-    //http://docs.python.org/library/constants.html
-    'True,False,None,NotImplemented,Ellipsis,__debug__,quit,exit,copyright,license,credits,' +
-    // http://docs.python.org/library/functions.html
-    'abs,divmod,input,open,staticmethod,all,enumerate,int,ord,str,any,eval,isinstance,pow,sum,basestring,execfile,issubclass,print,super,bin,file,iter,property,tuple,bool,filter,len,range,type,bytearray,float,list,raw_input,unichr,callable,format,locals,reduce,unicode,chr,frozenset,long,reload,vars,classmethod,getattr,map,repr,xrange,cmp,globals,max,reversed,zip,compile,hasattr,memoryview,round,__import__,complex,hash,min,set,apply,delattr,help,next,setattr,buffer,dict,hex,object,slice,coerce,dir,id,oct,sorted,intern');
+  // Keywords.
+  'and,as,assert,break,class,continue,def,del,elif,else,except,finally,for,from,global,if,import,in,is,lambda,or,nonlocal,not,pass,raise,return,try,while,with,yield,False,None,True,' +
+  // Helpers.
+  'copyright,credits,exit,license,quit,' +
+  // Builtins.
+  'abs,all,any,ascii,bin,bool,bytearray,bytes,callable,chr,classmethod,compile,complex,delattr,dict,dir,divmod,enumerate,eval,exec,filter,float,format,frozenset,getattr,globals,hasattr,hash,help,hex,id,input,int,isinstance,issubclass,iter,len,list,locals,map,max,memoryview,min,next,object,oct,open,ord,pow,print,property,range,repr,reversed,round,set,setattr,slice,sorted,staticmethod,str,sum,super,tuple,type,vars,zip,NotImplemented,Ellipsis,' +
+  '__debug__,__import__,__name__,' +
+  // Exceptions.
+  'ArithmeticError,AssertionError,AttributeError,BaseException,BufferError,BytesWarning,DeprecationWarning,EOFError,EnvironmentError,Exception,FloatingPointError,FutureWarning,GeneratorExit,IOError,ImportError,ImportWarning,IndentationError,IndexError,KeyError,KeyboardInterrupt,LookupError,MemoryError,NameError,NotImplementedError,OSError,OverflowError,PendingDeprecationWarning,ReferenceError,RuntimeError,RuntimeWarning,StopIteration,SyntaxError,SyntaxWarning,SystemError,SystemExit,TabError,TypeError,UnboundLocalError,UnicodeDecodeError,UnicodeEncodeError,UnicodeError,UnicodeTranslateError,UnicodeWarning,UserWarning,ValueError,Warning,ZeroDivisionError,' +
+  'BlockingIOError,BrokenPipeError,ChildProcessError,ConnectionAbortedError,ConnectionError,ConnectionRefusedError,ConnectionResetError,FileExistsError,FileNotFoundError,InterruptedError,IsADirectoryError,NotADirectoryError,PermissionError,ProcessLookupError,ResourceWarning,TimeoutError'
+);
 
 /**
  * Order of operation ENUMs.
