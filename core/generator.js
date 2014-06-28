@@ -63,12 +63,13 @@ Blockly.Generator.prototype.STATEMENT_PREFIX = null;
 
 /**
  * Generate code for all blocks in the workspace to the specified language.
+ * @param {!Blockly.Workspace} workspace Mutator's workspace.
  * @return {string} Generated code.
  */
-Blockly.Generator.prototype.workspaceToCode = function() {
+Blockly.Generator.prototype.workspaceToCode = function(workspace) {
   var code = [];
   this.init();
-  var blocks = Blockly.mainWorkspace.getTopBlocks(true);
+  var blocks = workspace.getTopBlocks(true);
   for (var x = 0, block; block = blocks[x]; x++) {
     var line = this.blockToCode(block);
     if (goog.isArray(line)) {
