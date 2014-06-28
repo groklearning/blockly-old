@@ -404,7 +404,7 @@ class Gen_langfiles(threading.Thread):
 if __name__ == '__main__':
   try:
     calcdeps = import_path(os.path.join(os.path.pardir,
-          'closure-library-read-only', 'closure', 'bin', 'calcdeps.py'))
+          'closure-library', 'closure', 'bin', 'calcdeps.py'))
   except ImportError:
     print("""Error: Closure not found.  Read this:
 http://code.google.com/p/blockly/wiki/Closure""")
