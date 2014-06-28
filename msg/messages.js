@@ -718,6 +718,16 @@ Blockly.Msg.TEXT_TRIM_OPERATOR_LEFT = 'trim spaces from left side of';
 Blockly.Msg.TEXT_TRIM_OPERATOR_RIGHT = 'trim spaces from right side of';
 
 /// url - Information about displaying text on computers.
+Blockly.Msg.TEXT_PRINT0_HELPURL = 'https://code.google.com/p/blockly/wiki/Text#Printing_text';
+/// block text - Display the input on the screen.  See
+/// [https://code.google.com/p/blockly/wiki/Text#Printing_text
+/// https://code.google.com/p/blockly/wiki/Text#Printing_text].
+/// \n\nParameters:\n* %1 - the value to print
+Blockly.Msg.TEXT_PRINT0_TITLE = 'print';
+/// tooltip - See [https://code.google.com/p/blockly/wiki/Text#Printing_text
+/// https://code.google.com/p/blockly/wiki/Text#Printing_text].
+Blockly.Msg.TEXT_PRINT0_TOOLTIP = 'Print a blank line.';
+/// url - Information about displaying text on computers.
 Blockly.Msg.TEXT_PRINT_HELPURL = 'https://code.google.com/p/blockly/wiki/Text#Printing_text';
 /// block text - Display the input on the screen.  See
 /// [https://code.google.com/p/blockly/wiki/Text#Printing_text
