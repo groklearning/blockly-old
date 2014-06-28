@@ -103,42 +103,6 @@ Blockly.Msg.RENAME_VARIABLE = 'Rename variable...';
 /// prompt - Prompts the user to enter the new name for the selected variable.  See [https://code.google.com/p/blockly/wiki/Variables#Dropdown_menu https://code.google.com/p/blockly/wiki/Variables#Dropdown_menu].\n\nParameters:\n* %1 - the name of the variable to be renamed.
 Blockly.Msg.RENAME_VARIABLE_TITLE = 'Rename all "%1" variables to:';
 
-// Colour Blocks.
-/// url - Information about colour.
-Blockly.Msg.COLOUR_PICKER_HELPURL = 'https://en.wikipedia.org/wiki/Color';
-/// tooltip - See [https://code.google.com/p/blockly/wiki/Colour#Picking_a_colour_from_a_palette https://code.google.com/p/blockly/wiki/Colour#Picking_a_colour_from_a_palette].
-Blockly.Msg.COLOUR_PICKER_TOOLTIP = 'Choose a colour from the palette.';
-/// url - A link that displays a random colour each time you visit it.
-Blockly.Msg.COLOUR_RANDOM_HELPURL = 'http://randomcolour.com';
-/// block text - Title of block that generates a colour at random.
-Blockly.Msg.COLOUR_RANDOM_TITLE = 'random colour';
-/// tooltip - See [https://code.google.com/p/blockly/wiki/Colour#Generating_a_random_colour https://code.google.com/p/blockly/wiki/Colour#Generating_a_random_colour].
-Blockly.Msg.COLOUR_RANDOM_TOOLTIP = 'Choose a colour at random.';
-/// url - A link for color codes with percentages (0-100%) for each component, instead of the more common 0-255, which may be more difficult for beginners.
-Blockly.Msg.COLOUR_RGB_HELPURL = 'http://www.december.com/html/spec/colorper.html';
-/// block text - Title of block for [https://code.google.com/p/blockly/wiki/Colour#Creating_a_colour_from_red,_green,_and_blue_components https://code.google.com/p/blockly/wiki/Colour#Creating_a_colour_from_red,_green,_and_blue_components].
-Blockly.Msg.COLOUR_RGB_TITLE = 'colour with';
-/// block input text - The amount of red (from 0 to 100) to use when [https://code.google.com/p/blockly/wiki/Colour#Creating_a_colour_from_red,_green,_and_blue_components https://code.google.com/p/blockly/wiki/Colour#Creating_a_colour_from_red,_green,_and_blue_components].\n{{Identical|Red}}
-Blockly.Msg.COLOUR_RGB_RED = 'red';
-/// block input text - The amount of green (from 0 to 100) to use when [https://code.google.com/p/blockly/wiki/Colour#Creating_a_colour_from_red,_green,_and_blue_components https://code.google.com/p/blockly/wiki/Colour#Creating_a_colour_from_red,_green,_and_blue_components].
-Blockly.Msg.COLOUR_RGB_GREEN = 'green';
-/// block input text - The amount of blue (from 0 to 100) to use when [https://code.google.com/p/blockly/wiki/Colour#Creating_a_colour_from_red,_green,_and_blue_components https://code.google.com/p/blockly/wiki/Colour#Creating_a_colour_from_red,_green,_and_blue_components].\n{{Identical|Blue}}
-Blockly.Msg.COLOUR_RGB_BLUE = 'blue';
-/// tooltip - See [https://code.google.com/p/blockly/wiki/Colour#Creating_a_colour_from_red,_green,_and_blue_components https://code.google.com/p/blockly/wiki/Colour#Creating_a_colour_from_red,_green,_and_blue_components].
-Blockly.Msg.COLOUR_RGB_TOOLTIP = 'Create a colour with the specified amount of red, green, and blue.  All values must be between 0 and 100.';
-/// url - A useful link that displays blending of two colors.
-Blockly.Msg.COLOUR_BLEND_HELPURL = 'http://meyerweb.com/eric/tools/color-blend/';
-/// block text - A verb for blending two shades of paint.
-Blockly.Msg.COLOUR_BLEND_TITLE = 'blend';
-/// block input text - The first of two colours to [https://code.google.com/p/blockly/wiki/Colour#Blending_colours blend].
-Blockly.Msg.COLOUR_BLEND_COLOUR1 = 'colour 1';
-/// block input text - The second of two colours to [https://code.google.com/p/blockly/wiki/Colour#Blending_colours blend].
-Blockly.Msg.COLOUR_BLEND_COLOUR2 = 'colour 2';
-/// block input text - The proportion of the [https://code.google.com/p/blockly/wiki/Colour#Blending_colours blend] containing the first color; the remaining proportion is of the second colour.  For example, if the first colour is red and the second color blue, a ratio of 1 would yield pure red, a ratio of .5 would yield purple (equal amounts of red and blue), and a ratio of 0 would yield pure blue.
-Blockly.Msg.COLOUR_BLEND_RATIO = 'ratio';
-/// tooltip - See [https://code.google.com/p/blockly/wiki/Colour#Blending_colours https://code.google.com/p/blockly/wiki/Colour#Blending_colours].
-Blockly.Msg.COLOUR_BLEND_TOOLTIP = 'Blends two colours together with a given ratio (0.0 - 1.0).';
-
 // Loop Blocks.
 /// url - Describes 'repeat loops' in computer programs; consider using the translation of the page [https://en.wikipedia.org/wiki/Control_flow http://en.wikipedia.org/wiki/Control_flow].
 Blockly.Msg.CONTROLS_REPEAT_HELPURL = 'https://en.wikipedia.org/wiki/For_loop';
