@@ -228,7 +228,7 @@ Blockly.Python['text_trim'] = function(block) {
 };
 
 Blockly.Python['text_print0'] = function(block) {
-  return 'print()';
+  return 'print()\n';
 };
 
 Blockly.Python['text_print'] = function(block) {
