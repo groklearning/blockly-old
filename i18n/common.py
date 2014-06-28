@@ -207,6 +207,8 @@ def write_files(author, lang, output_dir, units, write_key_file):
         IOError: An error occurs opening, writing to, or closing a file.
         KeyError: An expected key is missing from units.
     """
+    if not os.path.exists(output_dir):
+      os.makedirs(output_dir)
     lang_file = _create_lang_file(author, lang, output_dir)
     qqq_file = _create_qqq_file(output_dir)
     if write_key_file:
