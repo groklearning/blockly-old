@@ -129,7 +129,7 @@ delete window.BLOCKLY_BOOT;
 document.write('<script type="text/javascript">var goog = undefined;</script>');
 // Load fresh Closure Library.
 document.write('<script type="text/javascript" src="' + window.BLOCKLY_DIR +
-    '/../closure-library-read-only/closure/goog/base.js"></script>');
+    '/../closure-library/closure/goog/base.js"></script>');
 document.write('<script type="text/javascript">window.BLOCKLY_BOOT()</script>');
 """)
     f.close()
@@ -164,6 +164,7 @@ class Gen_compressed(threading.Thread):
         ('output_info', 'warnings'),
         ('output_info', 'errors'),
         ('output_info', 'statistics'),
+        ('language', 'ECMASCRIPT5_STRICT'),
       ]
 
     # Read in all the source files.
@@ -189,6 +190,7 @@ class Gen_compressed(threading.Thread):
         ('output_info', 'warnings'),
         ('output_info', 'errors'),
         ('output_info', 'statistics'),
+        ('language', 'ECMASCRIPT5_STRICT'),
       ]
 
     # Read in all the source files.
@@ -214,6 +216,7 @@ class Gen_compressed(threading.Thread):
         ('output_info', 'warnings'),
         ('output_info', 'errors'),
         ('output_info', 'statistics'),
+        ('language', 'ECMASCRIPT5_STRICT'),
       ]
 
     # Read in all the source files.
@@ -410,7 +413,7 @@ if __name__ == '__main__':
 http://code.google.com/p/blockly/wiki/Closure""")
     sys.exit(1)
   search_paths = calcdeps.ExpandDirectories(
-      ['core', os.path.join(os.path.pardir, 'closure-library-read-only')])
+      ['core', os.path.join(os.path.pardir, 'closure-library')])
 
   # Run both tasks in parallel threads.
   # Uncompressed is limited by processor speed.
