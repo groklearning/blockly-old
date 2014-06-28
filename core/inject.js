@@ -348,7 +348,6 @@ Blockly.init_ = function() {
     while (soundBinds.length) {
       Blockly.unbindEvent_(soundBinds.pop());
     }
-    Blockly.preloadAudio_();
   };
   // Android ignores any sound not loaded as a result of a user action.
   soundBinds.push(Blockly.bindEvent_(document, 'mousemove', null, unbindSounds));
@@ -409,12 +408,6 @@ Blockly.init_ = function() {
   }
 
   Blockly.mainWorkspace.addTrashcan();
-
-  // Load the sounds.
-  Blockly.loadAudio_(
-      ['media/click.mp3', 'media/click.wav', 'media/click.ogg'], 'click');
-  Blockly.loadAudio_(
-      ['media/delete.mp3', 'media/delete.ogg', 'media/delete.wav'], 'delete');
 };
 
 /**

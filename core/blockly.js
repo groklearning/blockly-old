@@ -148,13 +148,6 @@ Blockly.OPPOSITE_TYPE[Blockly.NEXT_STATEMENT] = Blockly.PREVIOUS_STATEMENT;
 Blockly.OPPOSITE_TYPE[Blockly.PREVIOUS_STATEMENT] = Blockly.NEXT_STATEMENT;
 
 /**
- * Database of pre-loaded sounds.
- * @private
- * @const
- */
-Blockly.SOUNDS_ = Object.create(null);
-
-/**
  * Currently selected block.
  * @type {Blockly.Block}
  */
@@ -511,73 +504,6 @@ Blockly.removeAllRanges = function() {
  */
 Blockly.isTargetInput_ = function(e) {
   return e.target.type == 'textarea' || e.target.type == 'text';
-};
-
-/**
- * Load an audio file.  Cache it, ready for instantaneous playing.
- * @param {!Array.<string>} filenames List of file types in decreasing order of
- *   preference (i.e. increasing size).  E.g. ['media/go.mp3', 'media/go.wav']
- *   Filenames include path from Blockly's root.  File extensions matter.
- * @param {string} name Name of sound.
- * @private
- */
-Blockly.loadAudio_ = function(filenames, name) {
-  if (!window['Audio'] || !filenames.length) {
-    // No browser support for Audio.
-    return;
-  }
-  var sound;
-  var audioTest = new window['Audio']();
-  for (var i = 0; i < filenames.length; i++) {
-    var filename = filenames[i];
-    var ext = filename.match(/\.(\w+)$/);
-    if (ext && audioTest.canPlayType('audio/' + ext[1])) {
-      // Found an audio format we can play.
-      sound = new window['Audio'](Blockly.pathToBlockly + filename);
-      break;
-    }
-  }
-  if (sound && sound.play) {
-    Blockly.SOUNDS_[name] = sound;
-  }
-};
-
-/**
- * Preload all the audio files so that they play quickly when asked for.
- * @private
- */
-Blockly.preloadAudio_ = function() {
-  for (var name in Blockly.SOUNDS_) {
-    var sound = Blockly.SOUNDS_[name];
-    sound.volume = .01;
-    sound.play();
-    sound.pause();
-  }
-};
-
-/**
- * Play an audio file at specified value.  If volume is not specified,
- * use full volume (1).
- * @param {string} name Name of sound.
- * @param {?number} opt_volume Volume of sound (0-1).
- */
-Blockly.playAudio = function(name, opt_volume) {
-  var sound = Blockly.SOUNDS_[name];
-  if (sound) {
-    var mySound;
-    var ie9 = goog.userAgent.DOCUMENT_MODE &&
-              goog.userAgent.DOCUMENT_MODE === 9;
-    if (ie9 || goog.userAgent.IPAD || goog.userAgent.ANDROID) {
-      // Creating a new audio node causes lag in IE9, Android and iPad. Android
-      // and IE9 refetch the file from the server, iPad uses a singleton audio
-      // node which must be deleted and recreated for each new audio tag.
-      mySound = sound;
-    } else {
-      mySound = sound.cloneNode();
-    }
-    mySound.volume = (opt_volume === undefined ? 1 : opt_volume);
-    mySound.play();
-  }
 };
 
 /**

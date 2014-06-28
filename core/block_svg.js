@@ -319,8 +319,6 @@ Blockly.BlockSvg.prototype.dispose = function() {
  * Play some UI effects (sound, animation) when disposing of a block.
  */
 Blockly.BlockSvg.prototype.disposeUiEffect = function() {
-  Blockly.playAudio('delete');
-
   var xy = Blockly.getSvgXY_(/** @type {!Element} */ (this.svgGroup_));
   // Deeply clone the current block.
   var clone = this.svgGroup_.cloneNode(true);
@@ -364,8 +362,6 @@ Blockly.BlockSvg.disposeUiStep_ = function(clone) {
  * Play some UI effects (sound, ripple) after a connection has been established.
  */
 Blockly.BlockSvg.prototype.connectionUiEffect = function() {
-  Blockly.playAudio('click');
-
   // Determine the absolute coordinates of the inferior block.
   var xy = Blockly.getSvgXY_(/** @type {!Element} */ (this.svgGroup_));
   // Offset the coordinates based on the two connection types.
