@@ -567,6 +567,22 @@ Blockly.Blocks['text_print'] = {
   }
 };
 
+Blockly.Blocks['text_print0'] = {
+  /**
+   * Block for print statement without any arguments.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.TEXT_PRINT0_HELPURL);
+    this.setColour(160);
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.TEXT_PRINT0_TITLE);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.TEXT_PRINT0_TOOLTIP);
+  }
+};
+
 Blockly.Blocks['text_prompt'] = {
   /**
    * Block for prompt function.

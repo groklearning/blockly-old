@@ -227,6 +227,10 @@ Blockly.Python['text_trim'] = function(block) {
   return [code, Blockly.Python.ORDER_MEMBER];
 };
 
+Blockly.Python['text_print0'] = function(block) {
+  return 'print()';
+};
+
 Blockly.Python['text_print'] = function(block) {
   // Print statement.
   var argument0 = Blockly.Python.valueToCode(block, 'TEXT',
