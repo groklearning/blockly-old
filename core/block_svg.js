@@ -409,7 +409,7 @@ Blockly.BlockSvg.prototype.updateColour = function() {
     // Disabled blocks don't have colour.
     return;
   }
-  var hexColour = Blockly.makeColour(this.block_.getColour());
+  var hexColour = this.block_.getColour();
   var rgb = goog.color.hexToRgb(hexColour);
   var rgbLight = goog.color.lighten(rgb, 0.3);
   var rgbDark = goog.color.darken(rgb, 0.4);

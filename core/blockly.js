@@ -75,27 +75,6 @@ Blockly.SVG_NS = 'http://www.w3.org/2000/svg';
 Blockly.HTML_NS = 'http://www.w3.org/1999/xhtml';
 
 /**
- * The richness of block colours, regardless of the hue.
- * Must be in the range of 0 (inclusive) to 1 (exclusive).
- */
-Blockly.HSV_SATURATION = 0.45;
-/**
- * The intensity of block colours, regardless of the hue.
- * Must be in the range of 0 (inclusive) to 1 (exclusive).
- */
-Blockly.HSV_VALUE = 0.65;
-
-/**
- * Convert a hue (HSV model) into an RGB hex triplet.
- * @param {number} hue Hue on a colour wheel (0-360).
- * @return {string} RGB code, e.g. '#5ba65b'.
- */
-Blockly.makeColour = function(hue) {
-  return goog.color.hsvToHex(hue, Blockly.HSV_SATURATION,
-      Blockly.HSV_VALUE * 256);
-};
-
-/**
  * ENUM for a right-facing value input.  E.g. 'test' or 'return'.
  * @const
  */

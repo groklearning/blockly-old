@@ -38,9 +38,7 @@ goog.provide('Blockly.Blocks');
  * @param {!Object} details Details about the block that should be created.
  *     The following fields are used:
  *     - blockName {string} The name of the block, which should be unique.
- *     - colour {number} The hue value of the colour to use for the block.
- *       (Blockly.HSV_SATURATION and Blockly.HSV_VALUE are used for saturation
- *       and value, respectively.)
+ *     - colour {string} The RGB hex colour string.
  *     - output {?string|Array.<string>} Output type.  If undefined, there are
  *       assumed to be no outputs.  Otherwise, this is interpreted the same way
  *       as arguments to Blockly.Block.setCheck():
@@ -95,9 +93,8 @@ Blockly.Blocks.addTemplate = function(details) {
   goog.asserts.assert(Blockly.Blocks[details.blockName],
       'Blockly.Blocks already has a field named ', details.blockName);
   goog.asserts.assert(details.message);
-  goog.asserts.assert(details.colour && typeof details.colour == 'number' &&
-      details.colour >= 0 && details.colour < 360,
-     'details.colour must be a number from 0 to 360 (exclusive)');
+  goog.asserts.assert(details.colour && typeof details.colour == 'string' &&
+     'details.colour must be a hex rgb string');
   if (details.output != 'undefined') {
     goog.asserts.assert(!details.previousStatement,
         'When details.output is defined, ' +

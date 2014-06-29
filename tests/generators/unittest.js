@@ -26,7 +26,7 @@
 Blockly.Blocks['unittest_main'] = {
   // Container for unit tests.
   init: function() {
-    this.setColour(65);
+    this.setColour('#9FA55B');
     this.appendDummyInput()
         .appendField('run tests');
     this.appendStatementInput('DO');
@@ -41,7 +41,7 @@ Blockly.Blocks['unittest_main'] = {
 Blockly.Blocks['unittest_assertequals'] = {
   // Asserts that a value equals another value.
   init: function() {
-    this.setColour(65);
+    this.setColour('#9FA55B');
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.appendDummyInput()
@@ -60,7 +60,7 @@ Blockly.Blocks['unittest_assertequals'] = {
 Blockly.Blocks['unittest_assertvalue'] = {
   // Asserts that a value is true, false, or null.
   init: function() {
-    this.setColour(65);
+    this.setColour('#9FA55B');
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.appendDummyInput()
@@ -79,7 +79,7 @@ Blockly.Blocks['unittest_assertvalue'] = {
 Blockly.Blocks['unittest_fail'] = {
   // Always assert an error.
   init: function() {
-    this.setColour(65);
+    this.setColour('#9FA55B');
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.appendDummyInput()

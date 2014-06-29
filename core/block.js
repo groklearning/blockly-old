@@ -1163,18 +1163,18 @@ Blockly.Block.prototype.setHelpUrl = function(url) {
 
 /**
  * Get the colour of a block.
- * @return {number} HSV hue value.
+ * @return {string} RGB hex string.
  */
 Blockly.Block.prototype.getColour = function() {
-  return this.colourHue_;
+  return this.colourHex_;
 };
 
 /**
  * Change the colour of a block.
- * @param {number} colourHue HSV hue value.
+ * @param {string} colourHex RGB hex colour value.
  */
-Blockly.Block.prototype.setColour = function(colourHue) {
-  this.colourHue_ = colourHue;
+Blockly.Block.prototype.setColour = function(colourHex) {
+  this.colourHex_ = colourHex;
   if (this.svg_) {
     this.svg_.updateColour();
   }
