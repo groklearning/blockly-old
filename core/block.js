@@ -1165,16 +1165,29 @@ Blockly.Block.prototype.setHelpUrl = function(url) {
  * Get the colour of a block.
  * @return {string} RGB hex string.
  */
-Blockly.Block.prototype.getColour = function() {
-  return this.colourHex_;
+Blockly.Block.prototype.getBodyColour = function() {
+  return this.bodyColour_;
+};
+
+/**
+ * Get the colour of a block.
+ * @return {string} RGB hex string.
+ */
+Blockly.Block.prototype.getTrimColour = function() {
+  return this.trimColour_;
+};
+
+Blockly.Block.prototype.setColour = function(colour) {
+  this.setColours(colour, colour);
 };
 
 /**
  * Change the colour of a block.
  * @param {string} colourHex RGB hex colour value.
  */
-Blockly.Block.prototype.setColour = function(colourHex) {
-  this.colourHex_ = colourHex;
+Blockly.Block.prototype.setColours = function(bodyColour, trimColour) {
+  this.bodyColour_ = bodyColour;
+  this.trimColour_ = trimColour;
   if (this.svg_) {
     this.svg_.updateColour();
   }

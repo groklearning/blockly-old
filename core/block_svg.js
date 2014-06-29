@@ -409,13 +409,13 @@ Blockly.BlockSvg.prototype.updateColour = function() {
     // Disabled blocks don't have colour.
     return;
   }
-  var hexColour = this.block_.getColour();
-  var rgb = goog.color.hexToRgb(hexColour);
+  var bodyColour = this.block_.getBodyColour();
+  var rgb = goog.color.hexToRgb(bodyColour);
   var rgbLight = goog.color.lighten(rgb, 0.3);
-  var rgbDark = goog.color.darken(rgb, 0.4);
+  var trimColour = this.block_.getTrimColour();
   this.svgPathLight_.setAttribute('stroke', goog.color.rgbArrayToHex(rgbLight));
-  this.svgPathDark_.setAttribute('fill', goog.color.rgbArrayToHex(rgbDark));
-  this.svgPath_.setAttribute('fill', hexColour);
+  this.svgPathDark_.setAttribute('fill', trimColour);
+  this.svgPath_.setAttribute('fill', bodyColour);
 };
 
 /**

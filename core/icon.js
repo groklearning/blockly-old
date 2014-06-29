@@ -122,7 +122,7 @@ Blockly.Icon.prototype.iconClick_ = function(e) {
  */
 Blockly.Icon.prototype.updateColour = function() {
   if (this.isVisible()) {
-    var hexColour = this.block_.getColour();
+    var hexColour = this.block_.getTrimColour();
     this.bubble_.setColour(hexColour);
   }
 };
