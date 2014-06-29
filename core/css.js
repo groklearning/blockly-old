@@ -49,8 +49,8 @@ Blockly.Css.inject = function() {
  */
 Blockly.Css.CONTENT = [
   '.blocklySvg {',
-  '  background-color: #fff;',
-  '  border: 1px solid #ddd;',
+//  '  background-color: #f5f8f9;', // put this in the HTML template for now
+//  '  border: 1px solid #ddd;',
   '  overflow: hidden;',  /* IE overflows by default. */
   '}',
 
