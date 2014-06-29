@@ -59,7 +59,6 @@ Blockly.Blocks['math_arithmetic'] = {
          [Blockly.Msg.MATH_POWER_SYMBOL, 'POWER']];
     this.setHelpUrl(Blockly.Msg.MATH_ARITHMETIC_HELPURL);
     this.setColours('#0080E4', '#003660');
-//    this.setColours('#00c', '#040460');
     this.setOutput(true, 'Number');
     this.appendValueInput('A')
         .setCheck('Number');
@@ -99,7 +98,6 @@ Blockly.Blocks['math_single'] = {
          ['10^', 'POW10']];
     this.setHelpUrl(Blockly.Msg.MATH_SINGLE_HELPURL);
     this.setColours('#0080E4', '#003660');
-//    this.setColours('#00c', '#040460');
     this.setOutput(true, 'Number');
     this.interpolateMsg('%1 %2',
         ['OP', new Blockly.FieldDropdown(OPERATORS)],
@@ -138,7 +136,6 @@ Blockly.Blocks['math_trig'] = {
          [Blockly.Msg.MATH_TRIG_ATAN, 'ATAN']];
     this.setHelpUrl(Blockly.Msg.MATH_TRIG_HELPURL);
     this.setColours('#0080E4', '#003660');
-//    this.setColours('#00c', '#040460');
     this.setOutput(true, 'Number');
     this.appendValueInput('NUM')
         .setCheck('Number')
@@ -175,7 +172,6 @@ Blockly.Blocks['math_constant'] = {
          ['\u221e', 'INFINITY']];
     this.setHelpUrl(Blockly.Msg.MATH_CONSTANT_HELPURL);
     this.setColours('#0080E4', '#003660');
-//    this.setColours('#00c', '#040460');
     this.setOutput(true, 'Number');
     this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown(CONSTANTS), 'CONSTANT');
@@ -199,7 +195,6 @@ Blockly.Blocks['math_number_property'] = {
          [Blockly.Msg.MATH_IS_NEGATIVE, 'NEGATIVE'],
          [Blockly.Msg.MATH_IS_DIVISIBLE_BY, 'DIVISIBLE_BY']];
     this.setColours('#0080E4', '#003660');
-//    this.setColours('#00c', '#040460');
     this.appendValueInput('NUMBER_TO_CHECK')
         .setCheck('Number');
     var dropdown = new Blockly.FieldDropdown(PROPERTIES, function(option) {
@@ -260,7 +255,6 @@ Blockly.Blocks['math_change'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.MATH_CHANGE_HELPURL);
     this.setColours('#0080E4', '#003660');
-//    this.setColours('#00c', '#040460');
     this.interpolateMsg(
         // TODO: Combine these messages instead of using concatenation.
         Blockly.Msg.MATH_CHANGE_TITLE_CHANGE + ' %1 ' +
@@ -375,7 +369,6 @@ Blockly.Blocks['math_modulo'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.MATH_MODULO_HELPURL);
     this.setColours('#0080E4', '#003660');
-//    this.setColours('#00c', '#040460');
     this.setOutput(true, 'Number');
     this.interpolateMsg(Blockly.Msg.MATH_MODULO_TITLE,
                         ['DIVIDEND', 'Number', Blockly.ALIGN_RIGHT],
@@ -394,7 +387,6 @@ Blockly.Blocks['math_constrain'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.MATH_CONSTRAIN_HELPURL);
     this.setColours('#0080E4', '#003660');
-//    this.setColours('#00c', '#040460');
     this.setOutput(true, 'Number');
     this.interpolateMsg(Blockly.Msg.MATH_CONSTRAIN_TITLE,
                         ['VALUE', 'Number', Blockly.ALIGN_RIGHT],
@@ -414,7 +406,6 @@ Blockly.Blocks['math_random_int'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.MATH_RANDOM_INT_HELPURL);
     this.setColours('#0080E4', '#003660');
-//    this.setColours('#00c', '#040460');
     this.setOutput(true, 'Number');
     this.interpolateMsg(Blockly.Msg.MATH_RANDOM_INT_TITLE,
                         ['FROM', 'Number', Blockly.ALIGN_RIGHT],
@@ -433,7 +424,6 @@ Blockly.Blocks['math_random_float'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.MATH_RANDOM_FLOAT_HELPURL);
     this.setColours('#0080E4', '#003660');
-//    this.setColours('#00c', '#040460');
     this.setOutput(true, 'Number');
     this.appendDummyInput()
         .appendField(Blockly.Msg.MATH_RANDOM_FLOAT_TITLE_RANDOM);

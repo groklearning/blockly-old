@@ -374,7 +374,7 @@ Blockly.BlockSvg.prototype.connectionUiEffect = function() {
   }
   var ripple = Blockly.createSvgElement('circle',
       {'cx': xy.x, 'cy': xy.y, 'r': 0, 'fill': 'none',
-       'stroke': '#888', 'stroke-width': 10},
+       'stroke': '#888888', 'stroke-width': 10},
       Blockly.svg);
   // Start the animation.
   ripple.startDate_ = new Date();
