@@ -35,7 +35,7 @@
 #   dart_compressed.js: The compressed Dart generator.
 #   msg/js/<LANG>.js for every language <LANG> defined in msg/js/<LANG>.json.
 
-import errno, glob, httplib, json, os, re, subprocess, sys, threading, urllib
+import errno, glob, hashlib, httplib, json, os, re, subprocess, sys, threading, urllib
 
 def import_path(fullpath):
   """Import a file with full path specification.
@@ -436,3 +436,12 @@ http://code.google.com/p/blockly/wiki/Closure""")
     for path in glob.glob('*_compressed.js') + glob.glob('msg/js/*.js'):
       with open(path, 'rU') as fin:
         fout.write(fin.read())
+
+  # Calculate the MD5 sum of the combined file for renaming.
+  m = hashlib.md5()
+  with open('combined.js', 'rb') as f:
+    m.update(f.read())
+  digest = m.hexdigest()
+  for path in glob.glob('combined-*.js'):
+    os.remove(path)
+  os.rename('combined.js', 'combined-{0}.js'.format(digest))
