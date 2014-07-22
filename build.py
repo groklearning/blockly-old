@@ -430,18 +430,3 @@ http://code.google.com/p/blockly/wiki/Closure""")
     thread.start()
   for thread in threads:
     thread.join()
-
-  # Cat the generated files together.
-  with open('combined.js', 'w') as fout:
-    for path in glob.glob('*_compressed.js') + glob.glob('msg/js/*.js'):
-      with open(path, 'rU') as fin:
-        fout.write(fin.read())
-
-  # Calculate the MD5 sum of the combined file for renaming.
-  m = hashlib.md5()
-  with open('combined.js', 'rb') as f:
-    m.update(f.read())
-  digest = m.hexdigest()
-  for path in glob.glob('combined-*.js'):
-    os.remove(path)
-  os.rename('combined.js', 'combined-{0}.js'.format(digest))
