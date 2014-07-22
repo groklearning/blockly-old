@@ -34,8 +34,17 @@
 #   python_compressed.js: The compressed Python generator.
 #   dart_compressed.js: The compressed Dart generator.
 #   msg/js/<LANG>.js for every language <LANG> defined in msg/js/<LANG>.json.
+import errno
+import glob
+import httplib
+import json
+import os
+import re
+import subprocess
+import sys
+import threading
+import urllib
 
-import errno, glob, hashlib, httplib, json, os, re, subprocess, sys, threading, urllib
 
 def import_path(fullpath):
   """Import a file with full path specification.
@@ -47,11 +56,15 @@ def import_path(fullpath):
   Returns:
       An imported module.
   """
+  if hasattr(__builtins__, 'reload'):
+    reload = __builtins__.reload
+  else:
+    from importlib import reload
   path, filename = os.path.split(fullpath)
   filename, ext = os.path.splitext(filename)
   sys.path.append(path)
   module = __import__(filename)
-  reload(module) # Might be out of date
+  reload(module)  # Might be out of date
   del sys.path[-1]
   return module
 
@@ -106,8 +119,7 @@ var dir = window.BLOCKLY_DIR.match(/[^\\/]+$/)[0];
     # This allows blockly_uncompressed.js to be compiled on one computer and be
     # used on another, even if the directory name differs.
     m = re.search('[\\/]([^\\/]+)[\\/]core[\\/]blockly.js', add_dependency)
-    add_dependency = re.sub('([\\/])' + re.escape(m.group(1)) +
-        '([\\/]core[\\/])', '\\1" + dir + "\\2', add_dependency)
+    add_dependency = re.sub('([\\/])' + re.escape(m.group(1)) + '([\\/]core[\\/])', '\\1" + dir + "\\2', add_dependency)
     f.write(add_dependency + '\n')
 
     provides = []
@@ -165,11 +177,10 @@ class Gen_compressed(threading.Thread):
         ('output_info', 'errors'),
         ('output_info', 'statistics'),
         ('language', 'ECMASCRIPT5_STRICT'),
-      ]
+    ]
 
     # Read in all the source files.
-    filenames = calcdeps.CalculateDependencies(self.search_paths,
-        [os.path.join('core', 'blockly.js')])
+    filenames = calcdeps.CalculateDependencies(self.search_paths, [os.path.join('core', 'blockly.js')])
     for filename in filenames:
       # Filter out the Closure files (the compiler will add them).
       if filename.startswith(os.pardir + os.sep):  # '../'
@@ -191,7 +202,7 @@ class Gen_compressed(threading.Thread):
         ('output_info', 'errors'),
         ('output_info', 'statistics'),
         ('language', 'ECMASCRIPT5_STRICT'),
-      ]
+    ]
 
     # Read in all the source files.
     # Add Blockly.Blocks to be compatible with the compiler.
@@ -217,7 +228,7 @@ class Gen_compressed(threading.Thread):
         ('output_info', 'errors'),
         ('output_info', 'statistics'),
         ('language', 'ECMASCRIPT5_STRICT'),
-      ]
+    ]
 
     # Read in all the source files.
     # Add Blockly.Generator to be compatible with the compiler.
@@ -237,7 +248,7 @@ class Gen_compressed(threading.Thread):
 
   def do_compile(self, params, target_filename, filenames, remove):
     # Send the request to Google.
-    headers = { "Content-type": "application/x-www-form-urlencoded" }
+    headers = {"Content-type": "application/x-www-form-urlencoded"}
     conn = httplib.HTTPConnection('closure-compiler.appspot.com')
     conn.request('POST', '/compile', urllib.urlencode(params), headers)
     response = conn.getresponse()
@@ -253,12 +264,12 @@ class Gen_compressed(threading.Thread):
       n = int(name[6:])
       return filenames[n]
 
-    if json_data.has_key('serverErrors'):
+    if 'serverErrors' in json_data:
       errors = json_data['serverErrors']
       for error in errors:
-        print 'SERVER ERROR: %s' % target_filename
-        print error['error']
-    elif json_data.has_key('errors'):
+        print('SERVER ERROR: {0}'.format(target_filename))
+        print(error['error'])
+    elif 'errors' in json_data:
       errors = json_data['errors']
       for error in errors:
         print('FATAL ERROR')
@@ -269,7 +280,7 @@ class Gen_compressed(threading.Thread):
         print((' ' * error['charno']) + '^')
         sys.exit(1)
     else:
-      if json_data.has_key('warnings'):
+      if 'warnings' in json_data:
         warnings = json_data['warnings']
         for warning in warnings:
           print('WARNING')
@@ -280,7 +291,7 @@ class Gen_compressed(threading.Thread):
           print((' ' * warning['charno']) + '^')
         print()
 
-      if not json_data.has_key('compiledCode'):
+      if 'compiledCode' not in json_data:
         print('FATAL ERROR: Compiler did not return compiledCode.')
         sys.exit(1)
 
@@ -324,7 +335,7 @@ class Gen_compressed(threading.Thread):
         print('Size changed from %d KB to %d KB (%d%%).' % (
             original_kb, compressed_kb, ratio))
       else:
-        print 'UNKNOWN ERROR'
+        print('UNKNOWN ERROR')
 
 
 class Gen_langfiles(threading.Thread):
@@ -341,7 +352,7 @@ class Gen_langfiles(threading.Thread):
     try:
       return (max(os.path.getmtime(src) for src in srcs) >
               min(os.path.getmtime(dest) for dest in dests))
-    except OSError, e:
+    except OSError as e:
       # Was a file not found?
       if e.errno == errno.ENOENT:
         # If it was a source file, we can't proceed.
@@ -366,7 +377,7 @@ class Gen_langfiles(threading.Thread):
             '--input_file', 'msg/messages.js',
             '--output_dir', 'msg/json/',
             '--quiet'])
-      except (subprocess.CalledProcessError, OSError), e:
+      except (subprocess.CalledProcessError, OSError) as e:
         # Documentation for subprocess.check_call says that CalledProcessError
         # will be raised on failure, but I found that OSError is also possible.
         print('Error running i18n/js_to_json.py: ', e)
@@ -390,7 +401,7 @@ class Gen_langfiles(threading.Thread):
                     (file.endswith(('keys.json', 'synonyms.json', 'qqq.json')))]
       cmd.extend(json_files)
       subprocess.check_call(cmd)
-    except (subprocess.CalledProcessError, OSError), e:
+    except (subprocess.CalledProcessError, OSError) as e:
       print('Error running i18n/create_messages.py: ', e)
       sys.exit(1)
 
@@ -406,8 +417,7 @@ class Gen_langfiles(threading.Thread):
 
 if __name__ == '__main__':
   try:
-    calcdeps = import_path(os.path.join(os.path.pardir,
-          'closure-library', 'closure', 'bin', 'calcdeps.py'))
+    calcdeps = import_path(os.path.join(os.path.pardir, 'closure-library', 'closure', 'bin', 'calcdeps.py'))
   except ImportError:
     print("""Error: Closure not found.  Read this:
 http://code.google.com/p/blockly/wiki/Closure""")
