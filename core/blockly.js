@@ -126,6 +126,8 @@ Blockly.OPPOSITE_TYPE[Blockly.OUTPUT_VALUE] = Blockly.INPUT_VALUE;
 Blockly.OPPOSITE_TYPE[Blockly.NEXT_STATEMENT] = Blockly.PREVIOUS_STATEMENT;
 Blockly.OPPOSITE_TYPE[Blockly.PREVIOUS_STATEMENT] = Blockly.NEXT_STATEMENT;
 
+Blockly.MARGIN = 10;
+
 /**
  * Currently selected block.
  * @type {Blockly.Block}
@@ -536,23 +538,12 @@ Blockly.getMainWorkspaceMetrics_ = function() {
     // Firefox has trouble with hidden elements (Bug 528969).
     return null;
   }
-  if (Blockly.mainWorkspace.scrollbar) {
-    // Add a border around the content that is at least half a screenful wide.
-    // Ensure border is wide enough that blocks can scroll over entire screen.
-    var leftEdge = Math.min(blockBox.x - viewWidth / 2,
-                            blockBox.x + blockBox.width - viewWidth);
-    var rightEdge = Math.max(blockBox.x + blockBox.width + viewWidth / 2,
-                             blockBox.x + viewWidth);
-    var topEdge = Math.min(blockBox.y - viewHeight / 2,
-                           blockBox.y + blockBox.height - viewHeight);
-    var bottomEdge = Math.max(blockBox.y + blockBox.height + viewHeight / 2,
-                              blockBox.y + viewHeight);
-  } else {
-    var leftEdge = blockBox.x;
-    var rightEdge = leftEdge + blockBox.width;
-    var topEdge = blockBox.y;
-    var bottomEdge = topEdge + blockBox.height;
-  }
+
+  var leftEdge = 0;
+  var rightEdge = Math.max(blockBox.x + blockBox.width + Blockly.MARGIN, svgSize.width);
+  var topEdge = 0;
+  var bottomEdge = Math.max(blockBox.y + blockBox.height + Blockly.MARGIN, svgSize.height);
+
   var absoluteLeft = Blockly.RTL ? 0 : Blockly.Toolbox.width;
   var metrics = {
     viewHeight: svgSize.height,

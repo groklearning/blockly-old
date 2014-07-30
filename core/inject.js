@@ -115,7 +115,7 @@ Blockly.parseOptions_ = function(options) {
   } else {
     var hasScrollbars = options['scrollbars'];
     if (hasScrollbars === undefined) {
-      hasScrollbars = true;
+      hasScrollbars = 'both';
     }
   }
   var enableRealtime = !!options['realtime'];
@@ -403,7 +403,7 @@ Blockly.init_ = function() {
   }
   if (Blockly.hasScrollbars) {
     Blockly.mainWorkspace.scrollbar =
-        new Blockly.ScrollbarPair(Blockly.mainWorkspace);
+      new Blockly.ScrollbarPair(Blockly.mainWorkspace, Blockly.hasScrollbars);
     Blockly.mainWorkspace.scrollbar.resize();
   }
 

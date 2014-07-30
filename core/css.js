@@ -272,6 +272,10 @@ Blockly.Css.CONTENT = [
   '  fill: #bbb;',
   '}',
 
+  '.blocklyScrollbarCorner {',
+  '  fill: #fff;',
+  '}',
+
   '.blocklyInvalidInput {',
   '  background: #faa;',
   '}',

@@ -35,16 +35,29 @@ goog.require('goog.userAgent');
  * @param {!Blockly.Workspace} workspace Workspace to bind the scrollbars to.
  * @constructor
  */
-Blockly.ScrollbarPair = function(workspace) {
+Blockly.ScrollbarPair = function(workspace, hasScrollbars) {
   this.workspace_ = workspace;
   this.oldHostMetrics_ = null;
-  this.hScroll = new Blockly.Scrollbar(workspace, true, true);
-  this.vScroll = new Blockly.Scrollbar(workspace, false, true);
-  this.corner_ = Blockly.createSvgElement('rect',
-      {'height': Blockly.Scrollbar.scrollbarThickness,
-      'width': Blockly.Scrollbar.scrollbarThickness,
-      'style': 'fill: #fff'}, null);
-  Blockly.Scrollbar.insertAfter_(this.corner_, workspace.getBubbleCanvas());
+  this.hScroll = null;
+
+  if (hasScrollbars === true) {
+    hasScrollbars = 'both';
+  }
+  if (hasScrollbars && hasScrollbars !== 'vertical') {
+    this.hScroll = new Blockly.Scrollbar(workspace, true, hasScrollbars === 'both');
+  }
+  this.vScroll = null;
+  if (hasScrollbars && hasScrollbars !== 'horizontal') {
+    this.vScroll = new Blockly.Scrollbar(workspace, false, hasScrollbars === 'both');
+  }
+  if (hasScrollbars === 'both') {
+    this.corner_ = Blockly.createSvgElement('rect', {
+      'class': 'blocklyScrollbarCorner',
+      'height': Blockly.Scrollbar.scrollbarThickness,
+      'width': Blockly.Scrollbar.scrollbarThickness
+    }, null);
+    Blockly.Scrollbar.insertAfter_(this.corner_, workspace.getBubbleCanvas());
+  }
 };
 
 /**
@@ -58,10 +71,14 @@ Blockly.ScrollbarPair.prototype.dispose = function() {
   this.corner_ = null;
   this.workspace_ = null;
   this.oldHostMetrics_ = null;
-  this.hScroll.dispose();
-  this.hScroll = null;
-  this.vScroll.dispose();
-  this.vScroll = null;
+  if (this.hscroll) {
+    this.hScroll.dispose();
+    this.hScroll = null;
+  }
+  if (this.vscroll) {
+    this.vScroll.dispose();
+    this.vScroll = null;
+  }
 };
 
 /**
@@ -102,23 +119,25 @@ Blockly.ScrollbarPair.prototype.resize = function() {
       resizeV = true;
     }
   }
-  if (resizeH) {
+  if (resizeH && this.hScroll) {
     this.hScroll.resize(hostMetrics);
   }
-  if (resizeV) {
+  if (resizeV && this.vScroll) {
     this.vScroll.resize(hostMetrics);
   }
 
   // Reposition the corner square.
-  if (!this.oldHostMetrics_ ||
-      this.oldHostMetrics_.viewWidth != hostMetrics.viewWidth ||
-      this.oldHostMetrics_.absoluteLeft != hostMetrics.absoluteLeft) {
-    this.corner_.setAttribute('x', this.vScroll.xCoordinate);
-  }
-  if (!this.oldHostMetrics_ ||
-      this.oldHostMetrics_.viewHeight != hostMetrics.viewHeight ||
-      this.oldHostMetrics_.absoluteTop != hostMetrics.absoluteTop) {
-    this.corner_.setAttribute('y', this.hScroll.yCoordinate);
+  if (this.corner_) {
+    if (!this.oldHostMetrics_ ||
+        this.oldHostMetrics_.viewWidth != hostMetrics.viewWidth ||
+        this.oldHostMetrics_.absoluteLeft != hostMetrics.absoluteLeft) {
+      this.corner_.setAttribute('x', this.vScroll.xCoordinate);
+    }
+    if (!this.oldHostMetrics_ ||
+        this.oldHostMetrics_.viewHeight != hostMetrics.viewHeight ||
+        this.oldHostMetrics_.absoluteTop != hostMetrics.absoluteTop) {
+      this.corner_.setAttribute('y', this.hScroll.yCoordinate);
+    }
   }
 
   // Cache the current metrics to potentially short-cut the next resize event.
@@ -146,8 +165,12 @@ Blockly.ScrollbarPair.prototype.set = function(x, y) {
   if (Blockly.Scrollbar === Blockly.ScrollbarNative) {
     // Native scrollbar mode.
     // Set both scrollbars and suppress their two separate onScroll events.
-    this.hScroll.set(x, false);
-    this.vScroll.set(y, false);
+    if (this.hScroll) {
+      this.hScroll.set(x, false);
+    }
+    if (this.vScroll) {
+      this.vScroll.set(y, false);
+    }
     // Redraw the surface once with the new settings for both scrollbars.
     var xyRatio = {};
     xyRatio.x = (this.hScroll.outerDiv_.scrollLeft /
@@ -158,8 +181,12 @@ Blockly.ScrollbarPair.prototype.set = function(x, y) {
   } else {
     // SVG scrollbars.
     // Set both scrollbars and allow each to call a separate onScroll execution.
-    this.hScroll.set(x, true);
-    this.vScroll.set(y, true);
+    if (this.hScroll) {
+      this.hScroll.set(x, true);
+    }
+    if (this.vScroll) {
+      this.vScroll.set(y, true);
+    }
   }
 };
 
@@ -265,7 +292,7 @@ Blockly.Scrollbar.prototype.resize = function(opt_metrics) {
       // Only show the scrollbar if needed.
       // Ideally this would also apply to scrollbar pairs, but that's a bigger
       // headache (due to interactions with the corner square).
-      this.setVisible(outerLength < hostMetrics.contentHeight);
+      this.setVisible(outerLength < hostMetrics.contentWidth);
     }
     this.ratio_ = outerLength / hostMetrics.contentWidth;
     if (this.ratio_ === -Infinity || this.ratio_ === Infinity ||
