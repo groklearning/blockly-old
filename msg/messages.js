@@ -706,19 +706,19 @@ Blockly.Msg.TEXT_PROMPT_HELPURL = 'https://code.google.com/p/blockly/wiki/Text#G
 /// dropdown - Specifies that a piece of text should be requested from the user with
 /// the following message.  See [https://code.google.com/p/blockly/wiki/Text#Printing_text
 /// https://code.google.com/p/blockly/wiki/Text#Printing_text].
-Blockly.Msg.TEXT_PROMPT_TYPE_TEXT = 'prompt for text with message';
+Blockly.Msg.TEXT_PROMPT_TYPE_TEXT = 'ask for text with prompt';
 /// dropdown - Specifies that a number should be requested from the user with the
 /// following message.  See [https://code.google.com/p/blockly/wiki/Text#Printing_text
 /// https://code.google.com/p/blockly/wiki/Text#Printing_text].
-Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER = 'prompt for number with message';
+Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER = 'ask for int with prompt';
 /// dropdown - Precedes the message with which the user should be prompted for
 /// a number.  See [https://code.google.com/p/blockly/wiki/Text#Printing_text
 /// https://code.google.com/p/blockly/wiki/Text#Printing_text].
-Blockly.Msg.TEXT_PROMPT_TOOLTIP_NUMBER = 'Prompt for user for a number.';
+Blockly.Msg.TEXT_PROMPT_TOOLTIP_NUMBER = 'Ask the user for a whole number.';
 /// dropdown - Precedes the message with which the user should be prompted for some text.
 /// See [https://code.google.com/p/blockly/wiki/Text#Printing_text
 /// https://code.google.com/p/blockly/wiki/Text#Printing_text].
-Blockly.Msg.TEXT_PROMPT_TOOLTIP_TEXT = 'Prompt for user for some text.';
+Blockly.Msg.TEXT_PROMPT_TOOLTIP_TEXT = 'Ask the user for some text.';
 
 // Lists Blocks.
 /// url - Information on empty lists.

@@ -243,7 +243,7 @@ Blockly.Python['text_prompt'] = function(block) {
   var code = 'input(' + msg + ')';
   var toNumber = block.getFieldValue('TYPE') == 'NUMBER';
   if (toNumber) {
-    code = 'float(' + code + ')';
+    code = 'int(' + code + ')';
   }
   return [code, Blockly.Python.ORDER_FUNCTION_CALL];
 };
