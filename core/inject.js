@@ -75,7 +75,7 @@ Blockly.parseToolboxTree_ = function(tree) {
       tree = tree.outerHTML;
     }
     if (typeof tree == 'string') {
-      tree = Blockly.Xml.textToDom(tree);
+      tree = Blockly.Xml.textToDom(tree, 'xml');
     }
   } else {
     tree = null;

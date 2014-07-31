@@ -40,7 +40,7 @@ Blockly.Xml.workspaceToDom = function(workspace) {
   if (Blockly.RTL) {
     width = workspace.getMetrics().viewWidth;
   }
-  var xml = goog.dom.createDom('xml');
+  var xml = goog.dom.createDom('blockly');
   var blocks = workspace.getTopBlocks(true);
   for (var i = 0, block; block = blocks[i]; i++) {
     var element = Blockly.Xml.blockToDom_(block);
@@ -193,15 +193,15 @@ Blockly.Xml.domToPrettyText = function(dom) {
  * @param {string} text Text representation.
  * @return {!Element} A tree of XML elements.
  */
-Blockly.Xml.textToDom = function(text) {
+Blockly.Xml.textToDom = function(text, root) {
   var oParser = new DOMParser();
   var dom = oParser.parseFromString(text, 'text/xml');
   // The DOM should have one and only one top-level node, an XML tag.
   if (!dom || !dom.firstChild ||
-      dom.firstChild.nodeName.toLowerCase() != 'xml' ||
+      dom.firstChild.nodeName.toLowerCase() != root ||
       dom.firstChild !== dom.lastChild) {
     // Whatever we got back from the parser is not XML.
-    throw 'Blockly.Xml.textToDom did not obtain a valid XML tree.';
+    throw 'Blockly.Xml.textToDom did not obtain a valid node tree.';
   }
   return dom.firstChild;
 };

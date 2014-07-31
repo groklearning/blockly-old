@@ -332,7 +332,7 @@ Blockly.Realtime.placeBlockOnWorkspace_ = function(block, addToTop) {
 //    if (!Blockly.Realtime.blocksMap_.has(block.id)) {
 //      Blockly.Realtime.blocksMap_.set(block.id, block);
 //    }
-    var blockDom = Blockly.Xml.textToDom(block.xmlDom).firstChild;
+    var blockDom = Blockly.Xml.textToDom(block.xmlDom, 'xml').firstChild;
     var newBlock =
         Blockly.Xml.domToBlock(Blockly.mainWorkspace, blockDom, true);
     // TODO: The following is for debugging.  It should never actually happen.
