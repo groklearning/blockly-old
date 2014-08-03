@@ -202,6 +202,58 @@ Blockly.Blocks['text_create_join_item'] = {
   }
 };
 
+
+Blockly.Blocks['text_concat2'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.TEXT_CONCAT2);
+    this.setColours('#00aa00', '#007a00');
+    this.setOutput(true, 'String');
+    this.appendValueInput('TEXT0')
+        .setCheck('String');
+    this.appendValueInput('TEXT1')
+        .setCheck('String')
+        .appendField('+');
+    this.setTooltip(Blockly.Msg.TEXT_CONCAT2_TOOLTIP);
+    this.setInputsInline(true);
+  }
+};
+
+
+Blockly.Blocks['text_concat3'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.TEXT_CONCAT3);
+    this.setColours('#00aa00', '#007a00');
+    this.appendValueInput('TEXT0')
+        .setCheck('String');
+    this.appendValueInput('TEXT1')
+        .setCheck('String')
+        .appendField('+');
+    this.appendValueInput('TEXT2')
+        .setCheck('String')
+        .appendField('+');
+    this.setOutput(true, 'String');
+    this.setTooltip(Blockly.Msg.TEXT_CONCAT3_TOOLTIP);
+    this.setInputsInline(true);
+  }
+};
+
+
+Blockly.Blocks['text_mult'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.TEXT_MULT_HELP);
+    this.setColours('#00aa00', '#007a00');
+    this.setOutput(true, 'String');
+    this.appendValueInput('TEXT0')
+        .setCheck('String');
+    this.appendValueInput('TEXT1')
+        .setCheck('String')
+        .appendField(Blockly.Msg.TEXT_MULTIPLICATION_SYMBOL);
+    this.setTooltip(Blockly.Msg.TEXT_MULT_TOOLTIP);
+    this.setInputsInline(true);
+  }
+};
+
+
 Blockly.Blocks['text_append'] = {
   /**
    * Block for appending to a variable in place.

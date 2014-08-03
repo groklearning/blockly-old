@@ -67,6 +67,32 @@ Blockly.Python['text_join'] = function(block) {
   }
 };
 
+Blockly.Python['text_concat2'] = function(block) {
+  var text0 = Blockly.Python.valueToCode(block, 'TEXT0',
+      Blockly.Python.ORDER_NONE) || '\'\'';
+  var text1 = Blockly.Python.valueToCode(block, 'TEXT1',
+      Blockly.Python.ORDER_NONE) || '\'\'';
+  return [text0 + ' + ' + text1, Blockly.Python.ORDER_ADDITIVE];
+};
+
+Blockly.Python['text_concat3'] = function(block) {
+  var text0 = Blockly.Python.valueToCode(block, 'TEXT0',
+      Blockly.Python.ORDER_NONE) || '\'\'';
+  var text1 = Blockly.Python.valueToCode(block, 'TEXT1',
+      Blockly.Python.ORDER_NONE) || '\'\'';
+  var text2 = Blockly.Python.valueToCode(block, 'TEXT2',
+      Blockly.Python.ORDER_NONE) || '\'\'';
+  return [text0 + ' + ' + text1 + ' + ' + text2, Blockly.Python.ORDER_ADDITIVE];
+};
+
+Blockly.Python['text_mult'] = function(block) {
+  var text = Blockly.Python.valueToCode(block, 'TEXT',
+      Blockly.Python.ORDER_NONE) || '\'\'';
+  var times = Blockly.Python.valueToCode(block, 'TIMES',
+      Blockly.Python.ORDER_NONE) || '\'\'';
+  return [text + '*' + times, Blockly.Python.ORDER_MULTIPLICATIVE];
+};
+
 Blockly.Python['text_append'] = function(block) {
   // Append to a variable in place.
   var varName = Blockly.Python.variableDB_.getName(block.getFieldValue('VAR'),
