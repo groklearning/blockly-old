@@ -243,9 +243,9 @@ Blockly.Blocks['text_mult'] = {
     this.setHelpUrl(Blockly.Msg.TEXT_MULT_HELP);
     this.setColours('#00aa00', '#007a00');
     this.setOutput(true, 'String');
-    this.appendValueInput('TEXT0')
-        .setCheck('String');
-    this.appendValueInput('TEXT1')
+    this.appendValueInput('TIMES')
+        .setCheck('Number');
+    this.appendValueInput('TEXT')
         .setCheck('String')
         .appendField(Blockly.Msg.TEXT_MULTIPLICATION_SYMBOL);
     this.setTooltip(Blockly.Msg.TEXT_MULT_TOOLTIP);
