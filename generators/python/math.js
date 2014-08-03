@@ -45,9 +45,9 @@ Blockly.Python['math_arithmetic'] = function(block) {
   var OPERATORS = {
     'ADD': [' + ', Blockly.Python.ORDER_ADDITIVE],
     'MINUS': [' - ', Blockly.Python.ORDER_ADDITIVE],
-    'MULTIPLY': [' * ', Blockly.Python.ORDER_MULTIPLICATIVE],
-    'DIVIDE': [' / ', Blockly.Python.ORDER_MULTIPLICATIVE],
-    'POWER': [' ** ', Blockly.Python.ORDER_EXPONENTIATION]
+    'MULTIPLY': ['*', Blockly.Python.ORDER_MULTIPLICATIVE],
+    'DIVIDE': ['/', Blockly.Python.ORDER_MULTIPLICATIVE],
+    'POWER': ['**', Blockly.Python.ORDER_EXPONENTIATION]
   };
   var tuple = OPERATORS[block.getFieldValue('OP')];
   var operator = tuple[0];
