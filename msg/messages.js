@@ -200,6 +200,36 @@ Blockly.Msg.CONTROLS_IF_ELSE_TITLE_ELSE = Blockly.Msg.CONTROLS_IF_MSG_ELSE;
 /// tooltip - Describes the 'else' subblock during [https://code.google.com/p/blockly/wiki/IfElse#Block_Modification if block modification].
 Blockly.Msg.CONTROLS_IF_ELSE_TOOLTIP = 'Add a final, catch-all condition to the if block.';
 
+/// Grok
+Blockly.Msg.IO_INPUT_HELPURL = 'https://code.google.com/p/blockly/wiki/Text#Getting_input_from_the_user';
+/// Grok
+Blockly.Msg.IO_INPUT_TYPE_TEXT = 'ask for text with prompt';
+/// Grok
+Blockly.Msg.IO_INPUT_TYPE_NUMBER = 'ask for int with prompt';
+/// Grok
+Blockly.Msg.IO_INPUT_TOOLTIP_NUMBER = 'Ask the user for a whole number.';
+/// Grok
+Blockly.Msg.IO_INPUT_TOOLTIP_TEXT = 'Ask the user for some text.';
+
+/// Grok
+Blockly.Msg.IO_PRINT_HELPURL = 'https://code.google.com/p/blockly/wiki/Text#Printing_text';
+/// Grok
+Blockly.Msg.IO_PRINT0_TITLE = 'print';
+/// Grok
+Blockly.Msg.IO_PRINT0_TOOLTIP = 'Print a blank line.';
+/// Grok
+Blockly.Msg.IO_PRINT1_TITLE  = 'print %1';
+/// Grok
+Blockly.Msg.IO_PRINT1_TOOLTIP = 'Print the specified text, number or other value.';
+/// Grok
+Blockly.Msg.IO_PRINT2_TITLE = 'print %1 %2';
+/// Grok
+Blockly.Msg.IO_PRINT2_TOOLTIP = 'Print two text, number or other values.';
+/// Grok
+Blockly.Msg.IO_PRINT3_TITLE = 'print %1 %2 %3';
+/// Grok
+Blockly.Msg.IO_PRINT3_TOOLTIP = 'Print three text, number or other values.';
+
 /// url - Information about comparisons.
 Blockly.Msg.LOGIC_COMPARE_HELPURL = 'https://en.wikipedia.org/wiki/Inequality_(mathematics)';
 /// tooltip - Describes the equals (=) block.
@@ -473,6 +503,20 @@ Blockly.Msg.TEXT_JOIN_TITLE_CREATEWITH = 'create text with';
 /// tooltip - See [https://code.google.com/p/blockly/wiki/Text#Text_creation create text with] for more information.
 Blockly.Msg.TEXT_JOIN_TOOLTIP = 'Create a piece of text by joining together any number of items.';
 
+/// Grok
+Blockly.Msg.TEXT_CONCAT_HELPURL = 'https://code.google.com/p/blockly/wiki/Text#Text_creation';
+/// Grok
+Blockly.Msg.TEXT_CONCAT2_TOOLTIP = 'Add two pieces of text together.';
+/// Grok
+Blockly.Msg.TEXT_CONCAT3_TOOLTIP = 'Add three pieces of text together.';
+
+/// Grok
+Blockly.Msg.TEXT_MULT_HELPURL = 'https://code.google.com/p/blockly/wiki/Text#Text_creation';
+/// Grok
+Blockly.Msg.TEXT_MULT_TOOLTIP = 'Copy a string multiple times.';
+/// Grok
+Blockly.Msg.TEXT_MULTIPLICATION_SYMBOL = '×';
+
 /// block text - This is shown when the programmer wants to change the number of pieces of text being joined together.  See [https://code.google.com/p/blockly/wiki/Text#Text_creation https://code.google.com/p/blockly/wiki/Text#Text_creation], specifically the last picture in the 'Text creation' section.
 Blockly.Msg.TEXT_CREATE_JOIN_TITLE_JOIN = 'join';
 /// tooltip - See [https://code.google.com/p/blockly/wiki/Text#Text_creation https://code.google.com/p/blockly/wiki/Text#Text_creation], specifically the last picture in the 'Text creation' section.
@@ -697,7 +741,7 @@ Blockly.Msg.TEXT_PRINT_HELPURL = 'https://code.google.com/p/blockly/wiki/Text#Pr
 /// [https://code.google.com/p/blockly/wiki/Text#Printing_text
 /// https://code.google.com/p/blockly/wiki/Text#Printing_text].
 /// \n\nParameters:\n* %1 - the value to print
-Blockly.Msg.TEXT_PRINT_TITLE = 'print %1';
+Blockly.Msg.TEXT_PRINT1_TITLE = 'print %1';
 /// tooltip - See [https://code.google.com/p/blockly/wiki/Text#Printing_text
 /// https://code.google.com/p/blockly/wiki/Text#Printing_text].
 Blockly.Msg.TEXT_PRINT_TOOLTIP = 'Print the specified text, number or other value.';

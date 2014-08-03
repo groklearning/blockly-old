@@ -8,4 +8,5 @@
 /combined*.js
 /*_compressed.js
 /*_uncompressed.js
-/msg/json
+/msg/js/*
+/msg/json/*
