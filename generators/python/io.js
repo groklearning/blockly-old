@@ -61,3 +61,16 @@ Blockly.Python['io_print3'] = function(block) {
       Blockly.Python.ORDER_NONE) || '\'\'';
   return 'print(' + argument0 + ', ' + argument1 + ', ' + argument2 + ')\n';
 };
+
+Blockly.Python['io_print4'] = function(block) {
+  // Print statement.
+  var argument0 = Blockly.Python.valueToCode(block, 'ANY0',
+      Blockly.Python.ORDER_NONE) || '\'\'';
+  var argument1 = Blockly.Python.valueToCode(block, 'ANY1',
+      Blockly.Python.ORDER_NONE) || '\'\'';
+  var argument2 = Blockly.Python.valueToCode(block, 'ANY2',
+      Blockly.Python.ORDER_NONE) || '\'\'';
+  var argument3 = Blockly.Python.valueToCode(block, 'ANY3',
+      Blockly.Python.ORDER_NONE) || '\'\'';
+  return 'print(' + argument0 + ', ' + argument1 + ', ' + argument2 + ', ' + argument3 + ')\n';
+};

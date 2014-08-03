@@ -226,3 +226,24 @@ Blockly.Blocks['io_print3'] = {
     this.setInputsInline(true);
   }
 };
+
+Blockly.Blocks['io_print4'] = {
+  /**
+   * Block for print statement with three arguments.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.IO_PRINT_HELPURL);
+    this.setColours('#900090', '#540054');
+    this.interpolateMsg(Blockly.Msg.IO_PRINT4_TITLE,
+                        ['ANY0', null, Blockly.ALIGN_RIGHT],
+                        ['ANY1', null, Blockly.ALIGN_RIGHT],
+                        ['ANY2', null, Blockly.ALIGN_RIGHT],
+                        ['ANY3', null, Blockly.ALIGN_RIGHT],
+                        Blockly.ALIGN_RIGHT);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.IO_PRINT4_TOOLTIP);
+    this.setInputsInline(true);
+  }
+};
