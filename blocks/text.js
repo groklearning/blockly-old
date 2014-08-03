@@ -263,6 +263,7 @@ Blockly.Blocks['text_append'] = {
     this.setHelpUrl(Blockly.Msg.TEXT_APPEND_HELPURL);
     this.setColours('#00aa00', '#007a00');
     this.appendValueInput('TEXT')
+        .setCheck('String')
         .appendField(Blockly.Msg.TEXT_APPEND_TO)
         .appendField(new Blockly.FieldVariable(
         Blockly.Msg.TEXT_APPEND_VARIABLE), 'VAR')
@@ -275,6 +276,7 @@ Blockly.Blocks['text_append'] = {
       return Blockly.Msg.TEXT_APPEND_TOOLTIP.replace('%1',
           thisBlock.getFieldValue('VAR'));
     });
+    this.setInputsInline(true);
   },
   /**
    * Return all variables referenced by this block.
@@ -311,6 +313,7 @@ Blockly.Blocks['text_length'] = {
                         Blockly.ALIGN_RIGHT);
     this.setOutput(true, 'Number');
     this.setTooltip(Blockly.Msg.TEXT_LENGTH_TOOLTIP);
+    this.setInputsInline(true);
   }
 };
 
@@ -327,6 +330,7 @@ Blockly.Blocks['text_isEmpty'] = {
                         Blockly.ALIGN_RIGHT);
     this.setOutput(true, 'Boolean');
     this.setTooltip(Blockly.Msg.TEXT_ISEMPTY_TOOLTIP);
+    this.setInputsInline(true);
   }
 };
 
