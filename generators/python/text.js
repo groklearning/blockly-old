@@ -252,24 +252,3 @@ Blockly.Python['text_trim'] = function(block) {
   var code = argument0 + operator;
   return [code, Blockly.Python.ORDER_MEMBER];
 };
-
-Blockly.Python['text_print0'] = function(block) {
-  return 'print()\n';
-};
-
-Blockly.Python['text_print'] = function(block) {
-  // Print statement.
-  var argument0 = Blockly.Python.valueToCode(block, 'TEXT',
-      Blockly.Python.ORDER_NONE) || '\'\'';
-  return 'print(' + argument0 + ')\n';
-};
-
-Blockly.Python['text_prompt'] = function(block) {
-  var msg = Blockly.Python.quote_(block.getFieldValue('TEXT'));
-  var code = 'input(' + msg + ')';
-  var toNumber = block.getFieldValue('TYPE') == 'NUMBER';
-  if (toNumber) {
-    code = 'int(' + code + ')';
-  }
-  return [code, Blockly.Python.ORDER_FUNCTION_CALL];
-};
