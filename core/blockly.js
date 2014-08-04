@@ -540,9 +540,9 @@ Blockly.getMainWorkspaceMetrics_ = function() {
   }
 
   var leftEdge = 0;
-  var rightEdge = Math.max(blockBox.x + blockBox.width + Blockly.MARGIN, svgSize.width);
+  var rightEdge = Math.max(blockBox.x + blockBox.width + Blockly.MARGIN*3, svgSize.width);
   var topEdge = 0;
-  var bottomEdge = Math.max(blockBox.y + blockBox.height + Blockly.MARGIN, svgSize.height);
+  var bottomEdge = Math.max(blockBox.y + blockBox.height + Blockly.MARGIN*3, svgSize.height);
 
   var absoluteLeft = Blockly.RTL ? 0 : Blockly.Toolbox.width;
   var metrics = {

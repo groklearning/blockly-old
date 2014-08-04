@@ -469,6 +469,12 @@ Blockly.Block.prototype.getRelativeToSurfaceXY = function() {
  */
 Blockly.Block.prototype.moveBy = function(dx, dy) {
   var xy = this.getRelativeToSurfaceXY();
+  if (xy.x + dx < Blockly.MARGIN) {
+    dx = Blockly.MARGIN - xy.x;
+  }
+  if (xy.y + dy < Blockly.MARGIN) {
+    dy = Blockly.MARGIN - xy.y;
+  }
   this.svg_.getRootElement().setAttribute('transform',
       'translate(' + (xy.x + dx) + ', ' + (xy.y + dy) + ')');
   this.moveConnections_(dx, dy);
@@ -866,6 +872,14 @@ Blockly.Block.prototype.onMouseMove_ = function(e) {
       // Unrestricted dragging.
       var x = this_.startDragX + dx;
       var y = this_.startDragY + dy;
+      if (x < Blockly.MARGIN) {
+        dx = Blockly.MARGIN - x;
+        x = Blockly.MARGIN;
+      }
+      if (y < Blockly.MARGIN) {
+        dy = Blockly.MARGIN - y;
+        y = Blockly.MARGIN;
+      }
       this_.svg_.getRootElement().setAttribute('transform',
           'translate(' + x + ', ' + y + ')');
       // Drag all the nested bubbles.
