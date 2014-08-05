@@ -1891,3 +1891,26 @@ Blockly.Block.prototype.render = function() {
   this.svg_.render();
   Blockly.Realtime.blockChanged(this);
 };
+
+/**
+ * check if all of the required inputs are filled
+ */
+Blockly.Block.prototype.isFilled = function() {
+  for (var i = 0; i < this.inputList.length; i++) {
+    var connection = this.inputList[i].connection;
+    if (!connection) {
+      continue;
+    }
+    var target = connection.targetBlock();
+    if (!target || !target.isFilled()) {
+      return false;
+    }
+  }
+
+  var next = this.getNextBlock();
+  if (next) {
+    return next.isFilled();
+  }
+
+  return true;
+};
