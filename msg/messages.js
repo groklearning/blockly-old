@@ -186,7 +186,7 @@ Blockly.Msg.CONTROLS_IF_TOOLTIP_4 = 'If the first value is true, then do the fir
 /// It is recommended, but not essential, that this have text in common with the translation of 'else if'
 Blockly.Msg.CONTROLS_IF_MSG_IF = 'if';
 /// block text - See [https://code.google.com/p/blockly/wiki/IfElse https://code.google.com/p/blockly/wiki/IfElse].  The English words "otherwise if" would probably be clearer than "else if", but the latter is used because it is traditional and shorter.
-Blockly.Msg.CONTROLS_IF_MSG_ELSEIF = 'else if';
+Blockly.Msg.CONTROLS_IF_MSG_ELSEIF = 'elif';
 /// block text - See [https://code.google.com/p/blockly/wiki/IfElse https://code.google.com/p/blockly/wiki/IfElse].  The English word "otherwise" would probably be superior to "else", but the latter is used because it is traditional and shorter.
 Blockly.Msg.CONTROLS_IF_MSG_ELSE = 'else';
 Blockly.Msg.CONTROLS_IF_MSG_THEN = Blockly.Msg.CONTROLS_REPEAT_INPUT_DO;
@@ -294,6 +294,32 @@ Blockly.Msg.LOGIC_TERNARY_IF_TRUE = 'if true';
 Blockly.Msg.LOGIC_TERNARY_IF_FALSE = 'if false';
 /// tooltip - See [https://en.wikipedia.org/wiki/%3F: https://en.wikipedia.org/wiki/%3F:].
 Blockly.Msg.LOGIC_TERNARY_TOOLTIP = 'Check the condition in "test". If the condition is true, returns the "if true" value; otherwise returns the "if false" value.';
+
+/// Grok
+Blockly.Msg.LOGIC_ISCASE_LOWER = 'is lowercase'
+/// Grok
+Blockly.Msg.LOGIC_ISCASE_UPPER = 'is UPPERCASE'
+/// Grok
+Blockly.Msg.LOGIC_ISCASE_TITLE = 'is Titlecase'
+/// Grok
+Blockly.Msg.LOGIC_ISCASE_HELPURL = 'http://en.wikipedia.org/wiki/Number';
+/// Grok
+Blockly.Msg.LOGIC_ISCASE_TOOLTIP_LOWER = 'Return true if the string is lowercase.';
+/// Grok
+Blockly.Msg.LOGIC_ISCASE_TOOLTIP_UPPER = 'Return true if the string is UPPERCASE.';
+/// Grok
+Blockly.Msg.LOGIC_ISCASE_TOOLTIP_TITLE = 'Return true if the string is Titlecase.';
+
+/// Grok
+Blockly.Msg.LOGIC_ISMEMBER_IN = 'in';
+/// Grok
+Blockly.Msg.LOGIC_ISMEMBER_NOT_IN = 'not in';
+/// Grok
+Blockly.Msg.LOGIC_ISMEMBER_HELPURL = 'http://en.wikipedia.org/wiki/String';
+/// Grok
+Blockly.Msg.LOGIC_ISMEMBER_TOOLTIP_IN = 'Return true if the first string (or character) is contained in the second.';
+/// Grok
+Blockly.Msg.LOGIC_ISMEMBER_TOOLTIP_NOT_IN = 'Return true if the first string (or character) is not contained in the second.';
 
 // Math Blocks.
 /// url - Information about (real) numbers.
@@ -701,11 +727,11 @@ Blockly.Msg.TEXT_CHANGECASE_TOOLTIP = 'Return a copy of the text in a different 
 /// applicable to your language.  For more information on this block, see
 /// [https://code.google.com/p/blockly/wiki/Text#Adjusting_text_case
 /// https://code.google.com/p/blockly/wiki/Text#Adjusting_text_case].
-Blockly.Msg.TEXT_CHANGECASE_OPERATOR_UPPERCASE = 'to UPPER CASE';
+Blockly.Msg.TEXT_CHANGECASE_OPERATOR_UPPERCASE = 'UPPERCASE';
 /// block text - Indicates that all of the letters in the following piece of text should be converted to lower-case.  If your language does not use case, you may indicate that this is not applicable to your language.  For more information on this block, see [https://code.google.com/p/blockly/wiki/Text#Adjusting_text_case https://code.google.com/p/blockly/wiki/Text#Adjusting_text_case].
-Blockly.Msg.TEXT_CHANGECASE_OPERATOR_LOWERCASE = 'to lower case';
+Blockly.Msg.TEXT_CHANGECASE_OPERATOR_LOWERCASE = 'lowercase';
 /// block text - Indicates that the first letter of each of the following words should be capitalized and the rest converted to lower-case.  If your language does not use case, you may indicate that this is not applicable to your language.  For more information on this block, see [https://code.google.com/p/blockly/wiki/Text#Adjusting_text_case https://code.google.com/p/blockly/wiki/Text#Adjusting_text_case].
-Blockly.Msg.TEXT_CHANGECASE_OPERATOR_TITLECASE = 'to Title Case';
+Blockly.Msg.TEXT_CHANGECASE_OPERATOR_TITLECASE = 'Titlecase';
 
 /// url - Information about trimming (removing) text off the beginning and ends of pieces of text.
 Blockly.Msg.TEXT_TRIM_HELPURL = 'https://code.google.com/p/blockly/wiki/Text#Trimming_%28removing%29_spaces';
@@ -767,6 +793,16 @@ Blockly.Msg.TEXT_PROMPT_TOOLTIP_NUMBER = 'Ask the user for a whole number.';
 /// See [https://code.google.com/p/blockly/wiki/Text#Printing_text
 /// https://code.google.com/p/blockly/wiki/Text#Printing_text].
 Blockly.Msg.TEXT_PROMPT_TOOLTIP_TEXT = 'Ask the user for some text.';
+
+/// Grok
+Blockly.Msg.TEXT_REPLACE_TOOLTIP = 'Replace one string with another in a string.';
+/// Grok
+Blockly.Msg.TEXT_REPLACE_HELPURL = 'https://code.google.com/p/blockly/wiki/Text';
+
+/// Grok
+Blockly.Msg.TEXT_COUNT_TOOLTIP = 'Count how many times a string occurs in another string.';
+/// Grok
+Blockly.Msg.TEXT_COUNT_HELPURL = 'https://code.google.com/p/blockly/wiki/Text';
 
 // Lists Blocks.
 /// url - Information on empty lists.

@@ -370,8 +370,8 @@ Blockly.Blocks['text_charAt'] = {
         [[Blockly.Msg.TEXT_CHARAT_FROM_START, 'FROM_START'],
          [Blockly.Msg.TEXT_CHARAT_FROM_END, 'FROM_END'],
          [Blockly.Msg.TEXT_CHARAT_FIRST, 'FIRST'],
-         [Blockly.Msg.TEXT_CHARAT_LAST, 'LAST'],
-         [Blockly.Msg.TEXT_CHARAT_RANDOM, 'RANDOM']];
+         [Blockly.Msg.TEXT_CHARAT_LAST, 'LAST']];
+//         [Blockly.Msg.TEXT_CHARAT_RANDOM, 'RANDOM']];
     this.setHelpUrl(Blockly.Msg.TEXT_CHARAT_HELPURL);
     this.setColours('#00aa00', '#007a00');
     this.setOutput(true, 'String');
@@ -443,6 +443,23 @@ Blockly.Blocks['text_charAt'] = {
       return undefined;
     });
     this.getInput('AT').appendField(menu, 'WHERE');
+  }
+};
+
+Blockly.Blocks['text_subscript'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.TEXT_CHARAT_HELPURL);
+    this.setColours('#00aa00', '#007a00');
+    this.setOutput(true, 'String');
+    this.appendValueInput('VALUE')
+        .setCheck('String')
+    this.appendValueInput('INDEX')
+        .setCheck('Number')
+        .appendField('[');
+    this.appendDummyInput()
+        .appendField(']');
+    this.setInputsInline(true);
+    this.setTooltip(Blockly.Msg.TEXT_CHARAT_TOOLTIP);
   }
 };
 
@@ -563,10 +580,11 @@ Blockly.Blocks['text_changeCase'] = {
          [Blockly.Msg.TEXT_CHANGECASE_OPERATOR_TITLECASE, 'TITLECASE']];
     this.setHelpUrl(Blockly.Msg.TEXT_CHANGECASE_HELPURL);
     this.setColours('#00aa00', '#007a00');
+    this.setOutput(true, 'String');
     this.appendValueInput('TEXT')
         .setCheck('String')
         .appendField(new Blockly.FieldDropdown(OPERATORS), 'CASE');
-    this.setOutput(true, 'String');
+    this.setInputsInline(true);
     this.setTooltip(Blockly.Msg.TEXT_CHANGECASE_TOOLTIP);
   }
 };
@@ -588,5 +606,49 @@ Blockly.Blocks['text_trim'] = {
         .appendField(new Blockly.FieldDropdown(OPERATORS), 'MODE');
     this.setOutput(true, 'String');
     this.setTooltip(Blockly.Msg.TEXT_TRIM_TOOLTIP);
+  }
+};
+
+
+Blockly.Blocks['text_replace'] = {
+  /**
+   * Block for replacing one string with another in a string
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.TEXT_REPLACE_HELPURL);
+    this.setColours('#00aa00', '#007a00');
+    this.appendValueInput('FROM')
+      .setCheck('String')
+      .appendField('replace');
+    this.appendValueInput('TO')
+      .setCheck('String')
+      .appendField('with');
+    this.appendValueInput('TEXT')
+      .setCheck('String')
+      .appendField('in');
+    this.setOutput(true, 'String');
+    this.setInputsInline(true);
+    this.setTooltip(Blockly.Msg.TEXT_REPLACE_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['text_count'] = {
+  /**
+   * Block for replacing one string with another in a string
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.TEXT_COUNT_HELPURL);
+    this.setColours('#00aa00', '#007a00');
+    this.appendValueInput('SUB')
+      .setCheck('String')
+      .appendField('count');
+    this.appendValueInput('TEXT')
+      .setCheck('String')
+      .appendField('in');
+    this.setOutput(true, 'Number');
+    this.setInputsInline(true);
+    this.setTooltip(Blockly.Msg.TEXT_COUNT_TOOLTIP);
   }
 };

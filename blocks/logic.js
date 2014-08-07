@@ -399,3 +399,66 @@ Blockly.Blocks['logic_ternary'] = {
     this.setTooltip(Blockly.Msg.LOGIC_TERNARY_TOOLTIP);
   }
 };
+
+Blockly.Blocks['logic_isCase'] = {
+  /**
+   * Block for checking the case of a string
+   * @this Blockly.Block
+   */
+  init: function() {
+    var OPERATORS =
+        [[Blockly.Msg.LOGIC_ISCASE_LOWER, 'ISLOWER'],
+         [Blockly.Msg.LOGIC_ISCASE_UPPER, 'ISUPPER'],
+         [Blockly.Msg.LOGIC_ISCASE_TITLE, 'ISTITLE']];
+    this.setHelpUrl(Blockly.Msg.LOGIC_ISCASE_HELPURL);
+    this.setColours('#FED651', '#E8C000');
+    this.setOutput(true, 'Boolean');
+    this.appendValueInput('TEXT')
+        .setCheck('String');
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown(OPERATORS), 'OP');
+    this.setInputsInline(true);
+    // Assign 'this' to a variable for use in the tooltip closure below.
+    var thisBlock = this;
+    this.setTooltip(function() {
+      var op = thisBlock.getFieldValue('OP');
+      var TOOLTIPS = {
+        'ISLOWER': Blockly.Msg.LOGIC_ISCASE_TOOLTIP_LOWER,
+        'ISUPPER': Blockly.Msg.LOGIC_ISCASE_TOOLTIP_UPPER,
+        'ISTITLE': Blockly.Msg.LOGIC_ISCASE_TOOLTIP_TITLE
+      };
+      return TOOLTIPS[op];
+    });
+  }
+};
+
+Blockly.Blocks['logic_isMember'] = {
+  /**
+   * Block for checking the case of a string
+   * @this Blockly.Block
+   */
+  init: function() {
+    var OPERATORS =
+        [[Blockly.Msg.LOGIC_ISMEMBER_IN, 'IN'],
+         [Blockly.Msg.LOGIC_ISMEMBER_NOT_IN, 'NOT_IN']];
+    this.setHelpUrl(Blockly.Msg.LOGIC_ISMEMBER_HELPURL);
+    this.setColours('#FED651', '#E8C000');
+    this.setOutput(true, 'Boolean');
+    this.appendValueInput('MEMBER')
+        .setCheck('String');
+    this.appendValueInput('TEXT')
+        .setCheck('String')
+        .appendField(new Blockly.FieldDropdown(OPERATORS), 'OP');
+    this.setInputsInline(true);
+    // Assign 'this' to a variable for use in the tooltip closure below.
+    var thisBlock = this;
+    this.setTooltip(function() {
+      var op = thisBlock.getFieldValue('OP');
+      var TOOLTIPS = {
+        'IN': Blockly.Msg.LOGIC_ISMEMBER_TOOLTIP_IN,
+        'NOT_IN': Blockly.Msg.LOGIC_ISMEMBER_TOOLTIP_NOT_IN
+      };
+      return TOOLTIPS[op];
+    });
+  }
+};

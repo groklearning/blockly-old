@@ -148,10 +148,7 @@ Blockly.Python['text_charAt'] = function(block) {
       // Blockly uses one-based indicies.
       if (Blockly.isNumber(at)) {
         // If the index is a naked number, decrement it right now.
-        at = parseInt(at, 10) - 1;
-      } else {
-        // If the index is dynamic, decrement it in code.
-        at = 'int(' + at + ' - 1)';
+        at = parseInt(at, 10);
       }
       var code = text + '[' + at + ']';
       return [code, Blockly.Python.ORDER_MEMBER];
@@ -169,6 +166,16 @@ Blockly.Python['text_charAt'] = function(block) {
       return [code, Blockly.Python.ORDER_FUNCTION_CALL];
   }
   throw 'Unhandled option (text_charAt).';
+};
+
+Blockly.Python['text_subscript'] = function(block) {
+  var text = Blockly.Python.valueToCode(block, 'VALUE',
+      Blockly.Python.ORDER_MEMBER) || '\'\'';
+  var index = Blockly.Python.valueToCode(block, 'INDEX',
+      Blockly.Python.ORDER_UNARY_SIGN) || '0';
+
+  var code = text + '[' + index + ']';
+  return [code, Blockly.Python.ORDER_MEMBER];
 };
 
 Blockly.Python['text_getSubstring'] = function(block) {
@@ -250,5 +257,27 @@ Blockly.Python['text_trim'] = function(block) {
   var argument0 = Blockly.Python.valueToCode(block, 'TEXT',
       Blockly.Python.ORDER_MEMBER) || '\'\'';
   var code = argument0 + operator;
+  return [code, Blockly.Python.ORDER_MEMBER];
+};
+
+Blockly.Python['text_replace'] = function(block) {
+  var text = Blockly.Python.valueToCode(block, 'TEXT',
+      Blockly.Python.ORDER_MEMBER) || '\'\'';
+  var from = Blockly.Python.valueToCode(block, 'FROM',
+      Blockly.Python.ORDER_NONE) || '\'\'';
+  var to = Blockly.Python.valueToCode(block, 'TO',
+      Blockly.Python.ORDER_NONE) || '\'\'';
+
+  var code = text + '.replace(' + from + ', ' + to + ')';
+  return [code, Blockly.Python.ORDER_MEMBER];
+};
+
+Blockly.Python['text_count'] = function(block) {
+  var text = Blockly.Python.valueToCode(block, 'TEXT',
+      Blockly.Python.ORDER_MEMBER) || '\'\'';
+  var sub = Blockly.Python.valueToCode(block, 'SUB',
+      Blockly.Python.ORDER_NONE) || '\'\'';
+
+  var code = text + '.count(' + sub + ')';
   return [code, Blockly.Python.ORDER_MEMBER];
 };

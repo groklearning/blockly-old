@@ -122,3 +122,31 @@ Blockly.Python['logic_ternary'] = function(block) {
   var code = value_then + ' if ' + value_if + ' else ' + value_else
   return [code, Blockly.Python.ORDER_CONDITIONAL];
 };
+
+Blockly.Python['logic_isCase'] = function(block) {
+  // Comparison operator.
+  var OPERATORS = {
+    'ISLOWER': 'islower',
+    'ISUPPER': 'isupper',
+    'ISTITLE': 'istitle',
+  };
+  var method = OPERATORS[block.getFieldValue('OP')];
+  var order = Blockly.Python.ORDER_MEMBER;
+  var text = Blockly.Python.valueToCode(block, 'TEXT', order) || '\'\'';
+  var code = text + '.' + method + '()';
+  return [code, order];
+};
+
+Blockly.Python['logic_isMember'] = function(block) {
+  // Comparison operator.
+  var OPERATORS = {
+    'IN': 'in',
+    'NOT_IN': 'not in',
+  };
+  var op = OPERATORS[block.getFieldValue('OP')];
+  var order = Blockly.Python.ORDER_RELATIONAL;
+  var text = Blockly.Python.valueToCode(block, 'TEXT', order) || '\'\'';
+  var member = Blockly.Python.valueToCode(block, 'MEMBER', order) || '\'\'';
+  var code = member + ' ' + op + ' ' + text;
+  return [code, order];
+};
