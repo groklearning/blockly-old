@@ -61,9 +61,9 @@ Blockly.Blocks['math_arithmetic'] = {
     this.setColours('#0080E4', '#003660');
     this.setOutput(true, 'Number');
     this.appendValueInput('A')
-        .setCheck('Number');
+        .setCheck(['Number', 'Float']);
     this.appendValueInput('B')
-        .setCheck('Number')
+        .setCheck(['Number', 'Float'])
         .appendField(new Blockly.FieldDropdown(OPERATORS), 'OP');
     this.setInputsInline(true);
     // Assign 'this' to a variable for use in the tooltip closure below.

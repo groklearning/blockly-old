@@ -136,7 +136,7 @@ Blockly.Msg.CONTROLS_FOR_HELPURL = 'https://code.google.com/p/blockly/wiki/Loops
 Blockly.Msg.CONTROLS_FOR_TOOLTIP = 'Have the variable %1 take on the values from the start number to the end number, counting by the specified interval, and do the specified blocks.';
 /// block title - Title of [https://code.google.com/p/blockly/wiki/Loops#count_with count with] blocks.
 /// [[File:Blockly-count-with.png]]
-Blockly.Msg.CONTROLS_FOR_INPUT_WITH = 'count with';
+Blockly.Msg.CONTROLS_FOR_INPUT_WITH = 'count';
 /// block text - Starting with a (usually lower) number in a range (%1),
 /// ending with a (usually higher) number in a range (%2), and counting the
 /// iterations by a number of steps (%3).  As in
@@ -149,14 +149,14 @@ Blockly.Msg.CONTROLS_FOR_INPUT_DO = Blockly.Msg.CONTROLS_REPEAT_INPUT_DO;
 /// url - Describes 'for-each loops' in computer programs.  Consider using your language's translation of [https://en.wikipedia.org/wiki/Foreach https://en.wikipedia.org/wiki/Foreach] if present.
 Blockly.Msg.CONTROLS_FOREACH_HELPURL = 'https://code.google.com/p/blockly/wiki/Loops#for_each for each block';
 /// block text - Title of [https://code.google.com/p/blockly/wiki/Loops#for_each for each block].
-Blockly.Msg.CONTROLS_FOREACH_INPUT_ITEM = 'for each item';
+Blockly.Msg.CONTROLS_FOREACH_INPUT_ITEM = 'for each';
 /// block text - Preceding the list that should be iterated over in a [https://code.google.com/p/blockly/wiki/Loops#for_each for each loop].
-Blockly.Msg.CONTROLS_FOREACH_INPUT_INLIST = 'in list';
+Blockly.Msg.CONTROLS_FOREACH_INPUT_INLIST = 'in';
 /// block text - Following the list that should be iterated over in a [https://code.google.com/p/blockly/wiki/Loops#for_each for each loop].  This is empty in most, but not all, languages.
 Blockly.Msg.CONTROLS_FOREACH_INPUT_INLIST_TAIL = '';
 Blockly.Msg.CONTROLS_FOREACH_INPUT_DO = Blockly.Msg.CONTROLS_REPEAT_INPUT_DO;
 /// block text - Description of [https://code.google.com/p/blockly/wiki/Loops#for_each for each blocks].\n\nParameters:\n* %1 - the name of the loop variable.
-Blockly.Msg.CONTROLS_FOREACH_TOOLTIP = 'For each item in a list, set the variable "%1" to the item, and then do some statements.';
+Blockly.Msg.CONTROLS_FOREACH_TOOLTIP = 'For each item in a list or string, set the variable "%1" to the item, and then do some statements.';
 
 /// url - Describes control flow in computer programs.  Consider using your language's translation of [https://en.wikipedia.org/wiki/Control_flow https://en.wikipedia.org/wiki/Control_flow], if it exists.
 Blockly.Msg.CONTROLS_FLOW_STATEMENTS_HELPURL = 'https://code.google.com/p/blockly/wiki/Loops#Loop_Termination_Blocks';
@@ -320,6 +320,17 @@ Blockly.Msg.LOGIC_ISMEMBER_HELPURL = 'http://en.wikipedia.org/wiki/String';
 Blockly.Msg.LOGIC_ISMEMBER_TOOLTIP_IN = 'Return true if the first string (or character) is contained in the second.';
 /// Grok
 Blockly.Msg.LOGIC_ISMEMBER_TOOLTIP_NOT_IN = 'Return true if the first string (or character) is not contained in the second.';
+
+/// Grok
+Blockly.Msg.LOGIC_STARTSWITH = 'starts with';
+/// Grok
+Blockly.Msg.LOGIC_ENDSWITH = 'ends with';
+/// Grok
+Blockly.Msg.LOGIC_STRINGENDS_HELPURL = 'http://en.wikipedia.org/wiki/String';
+/// Grok
+Blockly.Msg.LOGIC_STARTSWITH_TOOLTIP = 'Return true if the first string (or character) starts with the second.';
+/// Grok
+Blockly.Msg.LOGIC_ENDSWITH_TOOLTIP = 'Return true if the first string (or character) ends with the second.';
 
 // Math Blocks.
 /// url - Information about (real) numbers.
@@ -785,10 +796,14 @@ Blockly.Msg.TEXT_PROMPT_TYPE_TEXT = 'ask for text with prompt';
 /// following message.  See [https://code.google.com/p/blockly/wiki/Text#Printing_text
 /// https://code.google.com/p/blockly/wiki/Text#Printing_text].
 Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER = 'ask for int with prompt';
+/// Grok float
+Blockly.Msg.TEXT_PROMPT_TYPE_FLOAT = 'ask for float with prompt';
 /// dropdown - Precedes the message with which the user should be prompted for
 /// a number.  See [https://code.google.com/p/blockly/wiki/Text#Printing_text
 /// https://code.google.com/p/blockly/wiki/Text#Printing_text].
 Blockly.Msg.TEXT_PROMPT_TOOLTIP_NUMBER = 'Ask the user for a whole number.';
+/// Grok float
+Blockly.Msg.TEXT_PROMPT_TOOLTIP_FLOAT = 'Ask the user for a number with a decimal.';
 /// dropdown - Precedes the message with which the user should be prompted for some text.
 /// See [https://code.google.com/p/blockly/wiki/Text#Printing_text
 /// https://code.google.com/p/blockly/wiki/Text#Printing_text].

@@ -13,9 +13,11 @@ Blockly.Python['io_input'] = function(block) {
   var msg = Blockly.Python.valueToCode(block, 'TEXT',
     Blockly.Python.ORDER_NONE) || '\'\'';
   var code = 'input(' + msg + ')';
-  var toNumber = block.getFieldValue('TYPE') == 'NUMBER';
-  if (toNumber) {
+  var type = block.getFieldValue('TYPE');
+  if (type === 'NUMBER') {
     code = 'int(' + code + ')';
+  } else if (type === 'FLOAT') {
+    code = 'float(' + code + ')';
   }
   return [code, Blockly.Python.ORDER_FUNCTION_CALL];
 };

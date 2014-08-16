@@ -150,3 +150,17 @@ Blockly.Python['logic_isMember'] = function(block) {
   var code = member + ' ' + op + ' ' + text;
   return [code, order];
 };
+
+Blockly.Python['logic_stringEnds'] = function(block) {
+  // Comparison operator.
+  var OPERATORS = {
+    'STARTSWITH': 'startswith',
+    'ENDSWITH': 'endswith'
+  };
+  var method = OPERATORS[block.getFieldValue('OP')];
+  var order = Blockly.Python.ORDER_MEMBER;
+  var text = Blockly.Python.valueToCode(block, 'TEXT', order) || '\'\'';
+  var fix = Blockly.Python.valueToCode(block, 'FIX', Blockly.Python.ORDER_FUNCTION_CALL) || '\'\'';
+  var code = text + '.' + method + '(' + fix + ')';
+  return [code, order];
+};

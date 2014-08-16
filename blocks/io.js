@@ -36,7 +36,8 @@ Blockly.Blocks['text_prompt'] = {
   init: function() {
     var TYPES =
       [[Blockly.Msg.TEXT_PROMPT_TYPE_TEXT, 'TEXT'],
-       [Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER, 'NUMBER']];
+       [Blockly.Msg.TEXT_PROMPT_TYPE_NUMBER, 'NUMBER'],
+       [Blockly.Msg.TEXT_PROMPT_TYPE_FLOAT, 'FLOAT']];
     // Assign 'this' to a variable for use in the closure below.
     var thisBlock = this;
     this.setHelpUrl(Blockly.Msg.TEXT_PROMPT_HELPURL);
@@ -44,6 +45,8 @@ Blockly.Blocks['text_prompt'] = {
     var dropdown = new Blockly.FieldDropdown(TYPES, function(newOp) {
       if (newOp == 'NUMBER') {
         thisBlock.changeOutput('Number');
+      } else if (newOp == 'FLOAT') {
+        thisBlock.changeOutput('Float');
       } else {
         thisBlock.changeOutput('String');
       }
@@ -87,7 +90,8 @@ Blockly.Blocks['io_input'] = {
   init: function() {
     var TYPES =
         [[Blockly.Msg.IO_INPUT_TYPE_TEXT, 'TEXT'],
-         [Blockly.Msg.IO_INPUT_TYPE_NUMBER, 'NUMBER']];
+         [Blockly.Msg.IO_INPUT_TYPE_NUMBER, 'NUMBER'],
+         [Blockly.Msg.TEXT_PROMPT_TYPE_FLOAT, 'FLOAT']];
     // Assign 'this' to a variable for use in the closure below.
     var thisBlock = this;
     this.setHelpUrl(Blockly.Msg.IO_INPUT_HELPURL);
@@ -95,6 +99,8 @@ Blockly.Blocks['io_input'] = {
     var dropdown = new Blockly.FieldDropdown(TYPES, function(newOp) {
       if (newOp == 'NUMBER') {
         thisBlock.changeOutput('Number');
+      } else if (newOp == 'FLOAT') {
+        thisBlock.changeOutput('Float');
       } else {
         thisBlock.changeOutput('String');
       }
@@ -107,9 +113,14 @@ Blockly.Blocks['io_input'] = {
     // Assign 'this' to a variable for use in the tooltip closure below.
     var thisBlock = this;
     this.setTooltip(function() {
-      return (thisBlock.getFieldValue('TYPE') == 'TEXT') ?
-          Blockly.Msg.IO_INPUT_TOOLTIP_TEXT :
-          Blockly.Msg.IO_INPUT_TOOLTIP_NUMBER;
+      var newOp = thisBlock.getFieldValue('TYPE');
+      if (newOp == 'NUMBER') {
+        return Blockly.Msg.IO_INPUT_TOOLTIP_NUMBER;
+      } else if (newOp == 'FLOAT') {
+        return Blockly.Msg.IO_INPUT_TOOLTIP_FLOAT;
+      } else {
+        return Blockly.Msg.IO_INPUT_TOOLTIP_TEXT;
+      }
     });
     this.setInputsInline(true);
   }

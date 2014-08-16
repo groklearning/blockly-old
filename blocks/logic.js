@@ -462,3 +462,34 @@ Blockly.Blocks['logic_isMember'] = {
     });
   }
 };
+
+Blockly.Blocks['logic_stringEnds'] = {
+  /**
+   * Block for checking the case of a string
+   * @this Blockly.Block
+   */
+  init: function() {
+    var OPERATORS =
+        [[Blockly.Msg.LOGIC_STARTSWITH, 'STARTSWITH'],
+         [Blockly.Msg.LOGIC_ENDSWITH, 'ENDSWITH']];
+    this.setHelpUrl(Blockly.Msg.LOGIC_STRINGENDS_HELPURL);
+    this.setColours('#FED651', '#E8C000');
+    this.setOutput(true, 'Boolean');
+    this.appendValueInput('TEXT')
+        .setCheck('String');
+    this.appendValueInput('FIX')
+        .setCheck('String')
+        .appendField(new Blockly.FieldDropdown(OPERATORS), 'OP');
+    this.setInputsInline(true);
+    // Assign 'this' to a variable for use in the tooltip closure below.
+    var thisBlock = this;
+    this.setTooltip(function() {
+      var op = thisBlock.getFieldValue('OP');
+      var TOOLTIPS = {
+        'STARTSWITH': Blockly.Msg.LOGIC_STARTSWITH_TOOLTIP,
+        'ENDSWITH': Blockly.Msg.LOGIC_ENDSWITH_TOOLTIP
+      };
+      return TOOLTIPS[op];
+    });
+  }
+};

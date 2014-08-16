@@ -29,7 +29,7 @@ goog.provide('Blockly.Blocks.loops');
 goog.require('Blockly.Blocks');
 
 
-Blockly.Blocks['controls_repeat'] = {
+Blockly.Blocks['loops_repeat'] = {
   /**
    * Block for repeat n times (internal number).
    * @this Blockly.Block
@@ -50,7 +50,7 @@ Blockly.Blocks['controls_repeat'] = {
   }
 };
 
-Blockly.Blocks['controls_repeat_ext'] = {
+Blockly.Blocks['loops_repeat_ext'] = {
   /**
    * Block for repeat n times (external number).
    * @this Blockly.Block
@@ -70,7 +70,7 @@ Blockly.Blocks['controls_repeat_ext'] = {
   }
 };
 
-Blockly.Blocks['controls_whileUntil'] = {
+Blockly.Blocks['loops_whileUntil'] = {
   /**
    * Block for 'do while/until' loop.
    * @this Blockly.Block
@@ -101,22 +101,48 @@ Blockly.Blocks['controls_whileUntil'] = {
   }
 };
 
-Blockly.Blocks['controls_for'] = {
+Blockly.Blocks['loops_while'] = {
+  /**
+   * Block for 'do while/until' loop.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.CONTROLS_WHILEUNTIL_HELPURL);
+    this.setColours('#ff7700', '#C05900');
+    this.appendValueInput('BOOL')
+        .setCheck('Boolean')
+        .appendField('repeat while');
+    this.appendStatementInput('DO')
+        .appendField(Blockly.Msg.CONTROLS_WHILEUNTIL_INPUT_DO);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setInputsInline(true);
+    this.setTooltip('repeat while condition is true.');
+  }
+};
+
+Blockly.Blocks['loops_for'] = {
   /**
    * Block for 'for' loop.
    * @this Blockly.Block
    */
   init: function() {
+    var DIR = [['up to', 'UPTO'], ['down to', 'DOWNTO']];
+
     this.setHelpUrl(Blockly.Msg.CONTROLS_FOR_HELPURL);
     this.setColours('#ff7700', '#C05900');
     this.appendDummyInput()
         .appendField(Blockly.Msg.CONTROLS_FOR_INPUT_WITH)
         .appendField(new Blockly.FieldVariable(null), 'VAR');
-    this.interpolateMsg(Blockly.Msg.CONTROLS_FOR_INPUT_FROM_TO_BY,
-                        ['FROM', 'Number', Blockly.ALIGN_RIGHT],
-                        ['TO', 'Number', Blockly.ALIGN_RIGHT],
-                        ['BY', 'Number', Blockly.ALIGN_RIGHT],
-                        Blockly.ALIGN_RIGHT);
+    this.appendValueInput('FROM')
+      .setCheck('Number')
+      .appendField('from');
+    this.appendValueInput('TO')
+      .setCheck('Number')
+      .appendField(new Blockly.FieldDropdown(DIR), 'DIR');
+    this.appendValueInput('BY')
+      .setCheck('Number')
+      .appendField('by');
     this.appendStatementInput('DO')
         .appendField(Blockly.Msg.CONTROLS_FOR_INPUT_DO);
     this.setPreviousStatement(true);
@@ -169,7 +195,7 @@ Blockly.Blocks['controls_for'] = {
   }
 };
 
-Blockly.Blocks['controls_forEach'] = {
+Blockly.Blocks['loops_forEach'] = {
   /**
    * Block for 'for each' loop.
    * @this Blockly.Block
@@ -178,19 +204,19 @@ Blockly.Blocks['controls_forEach'] = {
     this.setHelpUrl(Blockly.Msg.CONTROLS_FOREACH_HELPURL);
     this.setColours('#ff7700', '#C05900');
     this.appendValueInput('LIST')
-        .setCheck('Array')
+        .setCheck(['Array', 'String'])
         .appendField(Blockly.Msg.CONTROLS_FOREACH_INPUT_ITEM)
         .appendField(new Blockly.FieldVariable(null), 'VAR')
         .appendField(Blockly.Msg.CONTROLS_FOREACH_INPUT_INLIST);
     if (Blockly.Msg.CONTROLS_FOREACH_INPUT_INLIST_TAIL) {
       this.appendDummyInput()
           .appendField(Blockly.Msg.CONTROLS_FOREACH_INPUT_INLIST_TAIL);
-      this.setInputsInline(true);
     }
     this.appendStatementInput('DO')
         .appendField(Blockly.Msg.CONTROLS_FOREACH_INPUT_DO);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
+    this.setInputsInline(true);
     // Assign 'this' to a variable for use in the tooltip closure below.
     var thisBlock = this;
     this.setTooltip(function() {
@@ -218,10 +244,10 @@ Blockly.Blocks['controls_forEach'] = {
       this.setFieldValue(newName, 'VAR');
     }
   },
-  customContextMenu: Blockly.Blocks['controls_for'].customContextMenu
+  customContextMenu: Blockly.Blocks['loops_for'].customContextMenu
 };
 
-Blockly.Blocks['controls_flow_statements'] = {
+Blockly.Blocks['loops_flow_statements'] = {
   /**
    * Block for flow statements: continue, break.
    * @this Blockly.Block
@@ -260,11 +286,11 @@ Blockly.Blocks['controls_flow_statements'] = {
     // Is the block nested in a control statement?
     var block = this;
     do {
-      if (block.type == 'controls_repeat' ||
-          block.type == 'controls_repeat_ext' ||
-          block.type == 'controls_forEach' ||
-          block.type == 'controls_for' ||
-          block.type == 'controls_whileUntil') {
+      if (block.type == 'loops_repeat' ||
+          block.type == 'loops_repeat_ext' ||
+          block.type == 'loops_forEach' ||
+          block.type == 'loops_for' ||
+          block.type == 'loops_whileUntil') {
         legal = true;
         break;
       }
