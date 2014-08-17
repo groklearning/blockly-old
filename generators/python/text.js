@@ -172,7 +172,7 @@ Blockly.Python['text_subscript'] = function(block) {
   var text = Blockly.Python.valueToCode(block, 'VALUE',
       Blockly.Python.ORDER_MEMBER) || '\'\'';
   var index = Blockly.Python.valueToCode(block, 'INDEX',
-      Blockly.Python.ORDER_UNARY_SIGN) || '0';
+      Blockly.Python.ORDER_NONE) || '0';
 
   var code = text + '[' + index + ']';
   return [code, Blockly.Python.ORDER_MEMBER];
