@@ -233,6 +233,10 @@ Blockly.Msg.IO_PRINT3_TOOLTIP = 'Print three text, number or other values.';
 Blockly.Msg.IO_PRINT4_TITLE = 'print %1 %2 %3 %4';
 /// Grok
 Blockly.Msg.IO_PRINT4_TOOLTIP = 'Print four text, number or other values.';
+/// Grok
+Blockly.Msg.IO_PRINT5_TITLE = 'print %1 %2 %3 %4 %5';
+/// Grok
+Blockly.Msg.IO_PRINT5_TOOLTIP = 'Print five text, number or other values.';
 
 /// url - Information about comparisons.
 Blockly.Msg.LOGIC_COMPARE_HELPURL = 'https://en.wikipedia.org/wiki/Inequality_(mathematics)';
