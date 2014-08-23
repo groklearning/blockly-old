@@ -346,12 +346,12 @@ Blockly.Blocks['text_indexOf'] = {
     this.setHelpUrl(Blockly.Msg.TEXT_INDEXOF_HELPURL);
     this.setColours('#00aa00', '#007a00');
     this.setOutput(true, 'Number');
-    this.appendValueInput('VALUE')
-        .setCheck('String')
-        .appendField(Blockly.Msg.TEXT_INDEXOF_INPUT_INTEXT);
     this.appendValueInput('FIND')
         .setCheck('String')
         .appendField(new Blockly.FieldDropdown(OPERATORS), 'END');
+    this.appendValueInput('VALUE')
+        .setCheck('String')
+        .appendField(Blockly.Msg.TEXT_INDEXOF_INPUT_INTEXT);
     if (Blockly.Msg.TEXT_INDEXOF_TAIL) {
       this.appendDummyInput().appendField(Blockly.Msg.TEXT_INDEXOF_TAIL);
     }
@@ -456,6 +456,26 @@ Blockly.Blocks['text_subscript'] = {
     this.appendValueInput('INDEX')
         .setCheck('Number')
         .appendField('[');
+    this.appendDummyInput()
+        .appendField(']');
+    this.setInputsInline(true);
+    this.setTooltip(Blockly.Msg.TEXT_CHARAT_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['text_slice'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.TEXT_CHARAT_HELPURL);
+    this.setColours('#00aa00', '#007a00');
+    this.setOutput(true, 'String');
+    this.appendValueInput('VALUE')
+        .setCheck('String')
+    this.appendValueInput('START')
+        .setCheck('Number')
+        .appendField('[');
+    this.appendValueInput('END')
+        .setCheck('Number')
+        .appendField(':');
     this.appendDummyInput()
         .appendField(']');
     this.setInputsInline(true);

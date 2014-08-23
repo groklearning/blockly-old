@@ -618,11 +618,11 @@ Blockly.Msg.TEXT_INDEXOF_TOOLTIP = 'Returns the index of the first/last occurren
 /// [https://code.google.com/p/blockly/wiki/Text#Finding_text
 /// https://code.google.com/p/blockly/wiki/Text#Finding_text].
 /// [[File:Blockly-find-text.png]].
-Blockly.Msg.TEXT_INDEXOF_INPUT_INTEXT = 'in text';
+Blockly.Msg.TEXT_INDEXOF_INPUT_INTEXT = 'in';
 /// dropdown - See [https://code.google.com/p/blockly/wiki/Text#Finding_text
 /// https://code.google.com/p/blockly/wiki/Text#Finding_text].
 /// [[File:Blockly-find-text.png]].
-Blockly.Msg.TEXT_INDEXOF_OPERATOR_FIRST = 'find first occurrence of text';
+Blockly.Msg.TEXT_INDEXOF_OPERATOR_FIRST = 'find first index of';
 /// dropdown - See [https://code.google.com/p/blockly/wiki/Text#Finding_text
 /// https://code.google.com/p/blockly/wiki/Text#Finding_text].  This would
 /// replace "find first occurrence of text" below.  (For more information on
@@ -630,7 +630,7 @@ Blockly.Msg.TEXT_INDEXOF_OPERATOR_FIRST = 'find first occurrence of text';
 /// [https://translatewiki.net/wiki/Translating:Blockly#Drop-Down_Menus
 /// https://translatewiki.net/wiki/Translating:Blockly#Drop-Down_Menus)].)
 /// [[File:Blockly-find-text.png]].
-Blockly.Msg.TEXT_INDEXOF_OPERATOR_LAST = 'find last occurrence of text';
+Blockly.Msg.TEXT_INDEXOF_OPERATOR_LAST = 'find last index of';
 /// block text - Optional text to follow the rightmost block in a
 /// [https://code.google.com/p/blockly/wiki/Text#Finding_text
 /// https://code.google.com/p/blockly/wiki/Text#Finding_text in text ... find block]

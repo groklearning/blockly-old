@@ -125,7 +125,7 @@ Blockly.Python['text_indexOf'] = function(block) {
       Blockly.Python.ORDER_NONE) || '\'\'';
   var argument1 = Blockly.Python.valueToCode(block, 'VALUE',
       Blockly.Python.ORDER_MEMBER) || '\'\'';
-  var code = argument1 + '.' + operator + '(' + argument0 + ') + 1';
+  var code = argument1 + '.' + operator + '(' + argument0 + ')';
   return [code, Blockly.Python.ORDER_MEMBER];
 };
 
@@ -175,6 +175,18 @@ Blockly.Python['text_subscript'] = function(block) {
       Blockly.Python.ORDER_NONE) || '0';
 
   var code = text + '[' + index + ']';
+  return [code, Blockly.Python.ORDER_MEMBER];
+};
+
+Blockly.Python['text_slice'] = function(block) {
+  var text = Blockly.Python.valueToCode(block, 'VALUE',
+      Blockly.Python.ORDER_MEMBER) || '\'\'';
+  var start = Blockly.Python.valueToCode(block, 'START',
+      Blockly.Python.ORDER_NONE) || '0';
+  var end = Blockly.Python.valueToCode(block, 'END',
+      Blockly.Python.ORDER_NONE) || '0';
+
+  var code = text + '[' + start + ':' + end + ']';
   return [code, Blockly.Python.ORDER_MEMBER];
 };
 
