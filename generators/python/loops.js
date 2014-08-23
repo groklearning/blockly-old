@@ -78,7 +78,6 @@ Blockly.Python['loops_whileUntil'] = function(block) {
 Blockly.Python['loops_while'] = function(block) {
   // Do while/until loop.
   var argument0 = Blockly.Python.valueToCode(block, 'BOOL',
-      until ? Blockly.Python.ORDER_LOGICAL_NOT :
       Blockly.Python.ORDER_NONE) || 'False';
   var branch = Blockly.Python.statementToCode(block, 'DO');
   branch = Blockly.Python.addLoopTrap(branch, block.id) ||

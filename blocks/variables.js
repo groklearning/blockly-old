@@ -128,3 +128,50 @@ Blockly.Blocks['variables_set'] = {
   },
   customContextMenu: Blockly.Blocks['variables_get'].customContextMenu
 };
+
+Blockly.Blocks['variables_incdec'] = {
+  /**
+   * Block for adding to a variable in place.
+   * @this Blockly.Block
+   */
+  init: function() {
+    var OPERATORS =
+        [[Blockly.Msg.VARIABLES_INCDEC_INCREMENT, 'INCREMENT'],
+         [Blockly.Msg.VARIABLES_INCDEC_DECREMENT, 'DECREMENT']];
+    this.setHelpUrl(Blockly.Msg.VARIABLES_INCDEC_HELPURL);
+    this.setColours('#666666', '#000000');
+    this.interpolateMsg('%1 %2 by %3',
+        ['OP', new Blockly.FieldDropdown(OPERATORS)],
+        ['VAR', new Blockly.FieldVariable(Blockly.Msg.VARIABLES_INCDEC_TITLE_ITEM)],
+        ['DELTA', ['Number', 'Float', 'String'], Blockly.ALIGN_RIGHT],
+        Blockly.ALIGN_RIGHT);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    // Assign 'this' to a variable for use in the tooltip closure below.
+    var thisBlock = this;
+    this.setTooltip(function() {
+      return Blockly.Msg.VARIABLES_INCDEC_TOOLTIP.replace('%1',
+          thisBlock.getFieldValue('VAR'));
+    });
+  },
+  /**
+   * Return all variables referenced by this block.
+   * @return {!Array.<string>} List of variable names.
+   * @this Blockly.Block
+   */
+  getVars: function() {
+    return [this.getFieldValue('VAR')];
+  },
+  /**
+   * Notification that a variable is renaming.
+   * If the name matches one of this block's variables, rename it.
+   * @param {string} oldName Previous name of variable.
+   * @param {string} newName Renamed variable.
+   * @this Blockly.Block
+   */
+  renameVar: function(oldName, newName) {
+    if (Blockly.Names.equals(oldName, this.getFieldValue('VAR'))) {
+      this.setFieldValue(newName, 'VAR');
+    }
+  }
+};

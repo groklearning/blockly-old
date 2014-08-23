@@ -44,3 +44,16 @@ Blockly.Python['variables_set'] = function(block) {
       Blockly.Variables.NAME_TYPE);
   return varName + ' = ' + argument0 + '\n';
 };
+
+
+Blockly.Python['variables_incdec'] = function(block) {
+  // Add to a variable in place.
+  var increment = block.getFieldValue('OP') === 'INCREMENT';
+  var operator = increment ? ' += ' : ' -= ';
+
+  var argument0 = Blockly.Python.valueToCode(block, 'DELTA',
+      Blockly.Python.ORDER_ADDITIVE) || '0';
+  var varName = Blockly.Python.variableDB_.getName(block.getFieldValue('VAR'),
+      Blockly.Variables.NAME_TYPE);
+  return varName + operator + argument0 + '\n';
+};

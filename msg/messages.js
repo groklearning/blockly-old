@@ -275,11 +275,11 @@ Blockly.Msg.LOGIC_NEGATE_TOOLTIP = 'Returns true if the input is false.  Returns
 /// url - Information about the logic values ''true'' and ''false''.  Consider using the translation of [https://en.wikipedia.org/wiki/Truth_value https://en.wikipedia.org/wiki/Truth_value] if it exists in your language.
 Blockly.Msg.LOGIC_BOOLEAN_HELPURL = 'https://code.google.com/p/blockly/wiki/True_False';
 /// block text - The word for the [https://en.wikipedia.org/wiki/Truth_value logical value] ''true''.
-Blockly.Msg.LOGIC_BOOLEAN_TRUE = 'true';
+Blockly.Msg.LOGIC_BOOLEAN_TRUE = 'True';
 /// block text - The word for the [https://en.wikipedia.org/wiki/Truth_value logical value] ''false''.
-Blockly.Msg.LOGIC_BOOLEAN_FALSE = 'false';
+Blockly.Msg.LOGIC_BOOLEAN_FALSE = 'False';
 /// tooltip - Indicates that the block returns either of the two possible [https://en.wikipedia.org/wiki/Truth_value logical values].
-Blockly.Msg.LOGIC_BOOLEAN_TOOLTIP = 'Returns either true or false.';
+Blockly.Msg.LOGIC_BOOLEAN_TOOLTIP = 'Returns either True or False.';
 
 /// url - Provide a link to the translation of [https://en.wikipedia.org/wiki/Nullable_type https://en.wikipedia.org/wiki/Nullable_type], if it exists in your language; otherwise, do not worry about translating this advanced concept.
 Blockly.Msg.LOGIC_NULL_HELPURL = 'https://en.wikipedia.org/wiki/Nullable_type';
@@ -458,6 +458,17 @@ Blockly.Msg.MATH_CHANGE_TITLE_ITEM = Blockly.Msg.VARIABLES_DEFAULT_NAME;
 Blockly.Msg.MATH_CHANGE_INPUT_BY = 'by';
 /// tooltip - This updates the value of the variable by adding to it the following numeric input.\n\nParameters:\n* %1 - the name of the variable whose value should be increased.
 Blockly.Msg.MATH_CHANGE_TOOLTIP = 'Add a number to variable "%1".';
+
+/// URL
+Blockly.Msg.VARIABLES_INCDEC_HELPURL = 'https://en.wikipedia.org/wiki/Programming_idiom#Incrementing_a_counter';
+/// Increment
+Blockly.Msg.VARIABLES_INCDEC_INCREMENT = 'Increment';
+/// Decrement
+Blockly.Msg.VARIABLES_INCDEC_DECREMENT = 'Decrement';
+/// - As in: '''change''' [the value of variable] ''item by'' 1 (e.g., if the variable named 'item' had the value 5, change it to 6).
+Blockly.Msg.VARIABLES_INCDEC_TITLE_ITEM = Blockly.Msg.VARIABLES_DEFAULT_NAME;
+/// tooltip - This updates the value of the variable by adding to it the following numeric input.\n\nParameters:\n* %1 - the name of the variable whose value should be increased.
+Blockly.Msg.VARIABLES_INCDEC_TOOLTIP = 'Increment or decrement the variable %1.';
 
 /// url - Information about how numbers are rounded to the nearest integer
 Blockly.Msg.MATH_ROUND_HELPURL = 'https://en.wikipedia.org/wiki/Rounding';
