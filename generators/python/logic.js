@@ -140,8 +140,8 @@ Blockly.Python['logic_isCase'] = function(block) {
 Blockly.Python['logic_isEmpty'] = function(block) {
   // Comparison operator.
   var OPERATORS = {
-    'IS': '',
-    'IS_NOT': 'not ',
+    'IS': 'not ',
+    'IS_NOT': '',
   };
   var op = block.getFieldValue('OP');
   var order = (op === 'IS') ? Blockly.Python.ORDER_NONE : Blockly.Python.ORDER_RELATIONAL;
