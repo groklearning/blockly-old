@@ -471,9 +471,9 @@ Blockly.Msg.MATH_CHANGE_TOOLTIP = 'Add a number to variable "%1".';
 /// URL
 Blockly.Msg.VARIABLES_INCDEC_HELPURL = 'https://en.wikipedia.org/wiki/Programming_idiom#Incrementing_a_counter';
 /// Increment
-Blockly.Msg.VARIABLES_INCDEC_INCREMENT = 'Increment';
+Blockly.Msg.VARIABLES_INCDEC_INCREMENT = 'increment';
 /// Decrement
-Blockly.Msg.VARIABLES_INCDEC_DECREMENT = 'Decrement';
+Blockly.Msg.VARIABLES_INCDEC_DECREMENT = 'decrement';
 Blockly.Msg.VARIABLES_INCDEC_TITLE_ITEM = Blockly.Msg.VARIABLES_DEFAULT_NAME;
 /// tooltip - This updates the value of the variable by adding to it the following numeric input.\n\nParameters:\n* %1 - the name of the variable whose value should be increased.
 Blockly.Msg.VARIABLES_INCDEC_TOOLTIP = 'Increment or decrement the variable %1.';
