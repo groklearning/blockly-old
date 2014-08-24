@@ -253,6 +253,15 @@ Blockly.Msg.LOGIC_COMPARE_TOOLTIP_GT = 'Return true if the first input is greate
 /// tooltip - Describes the greater than or equals (≥) block.
 Blockly.Msg.LOGIC_COMPARE_TOOLTIP_GTE = 'Return true if the first input is greater than or equal to the second input.';
 
+/// Grok
+Blockly.Msg.LOGIC_ISEMPTY_HELPURL = 'https://code.google.com/p/blockly/wiki/Text#Checking_for_empty_text';
+/// Grok
+Blockly.Msg.LOGIC_ISEMPTY_IS = 'is empty';
+/// Grok
+Blockly.Msg.LOGIC_ISEMPTY_ISNOT = 'is not empty';
+/// Grok
+Blockly.Msg.LOGIC_ISEMPTY_TOOLTIP = 'Returns true if the provided text is empty (or not empty).';
+
 /// url - Information about the Boolean conjunction ("and") and disjunction ("or") operators.  Consider using the translation of [https://en.wikipedia.org/wiki/Boolean_logic https://en.wikipedia.org/wiki/Boolean_logic], if it exists in your language.
 Blockly.Msg.LOGIC_OPERATION_HELPURL = 'https://code.google.com/p/blockly/wiki/And_Or';
 /// tooltip - See [https://en.wikipedia.org/wiki/Logical_conjunction https://en.wikipedia.org/wiki/Logical_conjunction].
@@ -465,7 +474,6 @@ Blockly.Msg.VARIABLES_INCDEC_HELPURL = 'https://en.wikipedia.org/wiki/Programmin
 Blockly.Msg.VARIABLES_INCDEC_INCREMENT = 'Increment';
 /// Decrement
 Blockly.Msg.VARIABLES_INCDEC_DECREMENT = 'Decrement';
-/// - As in: '''change''' [the value of variable] ''item by'' 1 (e.g., if the variable named 'item' had the value 5, change it to 6).
 Blockly.Msg.VARIABLES_INCDEC_TITLE_ITEM = Blockly.Msg.VARIABLES_DEFAULT_NAME;
 /// tooltip - This updates the value of the variable by adding to it the following numeric input.\n\nParameters:\n* %1 - the name of the variable whose value should be increased.
 Blockly.Msg.VARIABLES_INCDEC_TOOLTIP = 'Increment or decrement the variable %1.';

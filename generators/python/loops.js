@@ -85,6 +85,33 @@ Blockly.Python['loops_while'] = function(block) {
   return 'while ' + argument0 + ':\n' + branch;
 };
 
+Blockly.Python['loops_read'] = function(block) {
+  var msg = Blockly.Python.valueToCode(block, 'TEXT',
+    Blockly.Python.ORDER_NONE) || '\'\'';
+  var read = 'input(' + msg + ')';
+
+  var type = block.getFieldValue('TYPE');
+  if (type === 'NUMBER') {
+    read = 'int(' + code + ')';
+  } else if (type === 'FLOAT') {
+    read = 'float(' + code + ')';
+  }
+
+  var variable = Blockly.Python.variableDB_.getName(
+      block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
+  read = variable + ' = ' + read;
+
+  // Do while loop including reading
+  var argument0 = Blockly.Python.valueToCode(block, 'BOOL',
+      Blockly.Python.ORDER_NONE) || 'False';
+
+  var branch = Blockly.Python.statementToCode(block, 'DO');
+  branch = Blockly.Python.addLoopTrap(branch, block.id) ||
+      Blockly.Python.LOOP_PASS;
+
+  return read + '\nwhile ' + argument0 + ':\n' + branch + '  ' + read + '\n';
+};
+
 Blockly.Python['loops_for'] = function(block) {
   function get_value(block, name, order, def) {
     var target = block.getInputTargetBlock(name);

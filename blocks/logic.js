@@ -432,6 +432,28 @@ Blockly.Blocks['logic_isCase'] = {
   }
 };
 
+Blockly.Blocks['logic_isEmpty'] = {
+  /**
+   * Block for is the string null?
+   * @this Blockly.Block
+   */
+  init: function() {
+    var OPERATORS =
+        [[Blockly.Msg.LOGIC_ISEMPTY_IS, 'IS'],
+         [Blockly.Msg.LOGIC_ISEMPTY_ISNOT, 'IS_NOT']];
+    this.setHelpUrl(Blockly.Msg.LOGIC_ISEMPTY_HELPURL);
+    this.setColours('#FED651', '#E8C000');
+    this.setOutput(true, 'Boolean');
+    this.appendValueInput('VALUE')
+        .setCheck(['String', 'Array']);
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown(OPERATORS), 'OP');
+    this.setOutput(true, 'Boolean');
+    this.setTooltip(Blockly.Msg.LOGIC_ISEMPTY_TOOLTIP);
+    this.setInputsInline(true);
+  }
+};
+
 Blockly.Blocks['logic_isMember'] = {
   /**
    * Block for checking the case of a string

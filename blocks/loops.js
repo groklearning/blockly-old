@@ -121,6 +121,67 @@ Blockly.Blocks['loops_while'] = {
   }
 };
 
+Blockly.Blocks['loops_read'] = {
+  /**
+   * Block for 'do while/until' loop.
+   * @this Blockly.Block
+   */
+  init: function() {
+    var TYPES =
+        [['read text into', 'TEXT'],
+         ['read number into', 'NUMBER'],
+         ['read float into', 'FLOAT']];
+
+    this.setHelpUrl(Blockly.Msg.CONTROLS_WHILEREAD_HELPURL);
+    this.setColours('#ff7700', '#C05900');
+    var dropdown = new Blockly.FieldDropdown(TYPES, function(newOp) {
+      if (newOp == 'NUMBER') {
+        thisBlock.changeOutput('Number');
+      } else if (newOp == 'FLOAT') {
+        thisBlock.changeOutput('Float');
+      } else {
+        thisBlock.changeOutput('String');
+      }
+    });
+    this.appendDummyInput()
+      .appendField(dropdown, 'TYPE')
+      .appendField(new Blockly.FieldVariable(null), 'VAR');
+    this.appendValueInput('TEXT')
+      .setCheck('String')
+      .appendField('with prompt');
+    this.appendValueInput('BOOL')
+      .setCheck('Boolean')
+      .setNewRow(true)
+      .appendField('while');
+    this.appendStatementInput('DO')
+        .appendField(Blockly.Msg.CONTROLS_WHILEUNTIL_INPUT_DO);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setInputsInline(true);
+    this.setTooltip('repeat while condition is true.');
+  },
+  /**
+   * Return all variables referenced by this block.
+   * @return {!Array.<string>} List of variable names.
+   * @this Blockly.Block
+   */
+  getVars: function() {
+    return [this.getFieldValue('VAR')];
+  },
+  /**
+   * Notification that a variable is renaming.
+   * If the name matches one of this block's variables, rename it.
+   * @param {string} oldName Previous name of variable.
+   * @param {string} newName Renamed variable.
+   * @this Blockly.Block
+   */
+  renameVar: function(oldName, newName) {
+    if (Blockly.Names.equals(oldName, this.getFieldValue('VAR'))) {
+      this.setFieldValue(newName, 'VAR');
+    }
+  },
+};
+
 Blockly.Blocks['loops_for'] = {
   /**
    * Block for 'for' loop.

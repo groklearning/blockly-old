@@ -137,6 +137,19 @@ Blockly.Python['logic_isCase'] = function(block) {
   return [code, order];
 };
 
+Blockly.Python['logic_isEmpty'] = function(block) {
+  // Comparison operator.
+  var OPERATORS = {
+    'IS': '',
+    'IS_NOT': 'not ',
+  };
+  var op = block.getFieldValue('OP');
+  var order = (op === 'IS') ? Blockly.Python.ORDER_NONE : Blockly.Python.ORDER_RELATIONAL;
+  var value = Blockly.Python.valueToCode(block, 'VALUE', order) || '\'\'';
+  var code = OPERATORS[op] + value;
+  return [code, order];
+};
+
 Blockly.Python['logic_isMember'] = function(block) {
   // Comparison operator.
   var OPERATORS = {

@@ -49,6 +49,7 @@ Blockly.Input = function(type, name, block, connection) {
   this.connection = connection;
   this.fieldRow = [];
   this.align = Blockly.ALIGN_LEFT;
+  this.newRow = false;
 
   this.visible_ = true;
 };
@@ -191,6 +192,19 @@ Blockly.Input.prototype.setCheck = function(check) {
  */
 Blockly.Input.prototype.setAlign = function(align) {
   this.align = align;
+  if (this.sourceBlock_.rendered) {
+    this.sourceBlock_.render();
+  }
+  return this;
+};
+
+/**
+ * Change whether the input requires a new row in inline mode
+ * @param {newRow} must be true or false
+ * @return {!Blockly.Input} The input being modified (to allow chaining).
+ */
+Blockly.Input.prototype.setNewRow = function(newRow) {
+  this.newRow = newRow;
   if (this.sourceBlock_.rendered) {
     this.sourceBlock_.render();
   }
