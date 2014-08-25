@@ -92,9 +92,9 @@ Blockly.Python['loops_read'] = function(block) {
 
   var type = block.getFieldValue('TYPE');
   if (type === 'NUMBER') {
-    read = 'int(' + code + ')';
+    read = 'int(' + read + ')';
   } else if (type === 'FLOAT') {
-    read = 'float(' + code + ')';
+    read = 'float(' + read + ')';
   }
 
   var variable = Blockly.Python.variableDB_.getName(

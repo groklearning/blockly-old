@@ -134,17 +134,8 @@ Blockly.Blocks['loops_read'] = {
 
     this.setHelpUrl(Blockly.Msg.CONTROLS_WHILEREAD_HELPURL);
     this.setColours('#ff7700', '#C05900');
-    var dropdown = new Blockly.FieldDropdown(TYPES, function(newOp) {
-      if (newOp == 'NUMBER') {
-        thisBlock.changeOutput('Number');
-      } else if (newOp == 'FLOAT') {
-        thisBlock.changeOutput('Float');
-      } else {
-        thisBlock.changeOutput('String');
-      }
-    });
     this.appendDummyInput()
-      .appendField(dropdown, 'TYPE')
+      .appendField(new Blockly.FieldDropdown(TYPES), 'TYPE')
       .appendField(new Blockly.FieldVariable(null), 'VAR');
     this.appendValueInput('TEXT')
       .setCheck('String')
