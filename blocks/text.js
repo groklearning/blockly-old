@@ -307,7 +307,7 @@ Blockly.Blocks['text_length'] = {
    */
   init: function() {
     this.setHelpUrl(Blockly.Msg.TEXT_LENGTH_HELPURL);
-    this.setColours('#900090', '#540054');
+    this.setColours('#0080E4', '#003660');
     this.interpolateMsg(Blockly.Msg.TEXT_LENGTH_TITLE,
                         ['VALUE', ['String', 'Array'], Blockly.ALIGN_RIGHT],
                         Blockly.ALIGN_RIGHT);
