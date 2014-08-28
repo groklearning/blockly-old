@@ -842,6 +842,17 @@ Blockly.Msg.TEXT_COUNT_TOOLTIP = 'Count how many times a string occurs in anothe
 /// Grok
 Blockly.Msg.TEXT_COUNT_HELPURL = 'https://code.google.com/p/blockly/wiki/Text';
 
+/// Grok
+Blockly.Msg.TEXT_SPLIT_TITLE = 'split %1 on space';
+/// Grok
+Blockly.Msg.TEXT_SPLIT_TOOLTIP = 'Split a string into a list on whitespace.';
+/// Grok
+Blockly.Msg.TEXT_SPLIT_HELPURL = 'https://code.google.com/p/blockly/wiki/Text';
+/// Grok
+Blockly.Msg.TEXT_SPLIT_ON_TITLE = 'split %1 on %2';
+/// Grok
+Blockly.Msg.TEXT_SPLIT_ON_TOOLTIP = 'Split a string into a list using the separator.';
+
 // Lists Blocks.
 /// url - Information on empty lists.
 Blockly.Msg.LISTS_CREATE_EMPTY_HELPURL = 'https://en.wikipedia.org/wiki/Linked_list#Empty_lists';
@@ -890,7 +901,7 @@ Blockly.Msg.LISTS_IS_EMPTY_TITLE = '%1 is empty';
 Blockly.Msg.LISTS_TOOLTIP = 'Returns true if the list is empty.';
 
 /// block text - Title of blocks operating on [https://code.google.com/p/blockly/wiki/Lists lists].
-Blockly.Msg.LISTS_INLIST = 'in list';
+Blockly.Msg.LISTS_INLIST = 'in';
 
 /// url - See [https://code.google.com/p/blockly/wiki/Lists#Getting_Items_from_a_List
 /// https://code.google.com/p/blockly/wiki/Lists#Getting_Items_from_a_List].
@@ -899,11 +910,11 @@ Blockly.Msg.LISTS_INDEX_OF_INPUT_IN_LIST = Blockly.Msg.LISTS_INLIST;
 /// dropdown - See [https://code.google.com/p/blockly/wiki/Lists#Finding_Items_in_a_List
 /// Lists#Finding_Items_in_a_List].
 /// [[File:Blockly-list-find.png]]
-Blockly.Msg.LISTS_INDEX_OF_FIRST = 'find first occurrence of item';
+Blockly.Msg.LISTS_INDEX_OF_FIRST = 'find first index of';
 /// dropdown - See [https://code.google.com/p/blockly/wiki/Lists#Finding_Items_in_a_List
 /// https://code.google.com/p/blockly/wiki/Lists#Finding_Items_in_a_List].
 /// [[File:Blockly-list-find.png]]
-Blockly.Msg.LISTS_INDEX_OF_LAST = 'find last occurrence of item';
+Blockly.Msg.LISTS_INDEX_OF_LAST = 'find last index of';
 /// dropdown - See [https://code.google.com/p/blockly/wiki/Lists#Finding_Items_in_a_List
 /// https://code.google.com/p/blockly/wiki/Lists#Finding_Items_in_a_List].
 /// [[File:Blockly-list-find.png]]
@@ -1069,6 +1080,25 @@ Blockly.Msg.LISTS_GET_SUBLIST_TAIL = '';
 /// https://code.google.com/p/blockly/wiki/Lists#Getting_a_sublist] for more information.
 /// [[File:Blockly-get-sublist.png]]
 Blockly.Msg.LISTS_GET_SUBLIST_TOOLTIP = 'Creates a copy of the specified portion of a list.';
+
+/// Grok
+Blockly.Msg.LISTS_HELPURL = 'https://code.google.com/p/blockly/wiki/Lists';
+/// Grok
+Blockly.Msg.LISTS_SORT_TITLE = 'sort %1';
+/// Grok
+Blockly.Msg.LISTS_SORT_TOOLTIP = 'Sort the list (modifying the original list).';
+/// Grok
+Blockly.Msg.LISTS_REVERSE_TITLE = 'reverse %1';
+/// Grok
+Blockly.Msg.LISTS_REVERSE_TOOLTIP = 'Reverse the list (modifying the original list).';
+/// Grok
+Blockly.Msg.LISTS_APPEND_TITLE = 'append %1 to %2';
+/// Grok
+Blockly.Msg.LISTS_APPEND_TOOLTIP = 'Append the value to the list (modifying the original list).';
+/// Grok
+Blockly.Msg.LISTS_JOIN_TITLE = 'join %1 with %2';
+/// Grok
+Blockly.Msg.LISTS_JOIN_TOOLTIP = 'Append the value to the list (modifying the original list).';
 
 /// grammar - Text that follows an ordinal number (a number that indicates
 /// position relative to other numbers).  In most languages, such text appears

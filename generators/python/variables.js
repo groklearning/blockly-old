@@ -45,7 +45,6 @@ Blockly.Python['variables_set'] = function(block) {
   return varName + ' = ' + argument0 + '\n';
 };
 
-
 Blockly.Python['variables_incdec'] = function(block) {
   // Add to a variable in place.
   var increment = block.getFieldValue('OP') === 'INCREMENT';

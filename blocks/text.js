@@ -672,3 +672,38 @@ Blockly.Blocks['text_count'] = {
     this.setTooltip(Blockly.Msg.TEXT_COUNT_TOOLTIP);
   }
 };
+
+Blockly.Blocks['text_split'] = {
+  /**
+   * Block for replacing one string with another in a string
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.TEXT_SPLIT_HELPURL);
+    this.setColours(Blockly.Colours.LIST_MAIN, Blockly.Colours.LIST_TRIM);
+    this.setOutput(true, 'Array');
+    this.interpolateMsg(Blockly.Msg.TEXT_SPLIT_TITLE,
+                        ['TEXT', 'String', Blockly.ALIGN_RIGHT],
+                        Blockly.ALIGN_RIGHT);
+    this.setTooltip(Blockly.Msg.TEXT_SPLIT_TOOLTIP);
+    this.setInputsInline(true);
+  }
+};
+
+Blockly.Blocks['text_split_on'] = {
+  /**
+   * Block for replacing one string with another in a string
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.TEXT_SPLIT_HELPURL);
+    this.setColours(Blockly.Colours.LIST_MAIN, Blockly.Colours.LIST_TRIM);
+    this.setOutput(true, 'Array');
+    this.interpolateMsg(Blockly.Msg.TEXT_SPLIT_ON_TITLE,
+                        ['TEXT', 'String', Blockly.ALIGN_RIGHT],
+                        ['SEP', 'String', Blockly.ALIGN_RIGHT],
+                        Blockly.ALIGN_RIGHT);
+    this.setTooltip(Blockly.Msg.TEXT_SPLIT_ON_TOOLTIP);
+    this.setInputsInline(true);
+  }
+};

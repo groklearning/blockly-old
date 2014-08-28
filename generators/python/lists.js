@@ -29,16 +29,21 @@ goog.provide('Blockly.Python.lists');
 goog.require('Blockly.Python');
 
 
-Blockly.Python['lists_create_empty'] = function(block) {
+Blockly.Python['lists_list0'] = function(block) {
   // Create an empty list.
   return ['[]', Blockly.Python.ORDER_ATOMIC];
 };
 
-Blockly.Python['lists_create_with'] = function(block) {
+Blockly.Python['lists_list0'] =
+Blockly.Python['lists_list1'] =
+Blockly.Python['lists_list2'] =
+Blockly.Python['lists_list3'] =
+Blockly.Python['lists_list4'] =
+Blockly.Python['lists_list5'] = function(block) {
   // Create a list with any number of elements of any type.
   var code = new Array(block.itemCount_);
   for (var n = 0; n < block.itemCount_; n++) {
-    code[n] = Blockly.Python.valueToCode(block, 'ADD' + n,
+    code[n] = Blockly.Python.valueToCode(block, 'ITEM' + n,
         Blockly.Python.ORDER_NONE) || 'None';
   }
   code = '[' + code.join(', ') + ']';
@@ -186,6 +191,28 @@ Blockly.Python['lists_getIndex'] = function(block) {
   throw 'Unhandled combination (lists_getIndex).';
 };
 
+Blockly.Python['lists_subscript'] = function(block) {
+  var list = Blockly.Python.valueToCode(block, 'VALUE',
+      Blockly.Python.ORDER_MEMBER) || '\'\'';
+  var index = Blockly.Python.valueToCode(block, 'INDEX',
+      Blockly.Python.ORDER_NONE) || '0';
+
+  var code = list + '[' + index + ']';
+  return [code, Blockly.Python.ORDER_MEMBER];
+};
+
+Blockly.Python['lists_slice'] = function(block) {
+  var list = Blockly.Python.valueToCode(block, 'VALUE',
+      Blockly.Python.ORDER_MEMBER) || '\'\'';
+  var start = Blockly.Python.valueToCode(block, 'START',
+      Blockly.Python.ORDER_NONE) || '0';
+  var end = Blockly.Python.valueToCode(block, 'END',
+      Blockly.Python.ORDER_NONE) || '0';
+
+  var code = list + '[' + start + ':' + end + ']';
+  return [code, Blockly.Python.ORDER_MEMBER];
+};
+
 Blockly.Python['lists_setIndex'] = function(block) {
   // Set element at index.
   // Note: Until February 2013 this block did not have MODE or WHERE inputs.
@@ -310,4 +337,46 @@ Blockly.Python['lists_getSublist'] = function(block) {
   }
   var code = list + '[' + at1 + ' : ' + at2 + ']';
   return [code, Blockly.Python.ORDER_MEMBER];
+};
+
+Blockly.Python['lists_subscript_set'] = function(block) {
+  var value = Blockly.Python.valueToCode(block, 'VALUE',
+      Blockly.Python.ORDER_NONE) || '0';
+  var list = Blockly.Python.valueToCode(block, 'LIST',
+      Blockly.Python.ORDER_NONE) || '0';
+  var index = Blockly.Python.valueToCode(block, 'INDEX',
+      Blockly.Python.ORDER_NONE) || '0';
+  return list + '[' + index + '] = ' + value + '\n';
+};
+
+Blockly.Python['lists_sort'] = function(block) {
+  // Print statement.
+  var list = Blockly.Python.valueToCode(block, 'LIST',
+      Blockly.Python.ORDER_MEMBER) || '\'\'';
+  return list + '.sort()\n';
+};
+
+Blockly.Python['lists_reverse'] = function(block) {
+  // Print statement.
+  var list = Blockly.Python.valueToCode(block, 'LIST',
+      Blockly.Python.ORDER_MEMBER) || '\'\'';
+  return list + '.reverse()\n';
+};
+
+Blockly.Python['lists_append'] = function(block) {
+  // Print statement.
+  var list = Blockly.Python.valueToCode(block, 'LIST',
+      Blockly.Python.ORDER_MEMBER) || '\'\'';
+  var value = Blockly.Python.valueToCode(block, 'VALUE',
+      Blockly.Python.ORDER_NONE) || '\'\'';
+  return list + '.append(' + value + ')\n';
+};
+
+Blockly.Python['lists_join'] = function(block) {
+  // Print statement.
+  var list = Blockly.Python.valueToCode(block, 'LIST',
+      Blockly.Python.ORDER_NONE) || '\'\'';
+  var sep = Blockly.Python.valueToCode(block, 'SEP',
+      Blockly.Python.ORDER_MEMBER) || '\'\'';
+  return [sep + '.join(' + list + ')', Blockly.Python.ORDER_MEMBER];
 };
