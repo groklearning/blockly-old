@@ -32,6 +32,7 @@ goog.require('Blockly.Python');
 Blockly.Python['decisions_if'] =
 Blockly.Python['decisions_if_else'] =
 Blockly.Python['decisions_if_elif_else'] =
+Blockly.Python['decisions_if_elif_elif_else'] =
 function(block) {
   // If/elseif/else condition.
   var n = 0;

@@ -103,3 +103,37 @@ Blockly.Blocks['decisions_if_elif_else'] = {
     this.elseCount_ = 1;
   }
 };
+
+Blockly.Blocks['decisions_if_elif_elif_else'] = {
+  /**
+   * Block for if/elseif/else condition.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.CONTROLS_IF_HELPURL);
+    this.setColours('#ff7700', '#C05900');
+    this.appendValueInput('IF0')
+        .setCheck('Boolean')
+        .appendField(Blockly.Msg.CONTROLS_IF_MSG_IF);
+    this.appendStatementInput('DO0')
+        .appendField(Blockly.Msg.CONTROLS_IF_MSG_THEN);
+    this.appendValueInput('IF1')
+        .setCheck('Boolean')
+        .appendField(Blockly.Msg.CONTROLS_IF_MSG_ELSEIF);
+    this.appendStatementInput('DO1')
+        .appendField(Blockly.Msg.CONTROLS_IF_MSG_THEN);
+    this.appendValueInput('IF2')
+        .setCheck('Boolean')
+        .appendField(Blockly.Msg.CONTROLS_IF_MSG_ELSEIF);
+    this.appendStatementInput('DO2')
+        .appendField(Blockly.Msg.CONTROLS_IF_MSG_THEN);
+    this.appendStatementInput('ELSE')
+        .appendField(Blockly.Msg.CONTROLS_IF_MSG_ELSE);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setInputsInline(true);
+
+    this.elseifCount_ = 2;
+    this.elseCount_ = 1;
+  }
+};

@@ -310,3 +310,11 @@ Blockly.Python['text_split_on'] = function(block) {
   var code = text + '.split(' + sep + ')';
   return [code, Blockly.Python.ORDER_MEMBER];
 };
+
+Blockly.Python['text_reverse'] = function(block) {
+  var text = Blockly.Python.valueToCode(block, 'VALUE',
+      Blockly.Python.ORDER_MEMBER) || '\'\'';
+
+  var code = text + '[::-1]';
+  return [code, Blockly.Python.ORDER_MEMBER];
+};

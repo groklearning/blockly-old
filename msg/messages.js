@@ -853,6 +853,11 @@ Blockly.Msg.TEXT_SPLIT_ON_TITLE = 'split %1 on %2';
 /// Grok
 Blockly.Msg.TEXT_SPLIT_ON_TOOLTIP = 'Split a string into a list using the separator.';
 
+/// Grok
+Blockly.Msg.TEXT_REVERSE_TOOLTIP = 'Reverse the characters in the string.';
+/// Grok
+Blockly.Msg.TEXT_REVERSE_HELPURL = 'https://code.google.com/p/blockly/wiki/Text';
+
 // Lists Blocks.
 /// url - Information on empty lists.
 Blockly.Msg.LISTS_CREATE_EMPTY_HELPURL = 'https://en.wikipedia.org/wiki/Linked_list#Empty_lists';

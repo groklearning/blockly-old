@@ -707,3 +707,16 @@ Blockly.Blocks['text_split_on'] = {
     this.setInputsInline(true);
   }
 };
+
+Blockly.Blocks['text_reverse'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.TEXT_REVERSE_HELPURL);
+    this.setColours('#00aa00', '#007a00');
+    this.setOutput(true, 'String');
+    this.appendValueInput('VALUE')
+        .setCheck('String')
+      .appendField('reverse');
+    this.setInputsInline(true);
+    this.setTooltip(Blockly.Msg.TEXT_REVERSE_TOOLTIP);
+  }
+};
