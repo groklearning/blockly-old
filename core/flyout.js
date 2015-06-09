@@ -339,7 +339,7 @@ Blockly.Flyout.prototype.show = function(xmlList) {
         /** @type {!Blockly.Workspace} */ (this.workspace_));
   } else {
     for (var i = 0, xml; xml = xmlList[i]; i++) {
-      if (xml.tagName && xml.tagName.toUpperCase() == 'BLOCK') {
+      if (xml.tagName && xml.tagName.toUpperCase() == 'BLOCK' && !xml.hasAttribute('disabled')) {
         var block = Blockly.Xml.domToBlock(
             /** @type {!Blockly.Workspace} */ (this.workspace_), xml);
         blocks.push(block);
