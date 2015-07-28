@@ -1233,3 +1233,11 @@ Blockly.Msg.PROCEDURES_IFRETURN_WARNING = 'Warning: This block may be used only 
 Blockly.Msg.TURTLE_FORWARD_TITLE = 'move forward %1 steps';
 /// Grok
 Blockly.Msg.TURTLE_FORWARD_TOOLTIP = 'Move the turtle forward the specified number of steps.';
+/// Grok
+Blockly.Msg.TURTLE_TURN_RIGHT = 'turn right';
+/// Grok
+Blockly.Msg.TURTLE_TURN_LEFT = 'turn left';
+/// Grok
+Blockly.Msg.TURTLE_TURN_DEGREES_TAIL = 'degrees';
+/// Grok
+Blockly.Msg.TURTLE_TURN_TOOLTIP = 'Turn the turtle left or right the specified number of degrees.';

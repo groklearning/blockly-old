@@ -45,3 +45,25 @@ Blockly.Blocks['turtle_forward'] = {
     this.setInputsInline(true);
   }
 };
+
+Blockly.Blocks['turtle_turn'] = {
+  /**
+   * Block for changing capitalization.
+   * @this Blockly.Block
+   */
+  init: function() {
+    var DIRECTIONS =
+        [[Blockly.Msg.TURTLE_TURN_LEFT, 'LEFT'],
+         [Blockly.Msg.TURTLE_TURN_RIGHT, 'RIGHT']];
+    this.setColours('#00BFBA', '#00858F');
+    this.appendValueInput('ANGLE')
+        .setCheck('Number')
+        .appendField(new Blockly.FieldDropdown(DIRECTIONS), 'DIRECTION');
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.TURTLE_TURN_DEGREES_TAIL);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.TURTLE_TURN_TOOLTIP);
+    this.setInputsInline(true);
+  }
+};

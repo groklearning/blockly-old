@@ -39,8 +39,25 @@ Blockly.Python['turtle_forward'] = function(block) {
   if (Blockly.isNumber(distance)) {
     distance = parseInt(distance, 10);
   } else {
-    distance = 'int(' + distance + ')';
+    distance = 'float(' + distance + ')';
   }
   var code = 'turtle.forward(' + distance + ')\n';
+  return code;
+};
+
+Blockly.Python['turtle_turn'] = function(block) {
+  Blockly.Python.definitions_['import_turtle'] = 'import turtle';
+  var angle = Blockly.Python.valueToCode(block, 'ANGLE', Blockly.Python.ORDER_NONE) || 0;
+  if (Blockly.isNumber(angle)) {
+    angle = parseInt(angle, 10);
+  } else {
+    angle = 'float(' + angle + ')';
+  }
+  var TURN_FUNCTIONS = {
+    'RIGHT': 'right',
+    'LEFT': 'left',
+  };
+  var turnFunction = TURN_FUNCTIONS[block.getFieldValue('DIRECTION')];
+  var code = 'turtle.' + turnFunction + '(' + angle + ')\n';
   return code;
 };
