@@ -30,8 +30,8 @@ goog.require('Blockly.Blocks');
 
 Blockly.Colours = Blockly.Colours || {};
 
-Blockly.Colours.LIST_MAIN = '#E7009D'; // '#FD00AC';
-Blockly.Colours.LIST_TRIM = '#FD00AC'; // '#E7009D';
+Blockly.Colours.LIST_MAIN = '#E7009D';
+Blockly.Colours.LIST_TRIM = '#B6007C';
 
 Blockly.Blocks['lists_list0'] = {
   /**
