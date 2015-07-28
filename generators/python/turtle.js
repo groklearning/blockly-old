@@ -61,3 +61,14 @@ Blockly.Python['turtle_turn'] = function(block) {
   var code = 'turtle.' + turnFunction + '(' + angle + ')\n';
   return code;
 };
+
+Blockly.Python['turtle_pen'] = function(block) {
+  Blockly.Python.definitions_['import_turtle'] = 'import turtle';
+  var PEN_FUNCTIONS = {
+    'UP': 'penup',
+    'DOWN': 'pendown',
+  };
+  var penFunction = PEN_FUNCTIONS[block.getFieldValue('STATE')];
+  var code = 'turtle.' + penFunction + '()\n';
+  return code;
+};

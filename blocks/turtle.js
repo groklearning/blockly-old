@@ -67,3 +67,26 @@ Blockly.Blocks['turtle_turn'] = {
     this.setInputsInline(true);
   }
 };
+
+Blockly.Blocks['turtle_pen'] = {
+  /**
+   * Block for changing capitalization.
+   * @this Blockly.Block
+   */
+  init: function() {
+    var STATES =
+        [[Blockly.Msg.TURTLE_PEN_UP, 'UP'],
+         [Blockly.Msg.TURTLE_PEN_DOWN, 'DOWN']];
+    this.setColours('#00BFBA', '#00858F');
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown(STATES), 'STATE');
+    if (Blockly.Msg.TURTLE_PEN_UP_DOWN_TAIL) {
+      this.appendDummyInput()
+          .appendField(Blockly.Msg.TURTLE_PEN_UP_DOWN_TAIL);
+    }
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.TURTLE_PEN_UP_DOWN_TOOLTIP);
+    this.setInputsInline(true);
+  }
+};
