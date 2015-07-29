@@ -85,6 +85,32 @@ Blockly.Python['text_concat3'] = function(block) {
   return [text0 + ' + ' + text1 + ' + ' + text2, Blockly.Python.ORDER_ADDITIVE];
 };
 
+Blockly.Python['text_concat4'] = function(block) {
+  var text0 = Blockly.Python.valueToCode(block, 'TEXT0',
+      Blockly.Python.ORDER_ADDITIVE) || '\'\'';
+  var text1 = Blockly.Python.valueToCode(block, 'TEXT1',
+      Blockly.Python.ORDER_ADDITIVE) || '\'\'';
+  var text2 = Blockly.Python.valueToCode(block, 'TEXT2',
+      Blockly.Python.ORDER_ADDITIVE) || '\'\'';
+  var text3 = Blockly.Python.valueToCode(block, 'TEXT3',
+      Blockly.Python.ORDER_ADDITIVE) || '\'\'';
+  return [text0 + ' + ' + text1 + ' + ' + text2 + ' + ' + text3, Blockly.Python.ORDER_ADDITIVE];
+};
+
+Blockly.Python['text_concat5'] = function(block) {
+  var text0 = Blockly.Python.valueToCode(block, 'TEXT0',
+      Blockly.Python.ORDER_ADDITIVE) || '\'\'';
+  var text1 = Blockly.Python.valueToCode(block, 'TEXT1',
+      Blockly.Python.ORDER_ADDITIVE) || '\'\'';
+  var text2 = Blockly.Python.valueToCode(block, 'TEXT2',
+      Blockly.Python.ORDER_ADDITIVE) || '\'\'';
+  var text3 = Blockly.Python.valueToCode(block, 'TEXT3',
+      Blockly.Python.ORDER_ADDITIVE) || '\'\'';
+  var text4 = Blockly.Python.valueToCode(block, 'TEXT4',
+      Blockly.Python.ORDER_ADDITIVE) || '\'\'';
+  return [text0 + ' + ' + text1 + ' + ' + text2 + ' + ' + text3 + ' + ' + text4, Blockly.Python.ORDER_ADDITIVE];
+};
+
 Blockly.Python['text_mult'] = function(block) {
   var times = Blockly.Python.valueToCode(block, 'TIMES',
       Blockly.Python.ORDER_MULTIPLICATIVE) || '0';

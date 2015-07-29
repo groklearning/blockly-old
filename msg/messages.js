@@ -573,6 +573,10 @@ Blockly.Msg.TEXT_CONCAT_HELPURL = 'https://code.google.com/p/blockly/wiki/Text#T
 Blockly.Msg.TEXT_CONCAT2_TOOLTIP = 'Add two pieces of text together.';
 /// Grok
 Blockly.Msg.TEXT_CONCAT3_TOOLTIP = 'Add three pieces of text together.';
+/// Grok
+Blockly.Msg.TEXT_CONCAT4_TOOLTIP = 'Add four pieces of text together.';
+/// Grok
+Blockly.Msg.TEXT_CONCAT5_TOOLTIP = 'Add five pieces of text together.';
 
 /// Grok
 Blockly.Msg.TEXT_MULT_HELPURL = 'https://code.google.com/p/blockly/wiki/Text#Text_creation';

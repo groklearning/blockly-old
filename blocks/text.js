@@ -238,6 +238,53 @@ Blockly.Blocks['text_concat3'] = {
 };
 
 
+Blockly.Blocks['text_concat4'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.TEXT_CONCAT4);
+    this.setColours('#00aa00', '#007a00');
+    this.appendValueInput('TEXT0')
+        .setCheck('String');
+    this.appendValueInput('TEXT1')
+        .setCheck('String')
+        .appendField('+');
+    this.appendValueInput('TEXT2')
+        .setCheck('String')
+        .appendField('+');
+    this.appendValueInput('TEXT3')
+        .setCheck('String')
+        .appendField('+');
+    this.setOutput(true, 'String');
+    this.setTooltip(Blockly.Msg.TEXT_CONCAT4_TOOLTIP);
+    this.setInputsInline(true);
+  }
+};
+
+
+Blockly.Blocks['text_concat5'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.TEXT_CONCAT5);
+    this.setColours('#00aa00', '#007a00');
+    this.appendValueInput('TEXT0')
+        .setCheck('String');
+    this.appendValueInput('TEXT1')
+        .setCheck('String')
+        .appendField('+');
+    this.appendValueInput('TEXT2')
+        .setCheck('String')
+        .appendField('+');
+    this.appendValueInput('TEXT3')
+        .setCheck('String')
+        .appendField('+');
+    this.appendValueInput('TEXT4')
+        .setCheck('String')
+        .appendField('+');
+    this.setOutput(true, 'String');
+    this.setTooltip(Blockly.Msg.TEXT_CONCAT5_TOOLTIP);
+    this.setInputsInline(true);
+  }
+};
+
+
 Blockly.Blocks['text_mult'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.TEXT_MULT_HELP);
