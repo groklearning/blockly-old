@@ -34,19 +34,19 @@ Blockly.Python.addReservedWords('turtle');
 
 
 Blockly.Python['turtle_forward'] = function(block) {
-  Blockly.Python.definitions_['import_turtle'] = 'import turtle';
+  Blockly.Python.definitions_['import_turtle'] = 'from turtle import *';
   var distance = Blockly.Python.valueToCode(block, 'DISTANCE', Blockly.Python.ORDER_NONE) || 0;
   if (Blockly.isNumber(distance)) {
     distance = parseInt(distance, 10);
   } else {
     distance = 'float(' + distance + ')';
   }
-  var code = 'turtle.forward(' + distance + ')\n';
+  var code = 'forward(' + distance + ')\n';
   return code;
 };
 
 Blockly.Python['turtle_turn'] = function(block) {
-  Blockly.Python.definitions_['import_turtle'] = 'import turtle';
+  Blockly.Python.definitions_['import_turtle'] = 'from turtle import *';
   var angle = Blockly.Python.valueToCode(block, 'ANGLE', Blockly.Python.ORDER_NONE) || 0;
   if (Blockly.isNumber(angle)) {
     angle = parseInt(angle, 10);
@@ -58,17 +58,17 @@ Blockly.Python['turtle_turn'] = function(block) {
     'LEFT': 'left',
   };
   var turnFunction = TURN_FUNCTIONS[block.getFieldValue('DIRECTION')];
-  var code = 'turtle.' + turnFunction + '(' + angle + ')\n';
+  var code = turnFunction + '(' + angle + ')\n';
   return code;
 };
 
 Blockly.Python['turtle_pen'] = function(block) {
-  Blockly.Python.definitions_['import_turtle'] = 'import turtle';
+  Blockly.Python.definitions_['import_turtle'] = 'from turtle import *';
   var PEN_FUNCTIONS = {
     'UP': 'penup',
     'DOWN': 'pendown',
   };
   var penFunction = PEN_FUNCTIONS[block.getFieldValue('STATE')];
-  var code = 'turtle.' + penFunction + '()\n';
+  var code = penFunction + '()\n';
   return code;
 };
