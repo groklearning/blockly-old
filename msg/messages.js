@@ -1246,10 +1246,10 @@ Blockly.Msg.TURTLE_TURN_DEGREES_TAIL = 'degrees';
 /// Grok
 Blockly.Msg.TURTLE_TURN_TOOLTIP = 'Turn the turtle left or right the specified number of degrees.';
 /// Grok
-Blockly.Msg.TURTLE_PEN_UP = 'stop';
+Blockly.Msg.TURTLE_PEN_UP = 'pen up';
 /// Grok
-Blockly.Msg.TURTLE_PEN_DOWN = 'start';
+Blockly.Msg.TURTLE_PEN_DOWN = 'pen down';
 /// Grok
-Blockly.Msg.TURTLE_PEN_UP_DOWN_TAIL = 'drawing';
+Blockly.Msg.TURTLE_PEN_UP_DOWN_TAIL = '';
 /// Grok
 Blockly.Msg.TURTLE_PEN_UP_DOWN_TOOLTIP = 'Make the turtle start or stop drawing lines as it moves around.';
