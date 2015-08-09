@@ -1253,3 +1253,9 @@ Blockly.Msg.TURTLE_PEN_DOWN = 'pen down';
 Blockly.Msg.TURTLE_PEN_UP_DOWN_TAIL = '';
 /// Grok
 Blockly.Msg.TURTLE_PEN_UP_DOWN_TOOLTIP = 'Make the turtle start or stop drawing lines as it moves around.';
+/// Grok
+Blockly.Msg.TURTLE_PEN_COLOR = 'set pen color to';
+/// Grok
+Blockly.Msg.TURTLE_PEN_COLOR_TAIL = '';
+/// Grok
+Blockly.Msg.TURTLE_PEN_COLOR_TOOLTIP = 'Set the colour of the lines the turtle draws.';

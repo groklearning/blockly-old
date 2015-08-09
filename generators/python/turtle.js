@@ -72,3 +72,17 @@ Blockly.Python['turtle_pen'] = function(block) {
   var code = penFunction + '()\n';
   return code;
 };
+
+Blockly.Python['turtle_pencolor_dropdown'] = function(block) {
+  Blockly.Python.definitions_['import_turtle'] = 'from turtle import *';
+  var color = block.getFieldValue('COLOR');
+  var code = 'pencolor(\'' + color + '\')\n';
+  return code;
+};
+
+Blockly.Python['turtle_pencolor_text'] = function(block) {
+  Blockly.Python.definitions_['import_turtle'] = 'from turtle import *';
+  var color = Blockly.Python.valueToCode(block, 'COLOR', Blockly.Python.ORDER_NONE) || 0;
+  var code = 'pencolor(' + color + ')\n';
+  return code;
+};
