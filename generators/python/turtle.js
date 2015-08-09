@@ -38,8 +38,6 @@ Blockly.Python['turtle_forward'] = function(block) {
   var distance = Blockly.Python.valueToCode(block, 'DISTANCE', Blockly.Python.ORDER_NONE) || 0;
   if (Blockly.isNumber(distance)) {
     distance = parseInt(distance, 10);
-  } else {
-    distance = 'float(' + distance + ')';
   }
   var code = 'forward(' + distance + ')\n';
   return code;
@@ -50,8 +48,6 @@ Blockly.Python['turtle_turn'] = function(block) {
   var angle = Blockly.Python.valueToCode(block, 'ANGLE', Blockly.Python.ORDER_NONE) || 0;
   if (Blockly.isNumber(angle)) {
     angle = parseInt(angle, 10);
-  } else {
-    angle = 'float(' + angle + ')';
   }
   var TURN_FUNCTIONS = {
     'RIGHT': 'right',
