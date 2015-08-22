@@ -46,6 +46,25 @@ Blockly.Blocks['turtle_forward'] = {
   }
 };
 
+
+Blockly.Blocks['turtle_backward'] = {
+  /**
+   * Block for turtle.backward(x)
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setColours('#00BFBA', '#00858F');
+    this.interpolateMsg(Blockly.Msg.TURTLE_BACKWARD_TITLE,
+                        ['DISTANCE', null, Blockly.ALIGN_RIGHT],
+                        Blockly.ALIGN_RIGHT);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.TURTLE_BACKWARD_TOOLTIP);
+    this.setInputsInline(true);
+  }
+};
+
+
 Blockly.Blocks['turtle_turn'] = {
   /**
    * Block for turning the turle left or right.

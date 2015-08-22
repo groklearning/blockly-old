@@ -1238,6 +1238,10 @@ Blockly.Msg.TURTLE_FORWARD_TITLE = 'move forward %1 steps';
 /// Grok
 Blockly.Msg.TURTLE_FORWARD_TOOLTIP = 'Move the turtle forward the specified number of steps.';
 /// Grok
+Blockly.Msg.TURTLE_BACKWARD_TITLE = 'move backward %1 steps';
+/// Grok
+Blockly.Msg.TURTLE_BACKWARD_TOOLTIP = 'Move the turtle backward the specified number of steps.';
+/// Grok
 Blockly.Msg.TURTLE_TURN_RIGHT = 'turn right';
 /// Grok
 Blockly.Msg.TURTLE_TURN_LEFT = 'turn left';

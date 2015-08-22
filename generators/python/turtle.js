@@ -43,6 +43,18 @@ Blockly.Python['turtle_forward'] = function(block) {
   return code;
 };
 
+
+Blockly.Python['turtle_backward'] = function(block) {
+  Blockly.Python.definitions_['import_turtle'] = 'from turtle import *';
+  var distance = Blockly.Python.valueToCode(block, 'DISTANCE', Blockly.Python.ORDER_NONE) || 0;
+  if (Blockly.isNumber(distance)) {
+    distance = parseInt(distance, 10);
+  }
+  var code = 'backward(' + distance + ')\n';
+  return code;
+};
+
+
 Blockly.Python['turtle_turn'] = function(block) {
   Blockly.Python.definitions_['import_turtle'] = 'from turtle import *';
   var angle = Blockly.Python.valueToCode(block, 'ANGLE', Blockly.Python.ORDER_NONE) || 0;
