@@ -171,3 +171,25 @@ Blockly.Blocks['turtle_pencolor_text'] = {
   }
 };
 
+
+Blockly.Blocks['turtle_pensize'] = {
+  /**
+   * Block for turtle.pensize(x)
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setColours('#00BFBA', '#00858F');
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.TURTLE_PEN_SIZE);
+    this.appendValueInput('SIZE')
+        .setCheck('Number');
+    if (Blockly.Msg.TURTLE_PEN_SIZE_TAIL) {
+      this.appendDummyInput()
+          .appendField(Blockly.Msg.TURTLE_PEN_SIZE_TAIL);
+    }
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.TURTLE_PEN_SIZE_TOOLTIP);
+    this.setInputsInline(true);
+  }
+};

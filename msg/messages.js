@@ -1263,3 +1263,9 @@ Blockly.Msg.TURTLE_PEN_COLOR = 'set pen color to';
 Blockly.Msg.TURTLE_PEN_COLOR_TAIL = '';
 /// Grok
 Blockly.Msg.TURTLE_PEN_COLOR_TOOLTIP = 'Set the colour of the lines the turtle draws.';
+/// Grok
+Blockly.Msg.TURTLE_PEN_SIZE = 'set pen size to';
+/// Grok
+Blockly.Msg.TURTLE_PEN_SIZE_TAIL = '';
+/// Grok
+Blockly.Msg.TURTLE_PEN_SIZE_TOOLTIP = 'Set the width of the lines the turtle draws.';

@@ -94,3 +94,13 @@ Blockly.Python['turtle_pencolor_text'] = function(block) {
   var code = 'pencolor(' + color + ')\n';
   return code;
 };
+
+Blockly.Python['turtle_pensize'] = function(block) {
+  Blockly.Python.definitions_['import_turtle'] = 'from turtle import *';
+  var size = Blockly.Python.valueToCode(block, 'SIZE', Blockly.Python.ORDER_NONE) || 0;
+  if (Blockly.isNumber(size)) {
+    size = parseInt(size, 10);
+  }
+  var code = 'pensize(' + size + ')\n';
+  return code;
+};
