@@ -521,7 +521,7 @@ Blockly.Blocks['text_slice'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.TEXT_CHARAT_HELPURL);
     this.setColours('#00aa00', '#007a00');
-    this.setOutput(true, 'string');
+    this.setOutput(true, 'String');
     this.appendDummyInput()
         .appendField(Blockly.Msg.TEXT_SUBSTRING_TITLE);
     this.appendValueInput('START')
@@ -548,7 +548,7 @@ Blockly.Blocks['text_slice_to_end'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.TEXT_CHARAT_HELPURL);
     this.setColours('#00aa00', '#007a00');
-    this.setOutput(true, 'string');
+    this.setOutput(true, 'String');
     this.appendDummyInput()
         .appendField(Blockly.Msg.TEXT_SUBSTRING_TITLE);
     this.appendValueInput('START')
