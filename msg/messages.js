@@ -710,6 +710,8 @@ Blockly.Msg.TEXT_SUBSTRING_SEPARATOR = ':';
 /// Grok
 Blockly.Msg.TEXT_SUBSTRING_FROM = '] from';
 /// Grok
+Blockly.Msg.TEXT_SUBSTRING_END_OF_STRING = 'to the end';
+/// Grok
 Blockly.Msg.TEXT_SUBSCTRING_TAIL = '';
 
 /// See [https://code.google.com/p/blockly/wiki/Text#Extracting_a_region_of_text

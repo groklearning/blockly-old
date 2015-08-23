@@ -216,6 +216,16 @@ Blockly.Python['text_slice'] = function(block) {
   return [code, Blockly.Python.ORDER_MEMBER];
 };
 
+Blockly.Python['text_slice_to_end'] = function(block) {
+  var text = Blockly.Python.valueToCode(block, 'VALUE',
+      Blockly.Python.ORDER_MEMBER) || '\'\'';
+  var start = Blockly.Python.valueToCode(block, 'START',
+      Blockly.Python.ORDER_NONE) || '0';
+
+  var code = text + '[' + start + ':]';
+  return [code, Blockly.Python.ORDER_MEMBER];
+};
+
 Blockly.Python['text_getSubstring'] = function(block) {
   // Get substring.
   var text = Blockly.Python.valueToCode(block, 'STRING',

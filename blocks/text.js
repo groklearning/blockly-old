@@ -544,6 +544,32 @@ Blockly.Blocks['text_slice'] = {
 };
 
 
+Blockly.Blocks['text_slice_to_end'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.TEXT_CHARAT_HELPURL);
+    this.setColours('#00aa00', '#007a00');
+    this.setOutput(true, 'string');
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.TEXT_SUBSTRING_TITLE);
+    this.appendValueInput('START')
+        .setCheck('Number');
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.TEXT_SUBSTRING_END_OF_STRING);
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.TEXT_SUBSTRING_FROM);
+    this.appendValueInput('VALUE')
+        .setCheck('String');
+    if(Blockly.Msg.TEXT_SUBSTRING_TAIL) {
+      this.appendDummyInput()
+          .appendField(Blockly.Msg.TEXT_SUBSTRING_TAIL);
+    }
+    this.setInputsInline(true);
+    this.setTooltip(Blockly.Msg.TEXT_CHARAT_TOOLTIP);
+  }
+};
+
+
+
 Blockly.Blocks['text_getSubstring'] = {
   /**
    * Block for getting substring.
