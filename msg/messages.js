@@ -697,6 +697,21 @@ Blockly.Msg.TEXT_CHARAT_TAIL = '';
 /// [[File:Blockly-text-get.png]]
 Blockly.Msg.TEXT_CHARAT_TOOLTIP = 'Returns the letter at the specified position.';
 
+/// Grok
+Blockly.Msg.TEXT_SUBSCRIPT_TITLE = 'character [';
+/// Grok
+Blockly.Msg.TEXT_SUBSCRIPT_FROM_STRING = '] from';
+/// Grok
+Blockly.Msg.TEXT_SUBSCRIPT_TAIL = '';
+/// Grok
+Blockly.Msg.TEXT_SUBSTRING_TITLE = 'substring [';
+/// Grok
+Blockly.Msg.TEXT_SUBSTRING_SEPARATOR = ':';
+/// Grok
+Blockly.Msg.TEXT_SUBSTRING_FROM = '] from';
+/// Grok
+Blockly.Msg.TEXT_SUBSCTRING_TAIL = '';
+
 /// See [https://code.google.com/p/blockly/wiki/Text#Extracting_a_region_of_text
 /// https://code.google.com/p/blockly/wiki/Text#Extracting_a_region_of_text].
 Blockly.Msg.TEXT_GET_SUBSTRING_TOOLTIP = 'Returns a specified portion of the text.';

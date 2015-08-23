@@ -493,42 +493,56 @@ Blockly.Blocks['text_charAt'] = {
   }
 };
 
+
 Blockly.Blocks['text_subscript'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.TEXT_CHARAT_HELPURL);
     this.setColours('#00aa00', '#007a00');
     this.setOutput(true, 'String');
-    this.appendValueInput('VALUE')
-        .setCheck('String')
-    this.appendValueInput('INDEX')
-        .setCheck('Number')
-        .appendField('[');
     this.appendDummyInput()
-        .appendField(']');
+        .appendField(Blockly.Msg.TEXT_SUBSCRIPT_TITLE);
+    this.appendValueInput('INDEX')
+        .setCheck('Number');
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.TEXT_SUBSCRIPT_FROM_STRING);
+    this.appendValueInput('VALUE')
+        .setCheck('String');
+    if(Blockly.Msg.TEXT_SUBSCRIPT_TAIL) {
+      this.appendDummyInput()
+          .appendField(Blockly.Msg.TEXT_SUBSCRIPT_TAIL);
+    }
     this.setInputsInline(true);
     this.setTooltip(Blockly.Msg.TEXT_CHARAT_TOOLTIP);
   }
 };
 
+
 Blockly.Blocks['text_slice'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.TEXT_CHARAT_HELPURL);
     this.setColours('#00aa00', '#007a00');
-    this.setOutput(true, 'String');
-    this.appendValueInput('VALUE')
-        .setCheck('String')
-    this.appendValueInput('START')
-        .setCheck('Number')
-        .appendField('[');
-    this.appendValueInput('END')
-        .setCheck('Number')
-        .appendField(':');
+    this.setOutput(true, 'string');
     this.appendDummyInput()
-        .appendField(']');
+        .appendField(Blockly.Msg.TEXT_SUBSTRING_TITLE);
+    this.appendValueInput('START')
+        .setCheck('Number');
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.TEXT_SUBSTRING_SEPARATOR);
+    this.appendValueInput('END')
+        .setCheck('Number');
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.TEXT_SUBSTRING_FROM);
+    this.appendValueInput('VALUE')
+        .setCheck('String');
+    if(Blockly.Msg.TEXT_SUBSTRING_TAIL) {
+      this.appendDummyInput()
+          .appendField(Blockly.Msg.TEXT_SUBSTRING_TAIL);
+    }
     this.setInputsInline(true);
     this.setTooltip(Blockly.Msg.TEXT_CHARAT_TOOLTIP);
   }
 };
+
 
 Blockly.Blocks['text_getSubstring'] = {
   /**
