@@ -209,6 +209,8 @@ Blockly.Msg.IO_INPUT_TYPE_NUMBER = 'ask for int with prompt';
 /// Grok
 Blockly.Msg.IO_INPUT_TOOLTIP_NUMBER = 'Ask the user for a whole number.';
 /// Grok
+Blockly.Msg.IO_INPUT_TOOLTIP_FLOAT = 'Ask the user for a real number.';
+/// Grok
 Blockly.Msg.IO_INPUT_TOOLTIP_TEXT = 'Ask the user for some text.';
 
 /// Grok
