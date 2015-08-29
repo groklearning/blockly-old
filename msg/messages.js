@@ -1313,4 +1313,10 @@ Blockly.Msg.TURTLE_GOTO_SEPARATOR = ',';
 Blockly.Msg.TURTLE_GOTO_TAIL = ')';
 /// Grok
 Blockly.Msg.TURTLE_GOTO_TOOLTIP = 'Send the turtle to the given coordinate.';
+/// Grok
+Blockly.Msg.TURTLE_BACKGROUND_COLOR = 'set background color to';
+/// Grok
+Blockly.Msg.TURTLE_BACKGROUND_COLOR_TAIL = '';
+/// Grok
+Blockly.Msg.TURTLE_BACKGROUND_COLOR_TOOLTIP = 'Set the colour of the background of the turtle space.';
 

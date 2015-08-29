@@ -95,6 +95,20 @@ Blockly.Python['turtle_pencolor_text'] = function(block) {
   return code;
 };
 
+Blockly.Python['turtle_bgcolor_dropdown'] = function(block) {
+  Blockly.Python.definitions_['import_turtle'] = 'from turtle import *';
+  var color = block.getFieldValue('COLOR');
+  var code = 'bgcolor(\'' + color + '\')\n';
+  return code;
+};
+
+Blockly.Python['turtle_bgcolor_text'] = function(block) {
+  Blockly.Python.definitions_['import_turtle'] = 'from turtle import *';
+  var color = Blockly.Python.valueToCode(block, 'COLOR', Blockly.Python.ORDER_NONE) || 0;
+  var code = 'bgcolor(' + color + ')\n';
+  return code;
+};
+
 Blockly.Python['turtle_pensize'] = function(block) {
   Blockly.Python.definitions_['import_turtle'] = 'from turtle import *';
   var size = Blockly.Python.valueToCode(block, 'SIZE', Blockly.Python.ORDER_NONE) || 0;

@@ -172,6 +172,56 @@ Blockly.Blocks['turtle_pencolor_text'] = {
 };
 
 
+Blockly.Blocks['turtle_bgcolor_dropdown'] = {
+  /**
+   * Block for changing the color of the turtle background.
+   * @this Blockly.Block
+   */
+  init: function() {
+    var colors = [];
+    for (var i = 0; i < COLORS.length; i++) {
+      colors.push([COLORS[i], COLORS[i]]);
+    }
+    this.setColours('#00BFBA', '#00858F');
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.TURTLE_BACKGROUND_COLOR);
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown(colors), 'COLOR');
+    if (Blockly.Msg.TURTLE_BACKGROUND_COLOR_TAIL) {
+      this.appendDummyInput()
+          .appendField(Blockly.Msg.TURTLE_BACKGROUND_COLOR_TAIL);
+    }
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.TURTLE_BACKGROUND_COLOR_TOOLTIP);
+    this.setInputsInline(true);
+  }
+};
+
+
+Blockly.Blocks['turtle_bgcolor_text'] = {
+  /**
+   * Block for changing the color of the turtle background.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setColours('#00BFBA', '#00858F');
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.TURTLE_BACKGROUND_COLOR);
+    this.appendValueInput('COLOR')
+        .setCheck('String');
+    if (Blockly.Msg.TURTLE_BACKGROUND_COLOR_TAIL) {
+      this.appendDummyInput()
+          .appendField(Blockly.Msg.TURTLE_BACKGROUND_COLOR_TAIL);
+    }
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.TURTLE_BACKGROUND_COLOR_TOOLTIP);
+    this.setInputsInline(true);
+  }
+};
+
+
 Blockly.Blocks['turtle_pensize'] = {
   /**
    * Block for turtle.pensize(x)
