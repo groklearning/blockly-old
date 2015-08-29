@@ -52,9 +52,17 @@ Blockly.Python['math_arithmetic'] = function(block) {
   var tuple = OPERATORS[block.getFieldValue('OP')];
   var operator = tuple[0];
   var order = tuple[1];
-  var argument0 = Blockly.Python.valueToCode(block, 'A', order) || '0';
-  var argument1 = Blockly.Python.valueToCode(block, 'B', order) || '0';
-  var code = argument0 + operator + argument1;
+  var blockA = block.getInputTargetBlock('A');
+  var argumentA = Blockly.Python.valueToCode(block, 'A', order) || '0';
+  if (blockA.type === 'math_arithmetic') {
+    argumentA = '(' + argumentA + ')';
+  }
+  var blockB = block.getInputTargetBlock('B');
+  var argumentB = Blockly.Python.valueToCode(block, 'B', order) || '0';
+  if (blockB.type === 'math_arithmetic') {
+    argumentB = '(' + argumentB + ')';
+  }
+  var code = argumentA + operator + argumentB;
   return [code, order];
   // In case of 'DIVIDE', division between integers returns different results
   // in Python 2 and 3. However, is not an issue since Blockly does not
