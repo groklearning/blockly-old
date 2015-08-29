@@ -1306,7 +1306,7 @@ Blockly.Msg.TURTLE_PEN_SIZE_TAIL = '';
 /// Grok
 Blockly.Msg.TURTLE_PEN_SIZE_TOOLTIP = 'Set the width of the lines the turtle draws.';
 /// Grok
-Blockly.Msg.TURTLE_GOTO_TITLE = 'Go to coordinate: (';
+Blockly.Msg.TURTLE_GOTO_TITLE = 'go to coordinate: (';
 /// Grok
 Blockly.Msg.TURTLE_GOTO_SEPARATOR = ',';
 /// Grok
