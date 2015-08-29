@@ -714,7 +714,24 @@ Blockly.Msg.TEXT_SUBSTRING_FROM = '] from';
 /// Grok
 Blockly.Msg.TEXT_SUBSTRING_END_OF_STRING = 'to the end';
 /// Grok
-Blockly.Msg.TEXT_SUBSCTRING_TAIL = '';
+Blockly.Msg.TEXT_SUBSTRING_TAIL = '';
+
+/// Grok
+Blockly.Msg.LIST_SUBSCRIPT_TITLE = 'item [';
+/// Grok
+Blockly.Msg.LIST_SUBSCRIPT_FROM_LIST = '] from';
+/// Grok
+Blockly.Msg.LIST_SUBSCRIPT_TAIL = '';
+/// Grok
+Blockly.Msg.LIST_SLICE_TITLE = 'sublist [';
+/// Grok
+Blockly.Msg.LIST_SLICE_SEPARATOR = ':';
+/// Grok
+Blockly.Msg.LIST_SLICE_FROM = '] from';
+/// Grok
+Blockly.Msg.LIST_SLICE_END_OF_LIST = 'to the end';
+/// Grok
+Blockly.Msg.LIST_SLICE_TAIL = '';
 
 /// See [https://code.google.com/p/blockly/wiki/Text#Extracting_a_region_of_text
 /// https://code.google.com/p/blockly/wiki/Text#Extracting_a_region_of_text].

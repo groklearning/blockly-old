@@ -432,13 +432,18 @@ Blockly.Blocks['lists_subscript'] = {
     this.setHelpUrl(Blockly.Msg.TEXT_CHARAT_HELPURL);
     this.setColours(Blockly.Colours.LIST_MAIN, Blockly.Colours.LIST_TRIM);
     this.setOutput(true);
-    this.appendValueInput('VALUE')
-        .setCheck('Array')
-    this.appendValueInput('INDEX')
-        .setCheck('Number')
-        .appendField('[');
     this.appendDummyInput()
-        .appendField(']');
+        .appendField(Blockly.Msg.LIST_SUBSCRIPT_TITLE);
+    this.appendValueInput('INDEX')
+        .setCheck('Number');
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.LIST_SUBSCRIPT_FROM_LIST);
+    this.appendValueInput('VALUE')
+        .setCheck('Array');
+    if(Blockly.Msg.LIST_SUBSCRIPT_TAIL) {
+      this.appendDummyInput()
+          .appendField(Blockly.Msg.LIST_SUBSCRIPT_TAIL);
+    }
     this.setInputsInline(true);
     this.setTooltip(Blockly.Msg.TEXT_CHARAT_TOOLTIP);
   }
@@ -449,20 +454,27 @@ Blockly.Blocks['lists_slice'] = {
     this.setHelpUrl(Blockly.Msg.TEXT_CHARAT_HELPURL);
     this.setColours(Blockly.Colours.LIST_MAIN, Blockly.Colours.LIST_TRIM);
     this.setOutput(true);
-    this.appendValueInput('VALUE')
-        .setCheck('Array')
-    this.appendValueInput('START')
-        .setCheck('Number')
-        .appendField('[');
-    this.appendValueInput('END')
-        .setCheck('Number')
-        .appendField(':');
     this.appendDummyInput()
-        .appendField(']');
+        .appendField(Blockly.Msg.LIST_SLICE_TITLE);
+    this.appendValueInput('START')
+        .setCheck('Number');
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.LIST_SLICE_SEPARATOR);
+    this.appendValueInput('END')
+        .setCheck('Number');
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.LIST_SLICE_FROM);
+    this.appendValueInput('VALUE')
+        .setCheck('Array');
+    if(Blockly.Msg.LIST_SLICE_TAIL) {
+      this.appendDummyInput()
+          .appendField(Blockly.Msg.LIST_SLICE_TAIL);
+    }
     this.setInputsInline(true);
     this.setTooltip(Blockly.Msg.TEXT_CHARAT_TOOLTIP);
   }
 };
+
 
 Blockly.Blocks['lists_setIndex'] = {
   /**
@@ -681,7 +693,7 @@ Blockly.Blocks['lists_subscript_set'] = {
     this.setColours('#666666', '#000000');
     this.interpolateMsg(
         // TODO: Combine these messages instead of using concatenation.
-        Blockly.Msg.VARIABLES_SET_TITLE + ' %1 [ %2 ] ' +
+        Blockly.Msg.VARIABLES_SET_TITLE + ' %1 item [ %2 ] ' +
         Blockly.Msg.VARIABLES_SET_TAIL + ' %3',
         ['LIST', 'Array'],
         ['INDEX', 'Number'],
