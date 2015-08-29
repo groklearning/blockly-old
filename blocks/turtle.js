@@ -193,3 +193,30 @@ Blockly.Blocks['turtle_pensize'] = {
     this.setInputsInline(true);
   }
 };
+
+
+Blockly.Blocks['turtle_goto'] = {
+  /**
+   * Block for turtle.goto(x, y)
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setColours('#00BFBA', '#00858F');
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.TURTLE_GOTO_TITLE);
+    this.appendValueInput('XCOORD')
+        .setCheck('Number');
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.TURTLE_GOTO_SEPARATOR);
+    this.appendValueInput('YCOORD')
+        .setCheck('Number');
+    if (Blockly.Msg.TURTLE_GOTO_TAIL) {
+      this.appendDummyInput()
+          .appendField(Blockly.Msg.TURTLE_GOTO_TAIL);
+    }
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.TURTLE_GOTO_TOOLTIP);
+    this.setInputsInline(true);
+  }
+};

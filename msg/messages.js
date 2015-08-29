@@ -1288,3 +1288,12 @@ Blockly.Msg.TURTLE_PEN_SIZE = 'set pen size to';
 Blockly.Msg.TURTLE_PEN_SIZE_TAIL = '';
 /// Grok
 Blockly.Msg.TURTLE_PEN_SIZE_TOOLTIP = 'Set the width of the lines the turtle draws.';
+/// Grok
+Blockly.Msg.TURTLE_GOTO_TITLE = 'Go to coordinate: (';
+/// Grok
+Blockly.Msg.TURTLE_GOTO_SEPARATOR = ',';
+/// Grok
+Blockly.Msg.TURTLE_GOTO_TAIL = ')';
+/// Grok
+Blockly.Msg.TURTLE_GOTO_TOOLTIP = 'Send the turtle to the given coordinate.';
+

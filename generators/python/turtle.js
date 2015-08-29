@@ -104,3 +104,17 @@ Blockly.Python['turtle_pensize'] = function(block) {
   var code = 'pensize(' + size + ')\n';
   return code;
 };
+
+Blockly.Python['turtle_goto'] = function(block) {
+  Blockly.Python.definitions_['import_turtle'] = 'from turtle import *';
+  var x = Blockly.Python.valueToCode(block, 'XCOORD', Blockly.Python.ORDER_NONE) || 0;
+  var y = Blockly.Python.valueToCode(block, 'YCOORD', Blockly.Python.ORDER_NONE) || 0;
+  if (Blockly.isNumber(x)) {
+    x = parseInt(x, 10);
+  }
+  if (Blockly.isNumber(y)) {
+    y = parseInt(y, 10);
+  }
+  var code = 'goto(' + x + ', ' + y + ')\n';
+  return code;
+};
