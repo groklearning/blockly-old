@@ -46,7 +46,7 @@ Blockly.Python['math_arithmetic'] = function(block) {
     'ADD': [' + ', Blockly.Python.ORDER_ADDITIVE],
     'MINUS': [' - ', Blockly.Python.ORDER_ADDITIVE],
     'MULTIPLY': ['*', Blockly.Python.ORDER_MULTIPLICATIVE],
-    'DIVIDE': ['/', Blockly.Python.ORDER_MULTIPLICATIVE],
+    'DIVIDE': ['/', Blockly.Python.ORDER_DIVISION],
     'POWER': ['**', Blockly.Python.ORDER_EXPONENTIATION]
   };
   var tuple = OPERATORS[block.getFieldValue('OP')];
@@ -338,7 +338,7 @@ Blockly.Python['math_modulo'] = function(block) {
   var argument1 = Blockly.Python.valueToCode(block, 'DIVISOR',
       Blockly.Python.ORDER_MULTIPLICATIVE) || '0';
   var code = argument0 + ' % ' + argument1;
-  return [code, Blockly.Python.ORDER_MULTIPLICATIVE];
+  return [code, Blockly.Python.ORDER_MODULO];
 };
 
 Blockly.Python['math_constrain'] = function(block) {

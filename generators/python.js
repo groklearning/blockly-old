@@ -63,19 +63,21 @@ Blockly.Python.ORDER_FUNCTION_CALL = 2;     // ()
 Blockly.Python.ORDER_EXPONENTIATION = 3;    // **
 Blockly.Python.ORDER_UNARY_SIGN = 4;        // + -
 Blockly.Python.ORDER_BITWISE_NOT = 4;       // ~
-Blockly.Python.ORDER_MULTIPLICATIVE = 5;    // * / // %
-Blockly.Python.ORDER_ADDITIVE = 6;          // + -
-Blockly.Python.ORDER_BITWISE_SHIFT = 7;     // << >>
-Blockly.Python.ORDER_BITWISE_AND = 8;       // &
-Blockly.Python.ORDER_BITWISE_XOR = 9;       // ^
-Blockly.Python.ORDER_BITWISE_OR = 10;       // |
-Blockly.Python.ORDER_RELATIONAL = 11;       // in, not in, is, is not,
+Blockly.Python.ORDER_MODULO = 5;            //  %
+Blockly.Python.ORDER_DIVISION = 6;          // / //
+Blockly.Python.ORDER_MULTIPLICATIVE = 7;    // *
+Blockly.Python.ORDER_ADDITIVE = 8;          // + -
+Blockly.Python.ORDER_BITWISE_SHIFT = 9;     // << >>
+Blockly.Python.ORDER_BITWISE_AND = 10;      // &
+Blockly.Python.ORDER_BITWISE_XOR = 11;      // ^
+Blockly.Python.ORDER_BITWISE_OR = 12;       // |
+Blockly.Python.ORDER_RELATIONAL = 13;       // in, not in, is, is not,
                                             //     <, <=, >, >=, <>, !=, ==
-Blockly.Python.ORDER_LOGICAL_NOT = 12;      // not
-Blockly.Python.ORDER_LOGICAL_AND = 13;      // and
-Blockly.Python.ORDER_LOGICAL_OR = 14;       // or
-Blockly.Python.ORDER_CONDITIONAL = 15;      // if else
-Blockly.Python.ORDER_LAMBDA = 16;           // lambda
+Blockly.Python.ORDER_LOGICAL_NOT = 14;      // not
+Blockly.Python.ORDER_LOGICAL_AND = 15;      // and
+Blockly.Python.ORDER_LOGICAL_OR = 16;       // or
+Blockly.Python.ORDER_CONDITIONAL = 17;      // if else
+Blockly.Python.ORDER_LAMBDA = 18;           // lambda
 Blockly.Python.ORDER_NONE = 99;             // (...)
 
 /**
