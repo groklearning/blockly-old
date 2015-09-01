@@ -44,7 +44,7 @@ Blockly.Python['math_arithmetic'] = function(block) {
   // Basic arithmetic operators, and power.
   var OPERATORS = {
     'ADD': [' + ', Blockly.Python.ORDER_ADDITIVE],
-    'MINUS': [' - ', Blockly.Python.ORDER_ADDITIVE],
+    'MINUS': [' - ', Blockly.Python.ORDER_SUBTRACTIVE],
     'MULTIPLY': ['*', Blockly.Python.ORDER_MULTIPLICATIVE],
     'DIVIDE': ['/', Blockly.Python.ORDER_DIVISION],
     'POWER': ['**', Blockly.Python.ORDER_EXPONENTIATION]
