@@ -116,6 +116,7 @@ var COLORS = [
     'darkgreen',
     'navy',
     'blue',
+    'skyblue',
     'purple',
     'hotpink',
     'black',
