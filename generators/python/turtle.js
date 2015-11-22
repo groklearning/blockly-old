@@ -132,3 +132,11 @@ Blockly.Python['turtle_goto'] = function(block) {
   var code = 'goto(' + x + ', ' + y + ')\n';
   return code;
 };
+
+Blockly.Python['turtle_fill_dropdown'] = function(block) {
+  Blockly.Python.definitions_['import_turtle'] = 'from turtle import *';
+  var color = block.getFieldValue('COLOR');
+  var targetBlock = block.getInputTargetBlock('DO');
+  var code = Blockly.Python.blockToCode(targetBlock) || '\n';
+  return 'fillcolor(\'' + color + '\')\nbegin_fill()\n' + code + 'end_fill()\n';
+};
