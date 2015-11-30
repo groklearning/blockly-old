@@ -294,3 +294,23 @@ Blockly.Blocks['turtle_fill_dropdown'] = {
     this.setTooltip(Blockly.Msg.TURTLE_FILL_DROPDOWN_TOOLTIP);
   }
 };
+
+
+Blockly.Blocks['turtle_fill_text'] = {
+  /**
+   * Block for turtle `begin_fill()`/`end_fill()` pair.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.TURTLE_FILL_TEXT_TITLE);
+    this.appendValueInput('COLOR')
+        .setCheck('String');
+    this.setColours('#00BFBA', '#00858F');
+    this.appendStatementInput('DO');
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setInputsInline(true);
+    this.setTooltip(Blockly.Msg.TURTLE_FILL_TEXT_TOOLTIP);
+  }
+};

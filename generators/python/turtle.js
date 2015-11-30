@@ -140,3 +140,12 @@ Blockly.Python['turtle_fill_dropdown'] = function(block) {
   var code = Blockly.Python.blockToCode(targetBlock) || '\n';
   return 'fillcolor(\'' + color + '\')\nbegin_fill()\n' + code + 'end_fill()\n';
 };
+
+
+Blockly.Python['turtle_fill_text'] = function(block) {
+  Blockly.Python.definitions_['import_turtle'] = 'from turtle import *';
+  var color = Blockly.Python.valueToCode(block, 'COLOR', Blockly.Python.ORDER_NONE) || 0;
+  var targetBlock = block.getInputTargetBlock('DO');
+  var code = Blockly.Python.blockToCode(targetBlock) || '\n';
+  return 'fillcolor(' + color + ')\nbegin_fill()\n' + code + 'end_fill()\n';
+};

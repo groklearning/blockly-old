@@ -1323,3 +1323,7 @@ Blockly.Msg.TURTLE_BACKGROUND_COLOR_TOOLTIP = 'Set the colour of the background 
 Blockly.Msg.TURTLE_FILL_DROPDOWN_TITLE = 'fill with color';
 /// Grok
 Blockly.Msg.TURTLE_FILL_DROPDOWN_TOOLTIP= 'Enable fills for the enclosed code.';
+/// Grok
+Blockly.Msg.TURTLE_FILL_TEXT_TITLE = 'fill with color';
+/// Grok
+Blockly.Msg.TURTLE_FILL_TEXT_TOOLTIP= 'Enable fills for the enclosed code.';
