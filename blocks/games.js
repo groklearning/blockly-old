@@ -1,4 +1,4 @@
-t/**
+/**
  * @license
  * Visual Blocks Editor - Javascript html5 games extension
  *
