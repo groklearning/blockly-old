@@ -19,8 +19,7 @@
  */
 
 /**
- * @fileoverview Loop blocks for Blockly.
- * @author fraser@google.com (Neil Fraser)
+ * @fileoverview Blocks for Python's turtle module.
  */
 'use strict';
 

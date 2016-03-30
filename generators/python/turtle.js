@@ -19,8 +19,7 @@
  */
 
 /**
- * @fileoverview Generating Python for math blocks.
- * @author q.neutron@gmail.com (Quynh Neutron)
+ * @fileoverview Generating Python for turtle blocks.
  */
 'use strict';
 

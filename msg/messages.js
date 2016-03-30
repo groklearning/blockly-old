@@ -1327,3 +1327,40 @@ Blockly.Msg.TURTLE_FILL_DROPDOWN_TOOLTIP= 'Enable fills for the enclosed code.';
 Blockly.Msg.TURTLE_FILL_TEXT_TITLE = 'fill with color';
 /// Grok
 Blockly.Msg.TURTLE_FILL_TEXT_TOOLTIP= 'Enable fills for the enclosed code.';
+
+/// Grok
+Blockly.Msg.PILLOW_CHANNEL_RED = 'red channel from image';
+/// Grok
+Blockly.Msg.PILLOW_CHANNEL_GREEN = 'green channel from image';
+/// Grok
+Blockly.Msg.PILLOW_CHANNEL_BLUE = 'blue channel from image';
+/// Grok
+Blockly.Msg.PILLOW_CHANNEL_SPLIT_TAIL = '';
+/// Grok
+Blockly.Msg.PILLOW_CHANNEL_SPLIT_TOOLTIP = 'Take one of the colour channels as a black and white image.';
+
+/// Grok
+Blockly.Msg.PILLOW_IMAGE_WIDTH = 'width of image';
+/// Grok
+Blockly.Msg.PILLOW_IMAGE_HEIGHT = 'height of image';
+/// Grok
+Blockly.Msg.PILLOW_IMAGE_SIZE_TAIL = '';
+/// Grok
+Blockly.Msg.PILLOW_IMAGE_SIZE_TOOLTIP = 'Find out the height or width of an image.';
+/// Grok
+Blockly.Msg.PILLOW_OPEN_IMAGE = 'open image file %1';
+/// Grok
+Blockly.Msg.PILLOW_OPEN_IMAGE_TOOLTIP = 'Open the given image file.';
+
+/// Grok
+Blockly.Msg.PILLOW_COORDINATE_LOOP_START = 'for every pixel coordinate (';
+/// Grok
+Blockly.Msg.PILLOW_COORDINATE_LOOP_END = ') in image';
+/// Grok
+Blockly.Msg.PILLOW_COORDINATE_LOOP_TOOLTIP = 'Loop over every possible (x, y) pixel coordinate in the image.';
+/// Grok
+Blockly.Msg.PILLOW_DIMENSION_LOOP_START = 'count';
+/// Grok
+Blockly.Msg.PILLOW_DIMENSION_LOOP_MIDDLE = 'from 0 to';
+/// Grok
+Blockly.Msg.PILLOW_DIMENSION_LOOP_TOOLTIP = 'Count from 0 up to the given number (usually the width or height of an image).';
