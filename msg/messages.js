@@ -1364,3 +1364,20 @@ Blockly.Msg.PILLOW_DIMENSION_LOOP_START = 'count';
 Blockly.Msg.PILLOW_DIMENSION_LOOP_MIDDLE = 'from 0 to';
 /// Grok
 Blockly.Msg.PILLOW_DIMENSION_LOOP_TOOLTIP = 'Count from 0 up to the given number (usually the width or height of an image).';
+
+/// Grok
+Blockly.Msg.PILLOW_MERGE_RGB_TEXT = 'new image with red %1 green %2 and blue %3 channels';
+/// Grok
+Blockly.Msg.PILLOW_MERGE_RGB_TOOLTIP = 'Given red, green and blue channels as grayscale images, merge into a new image.';
+/// Grok
+Blockly.Msg.PILLOW_GET_PIXEL_TEXT = 'pixel value at (%1, %2) from grayscale image %3';
+/// Grok
+Blockly.Msg.PILLOW_GET_PIXEL_TOOLTIP = 'Find the value of a pixel at a specific coordinate in a black and white (grayscale) image.';
+/// Grok
+Blockly.Msg.PILLOW_SET_PIXEL_TEXT = 'change pixel at (%1, %2) in grayscale image %3 to value %4';
+/// Grok
+Blockly.Msg.PILLOW_SET_PIXEL_TOOLTIP = 'Set the value of the pixel at the coordinates to a new value.';
+/// Grok
+Blockly.Msg.PILLOW_SAVE_TEXT = 'save image %1 to a file called %2';
+/// Grok
+Blockly.Msg.PILLOW_SAVE_TOOLTIP = 'Save the image to a file with the given filename (e.g. myimage.png)';

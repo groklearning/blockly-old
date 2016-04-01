@@ -93,3 +93,40 @@ Blockly.Python['pillow_channel_split_rgb'] = function(block) {
   var code = image + '.split()[' + i + ']';
   return [code, Blockly.Python.ORDER_MEMBER];
 };
+
+
+Blockly.Python['pillow_channel_merge_rgb'] = function(block) {
+  var red = Blockly.Python.valueToCode(block, 'RED', Blockly.Python.ORDER_NONE);
+  var green = Blockly.Python.valueToCode(block, 'GREEN', Blockly.Python.ORDER_NONE);
+  var blue = Blockly.Python.valueToCode(block, 'BLUE', Blockly.Python.ORDER_NONE);
+
+  var code = 'Image.merge(\'RGB\', (' + red + ', ' + green + ', ' + blue + '))';
+  return [code, Blockly.Python.ORDER_MEMBER];
+};
+
+Blockly.Python['pillow_set_pixel'] = function(block) {
+  var x = Blockly.Python.valueToCode(block, 'X', Blockly.Python.ORDER_NONE);
+  var y = Blockly.Python.valueToCode(block, 'Y', Blockly.Python.ORDER_NONE);
+  var image = Blockly.Python.valueToCode(block, 'IMAGE', Blockly.Python.ORDER_MEMBER);
+  var newValue = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_NONE);
+
+  var code = image + '.putpixel((' + x + ', ' + y + '), ' + newValue + ')\n';
+  return code;
+};
+
+Blockly.Python['pillow_get_pixel'] = function(block) {
+  var x = Blockly.Python.valueToCode(block, 'X', Blockly.Python.ORDER_NONE);
+  var y = Blockly.Python.valueToCode(block, 'Y', Blockly.Python.ORDER_NONE);
+  var image = Blockly.Python.valueToCode(block, 'IMAGE', Blockly.Python.ORDER_MEMBER);
+
+  var code = image + '.getpixel((' + x + ', ' + y + '))';
+  return [code, Blockly.Python.ORDER_MEMBER];
+};
+
+Blockly.Python['pillow_save'] = function(block) {
+  var image = Blockly.Python.valueToCode(block, 'IMAGE', Blockly.Python.ORDER_MEMBER);
+  var filename = Blockly.Python.valueToCode(block, 'FILENAME', Blockly.Python.ORDER_NONE);
+
+  var code = image + '.save(' + filename + ')\n';
+  return code;
+};
