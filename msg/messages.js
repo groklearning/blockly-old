@@ -1381,3 +1381,54 @@ Blockly.Msg.PILLOW_SET_PIXEL_TOOLTIP = 'Set the value of the pixel at the coordi
 Blockly.Msg.PILLOW_SAVE_TEXT = 'save image %1 to a file called %2';
 /// Grok
 Blockly.Msg.PILLOW_SAVE_TOOLTIP = 'Save the image to a file with the given filename (e.g. myimage.png)';
+
+/// Grok
+Blockly.Msg.MICROBIT_MAIN_LOOP = 'micro:bit loop';
+/// Grok
+Blockly.Msg.MICROBIT_MAIN_LOOP_DO = 'do';
+/// Grok
+Blockly.Msg.MICROBIT_MAIN_LOOP_TOOLTIP = 'The main micro:bit loop.';
+/// Grok
+Blockly.Msg.MICROBIT_DISPLAY_SHOW = 'show image %1';
+/// Grok
+Blockly.Msg.MICROBIT_DISPLAY_SHOW_TOOLTIP = 'Shows an image on the display.';
+/// Grok
+Blockly.Msg.MICROBIT_DISPLAY_CLEAR = 'clear display';
+/// Grok
+Blockly.Msg.MICROBIT_DISPLAY_CLEAR_TOOLTIP = 'Clears the display.';
+/// Grok
+Blockly.Msg.MICROBIT_IMAGE = 'image %1';
+/// Grok
+Blockly.Msg.MICROBIT_IMAGE_TOOLTIP = 'Pre-defined images.';
+/// Grok
+Blockly.Msg.MICROBIT_PIN_DIGITAL_READ = 'read digital %1';
+/// Grok
+Blockly.Msg.MICROBIT_PIN_DIGITAL_READ_TOOLTIP = 'Read from a digital pin.';
+/// Grok
+Blockly.Msg.MICROBIT_PIN_DIGITAL_WRITE = 'write %1 to digital %2';
+/// Grok
+Blockly.Msg.MICROBIT_PIN_DIGITAL_WRITE_TOOLTIP = 'Write to a digital pin.';
+/// Grok
+Blockly.Msg.MICROBIT_PIN_ANALOG_READ = 'read analog %1';
+/// Grok
+Blockly.Msg.MICROBIT_PIN_ANALOG_READ_TOOLTIP = 'Read from an analog pin.';
+/// Grok
+Blockly.Msg.MICROBIT_PIN_ANALOG_WRITE = 'write %1 to analog %2';
+/// Grok
+Blockly.Msg.MICROBIT_PIN_ANALOG_WRITE_TOOLTIP = 'Write to an analog pin.';
+/// Grok
+Blockly.Msg.MICROBIT_BUTTON_PRESSED = 'button %1 %2 pressed';
+/// Grok
+Blockly.Msg.MICROBIT_BUTTON_PRESSED_TOOLTIP = 'Get button state.';
+/// Grok
+Blockly.Msg.MICROBIT_COMPASS = 'compass %1';
+/// Grok
+Blockly.Msg.MICROBIT_COMPASS_TOOLTIP = 'Get compass state.';
+/// Grok
+Blockly.Msg.MICROBIT_ACCELEROMETER = 'accelerometer %1';
+/// Grok
+Blockly.Msg.MICROBIT_ACCELEROMETER_TOOLTIP = 'Get accelerometer state.';
+/// Grok
+Blockly.Msg.MICROBIT_SLEEP = 'sleep for %1 ms';
+/// Grok
+Blockly.Msg.MICROBIT_SLEEP_TOOLTIP = 'Sleep.';
