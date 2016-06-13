@@ -22,6 +22,36 @@ Blockly.Python['io_input'] = function(block) {
   return [code, Blockly.Python.ORDER_FUNCTION_CALL];
 };
 
+Blockly.Python['io_ask_text'] = function(block) {
+  var msg = Blockly.Python.valueToCode(block, 'TEXT',
+    Blockly.Python.ORDER_ADDITIVE) || '\'\'';
+  var code = 'input(' + msg + ' + \' \')';
+  return [code, Blockly.Python.ORDER_FUNCTION_CALL];
+};
+
+Blockly.Python['io_ask_text_simple'] = function(block) {
+  Blockly.Python.definitions_['def_ask_text'] = 'def ask_text(question):\n  return input(question + \' \')\n';
+  var msg = Blockly.Python.valueToCode(block, 'TEXT',
+    Blockly.Python.ORDER_NONE) || '\'\'';
+  var code = 'ask_text(' + msg + ')';
+  return [code, Blockly.Python.ORDER_FUNCTION_CALL];
+};
+
+Blockly.Python['io_ask_num'] = function(block) {
+  var msg = Blockly.Python.valueToCode(block, 'TEXT',
+    Blockly.Python.ORDER_ADDITIVE) || '\'\'';
+  var code = 'float(input(' + msg + ' + \' \'))';
+  return [code, Blockly.Python.ORDER_FUNCTION_CALL];
+};
+
+Blockly.Python['io_ask_num_simple'] = function(block) {
+  Blockly.Python.definitions_['def_ask_num'] = 'def ask_num(question):\n  prompt = question + \' \'\n  while True:\n    try:\n      val = input(prompt)\n      res = float(val)\n      return int(res) if res == int(res) else res\n    except ValueError:\n      prompt = \'The value {} is not a number. {} \'.format(val, question)\n';
+  var msg = Blockly.Python.valueToCode(block, 'TEXT',
+    Blockly.Python.ORDER_NONE) || '\'\'';
+  var code = 'ask_num(' + msg + ')';
+  return [code, Blockly.Python.ORDER_FUNCTION_CALL];
+};
+
 Blockly.Python['text_print0'] = function(block) {
   return 'print()\n';
 };

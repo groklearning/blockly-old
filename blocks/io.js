@@ -126,6 +126,43 @@ Blockly.Blocks['io_input'] = {
   }
 };
 
+Blockly.Blocks['io_ask_text'] = {
+  /**
+   * Block for prompt function.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.IO_ASK_TEXT_HELPURL);
+    this.setColours('#00aa00', '#007a00');
+    this.appendValueInput('TEXT')
+        .setCheck('String')
+        .appendField(Blockly.Msg.IO_ASK_TEXT);
+    this.setOutput(true, 'String');
+    this.setTooltip(Blockly.Msg.IO_ASK_TEXT_TOOLTIP);
+    this.setInputsInline(true);
+  }
+};
+
+Blockly.Blocks['io_ask_text_simple'] = Blockly.Blocks['io_ask_text'];
+
+Blockly.Blocks['io_ask_num'] = {
+  /**
+   * Block for prompt function.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.IO_ASK_NUM_HELPURL);
+    this.setColours('#0080E4', '#003660');
+    this.appendValueInput('TEXT')
+        .setCheck('String')
+        .appendField(Blockly.Msg.IO_ASK_NUM);
+    this.setOutput(true, 'Number');
+    this.setTooltip(Blockly.Msg.IO_ASK_NUM_TOOLTIP);
+    this.setInputsInline(true);
+  }
+};
+
+Blockly.Blocks['io_ask_num_simple'] = Blockly.Blocks['io_ask_num'];
 
 Blockly.Blocks['text_print0'] = {
   /**

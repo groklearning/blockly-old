@@ -214,6 +214,20 @@ Blockly.Msg.IO_INPUT_TOOLTIP_FLOAT = 'Ask the user for a real number.';
 Blockly.Msg.IO_INPUT_TOOLTIP_TEXT = 'Ask the user for some text.';
 
 /// Grok
+Blockly.Msg.IO_ASK_TEXT_HELPURL = 'https://code.google.com/p/blockly/wiki/Text#Getting_input_from_the_user';
+/// Grok
+Blockly.Msg.IO_ASK_TEXT = 'ask';
+/// Grok
+Blockly.Msg.IO_ASK_TEXT_TOOLTIP = 'Ask the user for a message.';
+
+/// Grok
+Blockly.Msg.IO_ASK_NUM_HELPURL = 'https://code.google.com/p/blockly/wiki/Text#Getting_input_from_the_user';
+/// Grok
+Blockly.Msg.IO_ASK_NUM = 'ask';
+/// Grok
+Blockly.Msg.IO_ASK_NUM_TOOLTIP = 'Ask the user for a number.';
+
+/// Grok
 Blockly.Msg.IO_PRINT_HELPURL = 'https://code.google.com/p/blockly/wiki/Text#Printing_text';
 /// Grok
 Blockly.Msg.IO_PRINT0_TITLE = 'print';
