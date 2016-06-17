@@ -1367,7 +1367,7 @@ Blockly.Msg.PILLOW_OPEN_IMAGE = 'open image file %1';
 Blockly.Msg.PILLOW_OPEN_IMAGE_TOOLTIP = 'Open the given image file.';
 
 /// Grok
-Blockly.Msg.PILLOW_COORDINATE_LOOP_START = 'for every pixel coordinate (';
+Blockly.Msg.PILLOW_COORDINATE_LOOP_START = 'for each pixel coordinate (';
 /// Grok
 Blockly.Msg.PILLOW_COORDINATE_LOOP_END = ') in image';
 /// Grok
@@ -1384,15 +1384,15 @@ Blockly.Msg.PILLOW_MERGE_RGB_TEXT = 'new image with red %1 green %2 and blue %3 
 /// Grok
 Blockly.Msg.PILLOW_MERGE_RGB_TOOLTIP = 'Given red, green and blue channels as grayscale images, merge into a new image.';
 /// Grok
-Blockly.Msg.PILLOW_GET_PIXEL_TEXT = 'pixel value at (%1, %2) from grayscale image %3';
+Blockly.Msg.PILLOW_GET_PIXEL_TEXT = 'get %3 pixel (%1, %2)';
 /// Grok
 Blockly.Msg.PILLOW_GET_PIXEL_TOOLTIP = 'Find the value of a pixel at a specific coordinate in a black and white (grayscale) image.';
 /// Grok
-Blockly.Msg.PILLOW_SET_PIXEL_TEXT = 'change pixel at (%1, %2) in grayscale image %3 to value %4';
+Blockly.Msg.PILLOW_SET_PIXEL_TEXT = 'change %3 pixel (%1, %2) to %4';
 /// Grok
 Blockly.Msg.PILLOW_SET_PIXEL_TOOLTIP = 'Set the value of the pixel at the coordinates to a new value.';
 /// Grok
-Blockly.Msg.PILLOW_SAVE_TEXT = 'save image %1 to a file called %2';
+Blockly.Msg.PILLOW_SAVE_TEXT = 'save %1 with filename %2';
 /// Grok
 Blockly.Msg.PILLOW_SAVE_TOOLTIP = 'Save the image to a file with the given filename (e.g. myimage.png)';
 
