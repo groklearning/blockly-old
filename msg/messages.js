@@ -1388,7 +1388,7 @@ Blockly.Msg.PILLOW_GET_PIXEL_TEXT = 'get %3 pixel (%1, %2)';
 /// Grok
 Blockly.Msg.PILLOW_GET_PIXEL_TOOLTIP = 'Find the value of a pixel at a specific coordinate in a black and white (grayscale) image.';
 /// Grok
-Blockly.Msg.PILLOW_SET_PIXEL_TEXT = 'change %3 pixel (%1, %2) to %4';
+Blockly.Msg.PILLOW_SET_PIXEL_TEXT = 'set %3 pixel (%1, %2) to %4';
 /// Grok
 Blockly.Msg.PILLOW_SET_PIXEL_TOOLTIP = 'Set the value of the pixel at the coordinates to a new value.';
 /// Grok
