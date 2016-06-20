@@ -93,12 +93,86 @@ Blockly.Blocks['microbit_display_clear'] = {
 };
 
 
-var IMAGES = [
-  "HEART",
-  "GIRAFFE",
-  "HAPPY",
-  "SAD",
-];
+// Blockly doesn't handle long lists well, so we've grouped them into smaller lists.
+var IMAGE_CATEGORIES = {
+  'Faces': [
+    'ANGRY',
+    'ASLEEP',
+    'CONFUSED',
+    'FABULOUS',
+    'HAPPY',
+    'MEH',
+    'SAD',
+    'SILLY',
+    'SKULL',
+    'SMILE',
+    'SURPRISED',
+  ],
+  'Clocks': [
+    'CLOCK1',
+    'CLOCK10',
+    'CLOCK11',
+    'CLOCK12',
+    'CLOCK2',
+    'CLOCK3',
+    'CLOCK4',
+    'CLOCK5',
+    'CLOCK6',
+    'CLOCK7',
+    'CLOCK8',
+    'CLOCK9',
+  ],
+  'Animals': [
+    'BUTTERFLY',
+    'COW',
+    'DUCK',
+    'GIRAFFE',
+    'RABBIT',
+    'SNAKE',
+    'TORTOISE',
+  ],
+  'Arrows': [
+    'ARROW_E',
+    'ARROW_N',
+    'ARROW_NE',
+    'ARROW_NW',
+    'ARROW_S',
+    'ARROW_SE',
+    'ARROW_SW',
+    'ARROW_W',
+  ],
+  'Symbols': [
+    'DIAMOND',
+    'DIAMOND_SMALL',
+    'HEART',
+    'HEART_SMALL',
+    'NO',
+    'SQUARE',
+    'SQUARE_SMALL',
+    'TRIANGLE',
+    'TRIANGLE_LEFT',
+    'YES',
+  ],
+  'Music': [
+    'MUSIC_CROTCHET',
+    'MUSIC_QUAVER',
+    'MUSIC_QUAVERS',
+  ],
+  'Other': [
+    'CHESSBOARD',
+    'GHOST',
+    'HOUSE',
+    'PACMAN',
+    'PITCHFORK',
+    'ROLLERSKATE',
+    'STICKFIGURE',
+    'SWORD',
+    'TARGET',
+    'TSHIRT',
+    'UMBRELLA',
+    'XMAS',
+  ]
+};
 
 
 Blockly.Blocks['microbit_image'] = {
@@ -107,13 +181,34 @@ Blockly.Blocks['microbit_image'] = {
    * @this Blockly.Block
    */
   init: function() {
-    var images = [];
-    for (var i = 0; i < IMAGES.length; ++i) {
-      images.push([IMAGES[i], IMAGES[i],]);
+    // The category list is just the keys of the map above.
+    var categories = [];
+    for (var cat in IMAGE_CATEGORIES) {
+      categories.push([cat, cat,]);
     }
+    categories.sort();
+
+    // Create a dropdown that uses the currently selected category to return items.
+    var selectedCategory = categories[0][0];
+    var imageDropdown = new Blockly.FieldDropdown(function() {
+      var images = [];
+      for (var i = 0; i < IMAGE_CATEGORIES[selectedCategory].length; ++i) {
+        images.push([IMAGE_CATEGORIES[selectedCategory][i], IMAGE_CATEGORIES[selectedCategory][i],]);
+      }
+      return images;
+    });
+
+    // Create a dropdown that updates the currently selected category.
+    var categoryDropdown = new Blockly.FieldDropdown(categories, function(value) {
+      selectedCategory = value;
+      // This will cause imageDropdown to call its generator function.
+      imageDropdown.setValue(IMAGE_CATEGORIES[selectedCategory][0]);
+    });
+
     this.setColours(IMAGE_BODY_COLOR, IMAGE_TRIM_COLOR);
     this.interpolateMsg(Blockly.Msg.MICROBIT_IMAGE,
-                        ['NAME', new Blockly.FieldDropdown(images), Blockly.ALIGN_RIGHT],
+                        ['CATEGORY', categoryDropdown, Blockly.ALIGN_RIGHT],
+                        ['NAME', imageDropdown, Blockly.ALIGN_RIGHT],
                         Blockly.ALIGN_RIGHT);
     this.setTooltip(Blockly.Msg.MICROBIT_IMAGE_TOOLTIP);
     this.setOutput('micro:bit image');

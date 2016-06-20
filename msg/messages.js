@@ -1411,7 +1411,7 @@ Blockly.Msg.MICROBIT_DISPLAY_CLEAR = 'clear display';
 /// Grok
 Blockly.Msg.MICROBIT_DISPLAY_CLEAR_TOOLTIP = 'Clears the display.';
 /// Grok
-Blockly.Msg.MICROBIT_IMAGE = 'image %1';
+Blockly.Msg.MICROBIT_IMAGE = 'image %1 %2';
 /// Grok
 Blockly.Msg.MICROBIT_IMAGE_TOOLTIP = 'Pre-defined images.';
 /// Grok
