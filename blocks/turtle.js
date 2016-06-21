@@ -86,6 +86,27 @@ Blockly.Blocks['turtle_turn'] = {
   }
 };
 
+
+Blockly.Blocks['turtle_turn_simple'] = {
+  /**
+   * Block for turning the turle left or right.
+   * @this Blockly.Block
+   */
+  init: function() {
+    var DIRECTIONS =
+        [[Blockly.Msg.TURTLE_TURN_LEFT, 'LEFT'],
+         [Blockly.Msg.TURTLE_TURN_RIGHT, 'RIGHT']];
+    this.setColours('#00BFBA', '#00858F');
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown(DIRECTIONS), 'DIRECTION');
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.TURTLE_TURN_TOOLTIP);
+    this.setInputsInline(true);
+  }
+};
+
+
 Blockly.Blocks['turtle_pen'] = {
   /**
    * Block for putting the pen up and down.
