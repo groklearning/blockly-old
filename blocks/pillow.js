@@ -98,6 +98,181 @@ Blockly.Blocks['pillow_channel_split_rgb'] = {
 };
 
 
+Blockly.Blocks['pillow_set_pixel_gray'] = {
+  /**
+   * Block for image.putpixel((x, y), value);
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setColours(BODY_COLOR, TRIM_COLOR);
+    this.interpolateMsg(Blockly.Msg.PILLOW_SET_PIXEL_GRAY_TEXT,
+                        ['PIXEL', 'Pixel', Blockly.ALIGN_RIGHT],
+                        ['VALUE', 'Number', Blockly.ALIGN_RIGHT],
+                        Blockly.ALIGN_RIGHT);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setInputsInline(true);
+    this.setTooltip(Blockly.Msg.PILLOW_SET_PIXEL_GRAY_TOOLTIP);
+  }
+};
+
+
+Blockly.Blocks['pillow_get_pixel_gray'] = {
+  /**
+   * Block for image.putpixel((x, y), value);
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setColours(NUMBER_BODY_COLOR, NUMBER_TRIM_COLOR);
+    this.interpolateMsg(Blockly.Msg.PILLOW_GET_PIXEL_GRAY_TEXT,
+                        ['PIXEL', 'Pixel', Blockly.ALIGN_RIGHT],
+                        Blockly.ALIGN_RIGHT);
+    this.setInputsInline(true);
+    this.setOutput(true, 'Number');
+    this.setTooltip(Blockly.Msg.PILLOW_GET_PIXEL_GRAY_TOOLTIP);
+  }
+};
+
+
+Blockly.Blocks['pillow_set_pixel_rgb'] = {
+  /**
+   * Block for image.putpixel((x, y), value);
+   * @this Blockly.Block
+   */
+  init: function() {
+    var CHANNELS =
+        [[Blockly.Msg.PILLOW_VALUE_RED, 'RED'],
+         [Blockly.Msg.PILLOW_VALUE_GREEN, 'GREEN'],
+         [Blockly.Msg.PILLOW_VALUE_BLUE, 'BLUE']];
+    this.setColours(BODY_COLOR, TRIM_COLOR);
+    this.interpolateMsg(Blockly.Msg.PILLOW_SET_PIXEL_RGB_TEXT,
+                        ['PIXEL', 'Pixel', Blockly.ALIGN_RIGHT],
+                        ['CHANNEL', new Blockly.FieldDropdown(CHANNELS), Blockly.ALIGN_RIGHT],
+                        ['VALUE', 'Number', Blockly.ALIGN_RIGHT],
+                        Blockly.ALIGN_RIGHT);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setInputsInline(true);
+    this.setTooltip(Blockly.Msg.PILLOW_SET_PIXEL_RGB_TOOLTIP);
+  }
+};
+
+
+Blockly.Blocks['pillow_get_pixel_rgba'] = {
+  /**
+   * Block for image.putpixel((x, y), value);
+   * @this Blockly.Block
+   */
+  init: function() {
+    var CHANNELS =
+        [[Blockly.Msg.PILLOW_VALUE_RED, 'RED'],
+         [Blockly.Msg.PILLOW_VALUE_GREEN, 'GREEN'],
+         [Blockly.Msg.PILLOW_VALUE_BLUE, 'BLUE'],
+         [Blockly.Msg.PILLOW_VALUE_ALPHA, 'ALPHA']];
+    this.setColours(NUMBER_BODY_COLOR, NUMBER_TRIM_COLOR);
+    this.interpolateMsg(Blockly.Msg.PILLOW_GET_PIXEL_RGB_TEXT,
+                        ['PIXEL', 'Pixel', Blockly.ALIGN_RIGHT],
+                        ['CHANNEL', new Blockly.FieldDropdown(CHANNELS), Blockly.ALIGN_RIGHT],
+                        Blockly.ALIGN_RIGHT);
+    this.setInputsInline(true);
+    this.setOutput(true, 'Number');
+    this.setTooltip(Blockly.Msg.PILLOW_GET_PIXEL_RGB_TOOLTIP);
+  }
+};
+
+
+Blockly.Blocks['pillow_get_pixel_rgb'] = {
+  /**
+   * Block for image.putpixel((x, y), value);
+   * @this Blockly.Block
+   */
+  init: function() {
+    var CHANNELS =
+        [[Blockly.Msg.PILLOW_VALUE_RED, 'RED'],
+         [Blockly.Msg.PILLOW_VALUE_GREEN, 'GREEN'],
+         [Blockly.Msg.PILLOW_VALUE_BLUE, 'BLUE']];
+    this.setColours(NUMBER_BODY_COLOR, NUMBER_TRIM_COLOR);
+    this.interpolateMsg(Blockly.Msg.PILLOW_GET_PIXEL_RGB_TEXT,
+                        ['PIXEL', 'Pixel', Blockly.ALIGN_RIGHT],
+                        ['CHANNEL', new Blockly.FieldDropdown(CHANNELS), Blockly.ALIGN_RIGHT],
+                        Blockly.ALIGN_RIGHT);
+    this.setInputsInline(true);
+    this.setOutput(true, 'Number');
+    this.setTooltip(Blockly.Msg.PILLOW_GET_PIXEL_RGB_TOOLTIP);
+  }
+};
+
+
+Blockly.Blocks['pillow_set_pixel_rgba'] = {
+  /**
+   * Block for image.putpixel((x, y), value);
+   * @this Blockly.Block
+   */
+  init: function() {
+    var CHANNELS =
+        [[Blockly.Msg.PILLOW_VALUE_RED, 'RED'],
+         [Blockly.Msg.PILLOW_VALUE_GREEN, 'GREEN'],
+         [Blockly.Msg.PILLOW_VALUE_BLUE, 'BLUE'],
+         [Blockly.Msg.PILLOW_VALUE_ALPHA, 'ALPHA']];
+    this.setColours(BODY_COLOR, TRIM_COLOR);
+    this.interpolateMsg(Blockly.Msg.PILLOW_SET_PIXEL_RGB_TEXT,
+                        ['PIXEL', 'Pixel', Blockly.ALIGN_RIGHT],
+                        ['CHANNEL', new Blockly.FieldDropdown(CHANNELS), Blockly.ALIGN_RIGHT],
+                        ['VALUE', 'Number', Blockly.ALIGN_RIGHT],
+                        Blockly.ALIGN_RIGHT);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setInputsInline(true);
+    this.setTooltip(Blockly.Msg.PILLOW_SET_PIXEL_GRAY_TOOLTIP);
+  }
+};
+
+
+Blockly.Blocks['pillow_pixel_loop'] = {
+  /**
+   * Block for looping over all Pixel objects in an image.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setColours(LOOP_BODY_COLOR, LOOP_TRIM_COLOR);
+
+    // Row 1
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.PILLOW_PIXEL_LOOP_START)
+      .appendField(new Blockly.FieldVariable('pixel'), 'PIXELVAR');
+    this.appendValueInput('IMAGE')
+      .setCheck('Image')
+      .appendField(Blockly.Msg.PILLOW_PIXEL_LOOP_END);
+    this.appendStatementInput('DO')
+        .appendField(Blockly.Msg.CONTROLS_WHILEUNTIL_INPUT_DO);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setInputsInline(true);
+    this.setTooltip(Blockly.Msg.PILLOW_PIXEL_LOOP_TOOLTIP);
+  },
+  /**
+   * Return all variables referenced by this block.
+   * @return {!Array.<string>} List of variable names.
+   * @this Blockly.Block
+   */
+  getVars: function() {
+    return [this.getFieldValue('PIXELVAR')];
+  },
+  /**
+   * Notification that a variable is renaming.
+   * If the name matches one of this block's variables, rename it.
+   * @param {string} oldName Previous name of variable.
+   * @param {string} newName Renamed variable.
+   * @this Blockly.Block
+   */
+  renameVar: function(oldName, newName) {
+    if (Blockly.Names.equals(oldName, this.getFieldValue('PIXELVAR'))) {
+      this.setFieldValue(newName, 'PIXELVAR');
+    }
+  },
+};
+
+
 Blockly.Blocks['pillow_coordinate_loop'] = {
   /**
    * Block for looping over all (x, y) pixel coordinates in an image.

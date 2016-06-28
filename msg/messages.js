@@ -1343,6 +1343,14 @@ Blockly.Msg.TURTLE_FILL_TEXT_TITLE = 'fill with color';
 Blockly.Msg.TURTLE_FILL_TEXT_TOOLTIP= 'Enable fills for the enclosed code.';
 
 /// Grok
+Blockly.Msg.PILLOW_VALUE_RED = 'red';
+/// Grok
+Blockly.Msg.PILLOW_VALUE_GREEN = 'green';
+/// Grok
+Blockly.Msg.PILLOW_VALUE_BLUE = 'blue';
+/// Grok
+Blockly.Msg.PILLOW_VALUE_ALPHA = 'alpha';
+/// Grok
 Blockly.Msg.PILLOW_CHANNEL_RED = 'red channel from image';
 /// Grok
 Blockly.Msg.PILLOW_CHANNEL_GREEN = 'green channel from image';
@@ -1366,6 +1374,28 @@ Blockly.Msg.PILLOW_OPEN_IMAGE = 'open image file %1';
 /// Grok
 Blockly.Msg.PILLOW_OPEN_IMAGE_TOOLTIP = 'Open the given image file.';
 
+/// Grok
+Blockly.Msg.PILLOW_PIXEL_LOOP_START = 'for each';
+/// Grok
+Blockly.Msg.PILLOW_PIXEL_LOOP_END = 'in image';
+/// Grok
+Blockly.Msg.PILLOW_PIXEL_LOOP_TOOLTIP = 'Loop over every pixel in the image.';
+/// Grok
+Blockly.Msg.PILLOW_SET_PIXEL_GRAY_TEXT = 'set %1 grey to %2';
+/// Grok
+Blockly.Msg.PILLOW_GET_PIXEL_GRAY_TEXT = 'get %1 grey';
+/// Grok
+Blockly.Msg.PILLOW_SET_PIXEL_RGB_TEXT = 'set %1 %2 to %3';
+/// Grok
+Blockly.Msg.PILLOW_GET_PIXEL_RGB_TEXT = 'get %1 %2';
+/// Grok
+Blockly.Msg.PILLOW_SET_PIXEL_RGB_TOOLTIP = 'Set one of the colour values of the pixel to a new value.';
+/// Grok
+Blockly.Msg.PILLOW_GET_PIXEL_RGB_TOOLTIP = 'Find one of the colour values of a RGB pixel.';
+/// Grok
+Blockly.Msg.PILLOW_SET_PIXEL_GRAY_TOOLTIP = 'Set the grey (luminosity) value of the pixel to a new value.';
+/// Grok
+Blockly.Msg.PILLOW_GET_PIXEL_GRAY_TOOLTIP = 'Find the grey (luminosity) value of a greyscale pixel.';
 /// Grok
 Blockly.Msg.PILLOW_COORDINATE_LOOP_START = 'for each pixel coordinate (';
 /// Grok

@@ -28,12 +28,14 @@ goog.provide('Blockly.Python.pillow');
 goog.require('Blockly.Python');
 
 
+var PIL_IMPORT_IMAGE = 'from simple.PIL import Image';
+
 // Any imports need to be reserved words
 Blockly.Python.addReservedWords('PIL');
 Blockly.Python.addReservedWords('Image');
 
 Blockly.Python['pillow_open'] = function(block) {
-  Blockly.Python.definitions_['import_pil_image'] = 'from PIL import Image';
+  Blockly.Python.definitions_['import_pil_image'] = PIL_IMPORT_IMAGE;
   var filename = Blockly.Python.valueToCode(block, 'FILENAME', Blockly.Python.ORDER_NONE);
   var code = 'Image.open(' + filename + ')';
   return [code, Blockly.Python.ORDER_FUNCTION_CALL];
@@ -41,7 +43,6 @@ Blockly.Python['pillow_open'] = function(block) {
 
 
 Blockly.Python['pillow_image_size'] = function(block) {
-  Blockly.Python.definitions_['import_pil_image'] = 'from PIL import Image';
   var image = Blockly.Python.valueToCode(block, 'IMAGE', Blockly.Python.ORDER_NONE);
   var dimension = block.getFieldValue('DIMENSION');
 
@@ -64,6 +65,54 @@ Blockly.Python['pillow_dimension_loop'] = function(block) {
 
   var range = 'range(' + to + ')';
   return 'for ' + variable + ' in ' + range + ':\n' + body;
+};
+
+
+Blockly.Python['pillow_set_pixel_gray'] = function(block) {
+  Blockly.Python.definitions_['import_pil_image'] = PIL_IMPORT_IMAGE;
+  var pixel = Blockly.Python.valueToCode(block, 'PIXEL', Blockly.Python.ORDER_MEMBER);
+  var value = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_NONE);
+  var code = pixel + '.gray = ' + value + '\n';
+  return code;
+};
+
+
+Blockly.Python['pillow_get_pixel_gray'] = function(block) {
+  var pixel = Blockly.Python.valueToCode(block, 'PIXEL', Blockly.Python.ORDER_MEMBER);
+  var code = pixel + '.gray';
+  return [code, Blockly.Python.ORDER_MEMBER];
+};
+
+
+Blockly.Python['pillow_set_pixel_rgba'] = function(block) {
+  Blockly.Python.definitions_['import_pil_image'] = PIL_IMPORT_IMAGE;
+  var pixel = Blockly.Python.valueToCode(block, 'PIXEL', Blockly.Python.ORDER_MEMBER);
+  var channel = block.getFieldValue('CHANNEL').toLowerCase();
+  var value = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_NONE);
+  var code = pixel + '.' + channel + ' = ' + value + '\n';
+  return code;
+};
+Blockly.Python['pillow_set_pixel_rgb'] = Blockly.Python['pillow_set_pixel_rgba'];
+
+
+Blockly.Python['pillow_get_pixel_rgba'] = function(block) {
+  var pixel = Blockly.Python.valueToCode(block, 'PIXEL', Blockly.Python.ORDER_MEMBER);
+  var channel = block.getFieldValue('CHANNEL').toLowerCase();
+  var code = pixel + '.' + channel;
+  return [code, Blockly.Python.ORDER_MEMBER];
+};
+Blockly.Python['pillow_get_pixel_rgb'] = Blockly.Python['pillow_get_pixel_rgba'];
+
+
+Blockly.Python['pillow_pixel_loop'] = function(block) {
+  var pixelVariable = Blockly.Python.variableDB_.getName(block.getFieldValue('PIXELVAR'), Blockly.Variables.NAME_TYPE);
+  var image = Blockly.Python.valueToCode(block, 'IMAGE', Blockly.Python.ORDER_NONE);
+
+  var body = Blockly.Python.statementToCode(block, 'DO');
+  body = Blockly.Python.addLoopTrap(body, block.id) ||
+      Blockly.Python.LOOP_PASS;
+
+  return 'for ' + pixelVariable + ' in ' + image + ':\n' + body;
 };
 
 
@@ -96,6 +145,7 @@ Blockly.Python['pillow_channel_split_rgb'] = function(block) {
 
 
 Blockly.Python['pillow_channel_merge_rgb'] = function(block) {
+  Blockly.Python.definitions_['import_pil_image'] = PIL_IMPORT_IMAGE;
   var red = Blockly.Python.valueToCode(block, 'RED', Blockly.Python.ORDER_NONE);
   var green = Blockly.Python.valueToCode(block, 'GREEN', Blockly.Python.ORDER_NONE);
   var blue = Blockly.Python.valueToCode(block, 'BLUE', Blockly.Python.ORDER_NONE);
