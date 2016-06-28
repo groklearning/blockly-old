@@ -375,6 +375,25 @@ Blockly.Blocks['pillow_get_pixel'] = {
    * @this Blockly.Block
    */
   init: function() {
+    this.setColours(BODY_COLOR, TRIM_COLOR);
+    this.interpolateMsg(Blockly.Msg.PILLOW_GET_PIXEL_TEXT,
+                        ['X', 'Number', Blockly.ALIGN_RIGHT],
+                        ['Y', 'Number', Blockly.ALIGN_RIGHT],
+                        ['IMAGE', 'Image', Blockly.ALIGN_RIGHT],
+                        Blockly.ALIGN_RIGHT);
+    this.setOutput(true, 'Pixel');
+    this.setTooltip(Blockly.Msg.PILLOW_GET_PIXEL_TOOLTIP);
+    this.setInputsInline(true);
+  }
+};
+
+
+Blockly.Blocks['pillow_get_pixel_value'] = {
+  /**
+   * Block for image.getpixel((x, y));
+   * @this Blockly.Block
+   */
+  init: function() {
     this.setColours(NUMBER_BODY_COLOR, NUMBER_TRIM_COLOR);
     this.interpolateMsg(Blockly.Msg.PILLOW_GET_PIXEL_TEXT,
                         ['X', 'Number', Blockly.ALIGN_RIGHT],
@@ -388,7 +407,7 @@ Blockly.Blocks['pillow_get_pixel'] = {
 };
 
 
-Blockly.Blocks['pillow_set_pixel'] = {
+Blockly.Blocks['pillow_set_pixel_value'] = {
   /**
    * Block for image.putpixel((x, y), value);
    * @this Blockly.Block
@@ -421,7 +440,7 @@ Blockly.Blocks['pillow_channel_merge_rgb'] = {
                         ['GREEN', 'Image', Blockly.ALIGN_RIGHT],
                         ['BLUE', 'Image', Blockly.ALIGN_RIGHT],
                         Blockly.ALIGN_RIGHT);
-    this.setOutput(true, 'Number');
+    this.setOutput(true, 'Image');
     this.setTooltip(Blockly.Msg.PILLOW_MERGE_RGB_TOOLTIP);
     this.setInputsInline(true);
   }

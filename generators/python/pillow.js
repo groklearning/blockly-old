@@ -169,9 +169,20 @@ Blockly.Python['pillow_get_pixel'] = function(block) {
   var y = Blockly.Python.valueToCode(block, 'Y', Blockly.Python.ORDER_NONE);
   var image = Blockly.Python.valueToCode(block, 'IMAGE', Blockly.Python.ORDER_MEMBER);
 
+  var code = image + '[' + x + ', ' + y + ']';
+  return [code, Blockly.Python.ORDER_MEMBER];
+};
+
+
+Blockly.Python['pillow_get_pixel_value'] = function(block) {
+  var x = Blockly.Python.valueToCode(block, 'X', Blockly.Python.ORDER_NONE);
+  var y = Blockly.Python.valueToCode(block, 'Y', Blockly.Python.ORDER_NONE);
+  var image = Blockly.Python.valueToCode(block, 'IMAGE', Blockly.Python.ORDER_MEMBER);
+
   var code = image + '.getpixel((' + x + ', ' + y + '))';
   return [code, Blockly.Python.ORDER_MEMBER];
 };
+
 
 Blockly.Python['pillow_save'] = function(block) {
   var image = Blockly.Python.valueToCode(block, 'IMAGE', Blockly.Python.ORDER_MEMBER);
