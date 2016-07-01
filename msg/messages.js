@@ -1414,9 +1414,9 @@ Blockly.Msg.PILLOW_MERGE_RGB_TEXT = 'new image with red %1 green %2 and blue %3 
 /// Grok
 Blockly.Msg.PILLOW_MERGE_RGB_TOOLTIP = 'Given red, green and blue channels as grayscale images, merge into a new image.';
 /// Grok
-Blockly.Msg.PILLOW_GET_PIXEL_TEXT = 'get %3 pixel (%1, %2)';
+Blockly.Msg.PILLOW_GET_PIXEL_TEXT = 'pixel (%1, %2) in %3';
 /// Grok
-Blockly.Msg.PILLOW_GET_PIXEL_TOOLTIP = 'Find the value of a pixel at a specific coordinate in a black and white (grayscale) image.';
+Blockly.Msg.PILLOW_GET_PIXEL_TOOLTIP = 'Find the pixel at a specific coordinate in an image.';
 /// Grok
 Blockly.Msg.PILLOW_SET_PIXEL_TEXT = 'set %3 pixel (%1, %2) to %4';
 /// Grok
