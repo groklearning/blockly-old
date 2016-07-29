@@ -40,7 +40,7 @@ Blockly.Python['io_ask_text_simple'] = function(block) {
 Blockly.Python['io_ask_num'] = function(block) {
   var msg = Blockly.Python.valueToCode(block, 'TEXT',
     Blockly.Python.ORDER_ADDITIVE) || '\'\'';
-  var code = 'float(input(' + msg + ' + \' \'))';
+  var code = 'int(input(' + msg + ' + \' \'))';
   return [code, Blockly.Python.ORDER_FUNCTION_CALL];
 };
 
