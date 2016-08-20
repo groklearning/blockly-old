@@ -121,6 +121,55 @@ Blockly.Blocks['loops_while'] = {
   }
 };
 
+
+Blockly.Blocks['loops_read_text'] = {
+  /**
+   * Block for 'do while/until' loop.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.CONTROLS_WHILEREAD_HELPURL);
+    this.setColours('#ff7700', '#C05900');
+    this.appendDummyInput()
+      .appendField('set')
+      .appendField(new Blockly.FieldVariable(null), 'VAR');
+    this.appendValueInput('TEXT')
+      .setCheck('String')
+      .appendField('to ask ');
+    this.appendValueInput('BOOL')
+      .setCheck('Boolean')
+      .setNewRow(true)
+      .appendField('while');
+    this.appendStatementInput('DO')
+        .appendField(Blockly.Msg.CONTROLS_WHILEUNTIL_INPUT_DO);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setInputsInline(true);
+    this.setTooltip('repeat while condition is true.');
+  },
+  /**
+   * Return all variables referenced by this block.
+   * @return {!Array.<string>} List of variable names.
+   * @this Blockly.Block
+   */
+  getVars: function() {
+    return [this.getFieldValue('VAR')];
+  },
+  /**
+   * Notification that a variable is renaming.
+   * If the name matches one of this block's variables, rename it.
+   * @param {string} oldName Previous name of variable.
+   * @param {string} newName Renamed variable.
+   * @this Blockly.Block
+   */
+  renameVar: function(oldName, newName) {
+    if (Blockly.Names.equals(oldName, this.getFieldValue('VAR'))) {
+      this.setFieldValue(newName, 'VAR');
+    }
+  },
+}
+
+
 Blockly.Blocks['loops_read'] = {
   /**
    * Block for 'do while/until' loop.
