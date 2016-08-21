@@ -122,7 +122,7 @@ Blockly.Blocks['loops_while'] = {
 };
 
 
-Blockly.Blocks['loops_read_text'] = {
+Blockly.Blocks['loops_read_ask'] = {
   /**
    * Block for 'do while/until' loop.
    * @this Blockly.Block
@@ -131,11 +131,10 @@ Blockly.Blocks['loops_read_text'] = {
     this.setHelpUrl(Blockly.Msg.CONTROLS_WHILEREAD_HELPURL);
     this.setColours('#ff7700', '#C05900');
     this.appendDummyInput()
-      .appendField('set')
+      .appendField('repeat set')
       .appendField(new Blockly.FieldVariable(null), 'VAR');
-    this.appendValueInput('TEXT')
-      .setCheck('String')
-      .appendField('to ask ');
+    this.appendValueInput('ASK_BLOCK')
+      .appendField('to ');
     this.appendValueInput('BOOL')
       .setCheck('Boolean')
       .setNewRow(true)

@@ -112,14 +112,13 @@ Blockly.Python['loops_read'] = function(block) {
   return read + '\nwhile ' + argument0 + ':\n' + branch + '  ' + read + '\n';
 };
 
-Blockly.Python['loops_read_text'] = function(block) {
-  var msg = Blockly.Python.valueToCode(block, 'TEXT',
+Blockly.Python['loops_read_ask'] = function(block) {
+  var askBlock = Blockly.Python.valueToCode(block, 'ASK_BLOCK',
     Blockly.Python.ORDER_NONE) || '\'\'';
-  var read = 'input(' + msg + ' + \' \')';
 
   var variable = Blockly.Python.variableDB_.getName(
       block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
-  read = variable + ' = ' + read;
+  var read = variable + ' = ' + askBlock;
 
   // Do while loop including reading
   var argument0 = Blockly.Python.valueToCode(block, 'BOOL',
