@@ -720,7 +720,7 @@ Blockly.Msg.TEXT_SUBSCRIPT_FROM_STRING = '] from';
 /// Grok
 Blockly.Msg.TEXT_SUBSCRIPT_TAIL = '';
 /// Grok
-Blockly.Msg.TEXT_SUBSTRING_TITLE = 'substring [';
+Blockly.Msg.TEXT_SUBSTRING_TITLE = 'slice [';
 /// Grok
 Blockly.Msg.TEXT_SUBSTRING_SEPARATOR = ':';
 /// Grok
@@ -761,7 +761,7 @@ Blockly.Msg.TEXT_GET_SUBSTRING_INPUT_IN_TEXT = 'in text';
 /// piece of text.  See [https://code.google.com/p/blockly/wiki/Text#Extracting_a_region_of_text
 /// https://code.google.com/p/blockly/wiki/Text#Extracting_a_region_of_text].
 /// [[File:Blockly-get-substring.png]]
-Blockly.Msg.TEXT_GET_SUBSTRING_START_FROM_START = 'get substring from letter #';
+Blockly.Msg.TEXT_GET_SUBSTRING_START_FROM_START = 'get slice from letter #';
 /// dropdown - Indicates that the following number specifies the position (relative to the end
 /// position) of the beginning of the region of text that should be obtained from the preceding
 /// piece of text.  See [https://code.google.com/p/blockly/wiki/Text#Extracting_a_region_of_text
@@ -771,13 +771,13 @@ Blockly.Msg.TEXT_GET_SUBSTRING_START_FROM_START = 'get substring from letter #';
 /// [https://translatewiki.net/wiki/Translating:Blockly#Ordinal_numbers ordinal numbers]
 /// on this block.
 /// [[File:Blockly-get-substring.png]]
-Blockly.Msg.TEXT_GET_SUBSTRING_START_FROM_END = 'get substring from letter # from end';
+Blockly.Msg.TEXT_GET_SUBSTRING_START_FROM_END = 'get slice from letter # from end';
 /// block text - Indicates that a region starting with the first letter of the preceding piece
 /// of text should be extracted.  See
 /// [https://code.google.com/p/blockly/wiki/Text#Extracting_a_region_of_text
 /// https://code.google.com/p/blockly/wiki/Text#Extracting_a_region_of_text].
 /// [[File:Blockly-get-substring.png]]
-Blockly.Msg.TEXT_GET_SUBSTRING_START_FIRST = 'get substring from first letter';
+Blockly.Msg.TEXT_GET_SUBSTRING_START_FIRST = 'get slice from first letter';
 /// dropdown - Indicates that the following number specifies the position (relative to
 /// the start position) of the end of the region of text that should be obtained from the
 /// preceding piece of text.  See [
