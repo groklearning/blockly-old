@@ -35,7 +35,7 @@ Blockly.Python.addReservedWords('microbit');
 Blockly.Python['microbit_main_loop'] = function(block) {
   Blockly.Python.definitions_['import_microbit'] = 'from microbit import *';
   var branch = Blockly.Python.statementToCode(block, 'DO');
-  var code = 'while True:\n' + branch + '  sleep(10)\n';
+  var code = 'while True:\n' + branch;
   return code;
 };
 
