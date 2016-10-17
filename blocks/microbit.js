@@ -76,6 +76,24 @@ Blockly.Blocks['microbit_display_show'] = {
 };
 
 
+Blockly.Blocks['microbit_display_scroll'] = {
+  /**
+   * Block for display.scroll(str)
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setColours(BODY_COLOR, TRIM_COLOR);
+    this.interpolateMsg(Blockly.Msg.MICROBIT_DISPLAY_SCROLL,
+                        ['TEXT', 'String', Blockly.ALIGN_RIGHT],
+                        Blockly.ALIGN_RIGHT);
+    this.setTooltip(Blockly.Msg.MICROBIT_DISPLAY_SCROLL_TOOLTIP);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setInputsInline(true);
+  }
+};
+
+
 Blockly.Blocks['microbit_display_clear'] = {
   /**
    * Block for display.clear()

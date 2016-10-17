@@ -48,6 +48,14 @@ Blockly.Python['microbit_display_show'] = function(block) {
 };
 
 
+Blockly.Python['microbit_display_scroll'] = function(block) {
+  Blockly.Python.definitions_['import_microbit'] = 'from microbit import *';
+  var text = Blockly.Python.valueToCode(block, 'TEXT', Blockly.Python.ORDER_NONE);
+  var code = 'display.scroll(' + text + ')\n';
+  return code;
+};
+
+
 Blockly.Python['microbit_display_clear'] = function(block) {
   Blockly.Python.definitions_['import_microbit'] = 'from microbit import *';
   var code = 'display.clear()\n';

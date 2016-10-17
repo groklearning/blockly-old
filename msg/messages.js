@@ -1433,9 +1433,13 @@ Blockly.Msg.MICROBIT_MAIN_LOOP_DO = 'do';
 /// Grok
 Blockly.Msg.MICROBIT_MAIN_LOOP_TOOLTIP = 'The main micro:bit loop.';
 /// Grok
-Blockly.Msg.MICROBIT_DISPLAY_SHOW = 'show image %1';
+Blockly.Msg.MICROBIT_DISPLAY_SHOW = 'show %1';
 /// Grok
 Blockly.Msg.MICROBIT_DISPLAY_SHOW_TOOLTIP = 'Shows an image on the display.';
+/// Grok
+Blockly.Msg.MICROBIT_DISPLAY_SCROLL = 'scroll %1';
+/// Grok
+Blockly.Msg.MICROBIT_DISPLAY_SCROLL_TOOLTIP = 'Scrolls text on the display.';
 /// Grok
 Blockly.Msg.MICROBIT_DISPLAY_CLEAR = 'clear display';
 /// Grok
