@@ -199,6 +199,8 @@ Blockly.Blocks['microbit_image'] = {
    * @this Blockly.Block
    */
   init: function() {
+    var self = this;
+
     // The category list is just the keys of the map above.
     var categories = [];
     for (var cat in IMAGE_CATEGORIES) {
@@ -207,9 +209,15 @@ Blockly.Blocks['microbit_image'] = {
     categories.sort();
 
     // Create a dropdown that uses the currently selected category to return items.
-    var selectedCategory = categories[0][0];
     var imageDropdown = new Blockly.FieldDropdown(function() {
+      // Note: This gets called a second time on load if the block has data (available in getFieldValue).
+      // So for new blocks we do a sensible default, and on existing blocks we rely on the second call to initialize
+      // correctly.
       var images = [];
+      var selectedCategory = self.getFieldValue('CATEGORY');
+      if (!selectedCategory) {
+        selectedCategory = categories[0][0];
+      }
       for (var i = 0; i < IMAGE_CATEGORIES[selectedCategory].length; ++i) {
         images.push([IMAGE_CATEGORIES[selectedCategory][i], IMAGE_CATEGORIES[selectedCategory][i],]);
       }
@@ -218,9 +226,8 @@ Blockly.Blocks['microbit_image'] = {
 
     // Create a dropdown that updates the currently selected category.
     var categoryDropdown = new Blockly.FieldDropdown(categories, function(value) {
-      selectedCategory = value;
       // This will cause imageDropdown to call its generator function.
-      imageDropdown.setValue(IMAGE_CATEGORIES[selectedCategory][0]);
+      imageDropdown.setValue(IMAGE_CATEGORIES[value][0]);
     });
 
     this.setColours(IMAGE_BODY_COLOR, IMAGE_TRIM_COLOR);
