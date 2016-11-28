@@ -38,36 +38,56 @@ function addImport() {
 
 Blockly.Python['monster_body'] = function(block) {
   addImport();
-  var code = '# monster body\n';
-  return code;
+  var name = block.getFieldValue('name');
+  return 'add_body(\'' + name + '\')\n';
 };
 
 Blockly.Python['monster_eyes'] = function(block) {
   addImport();
-  var code = '# monster eyes\n';
-  return code;
+  var name = block.getFieldValue('name');
+  return 'add_eyes(\'' + name + '\')\n';
 };
 
 Blockly.Python['monster_mouth'] = function(block) {
   addImport();
-  var code = '# monster mouth\n';
-  return code;
+  var name = block.getFieldValue('name');
+  return 'add_mouth(\'' + name + '\')\n';
 };
 
 Blockly.Python['monster_hat'] = function(block) {
   addImport();
-  var code = '# monster hat\n';
-  return code;
+  var name = block.getFieldValue('name');
+  return 'add_hat(\'' + name + '\')\n';
 };
 
-Blockly.Python['monster_horn'] = function(block) {
+Blockly.Python['monster_horns'] = function(block) {
   addImport();
-  var code = '# monster horn\n';
-  return code;
+  var name = block.getFieldValue('name');
+  return 'add_horns(\'' + name + '\')\n';
 };
 
-Blockly.Python['monster_stencil'] = function(block) {
+Blockly.Python['monster_paint'] = function(block) {
   addImport();
-  var code = '# monster stencil\n';
-  return code;
+  var colour = block.getFieldValue('colour');
+  return 'paint(\'' + colour + '\')\n';
+};
+
+Blockly.Python['monster_stencil_add_remove'] = function(block) {
+  addImport();
+  var name = block.getFieldValue('name');
+  var targetBlock = block.getInputTargetBlock('DO');
+  var code = Blockly.Python.blockToCode(targetBlock) || '\n';
+  return 'overlay_stencil(\'' + name + '\')\n' + code + 'remove_stencil(\'' + name + '\')\n';
+};
+
+Blockly.Python['monster_stencil_add'] = function(block) {
+  addImport();
+  var name = block.getFieldValue('name');
+  return 'overlay_stencil(\'' + name + '\')\n';
+};
+
+Blockly.Python['monster_stencil_remove'] = function(block) {
+  addImport();
+  var name = block.getFieldValue('name');
+  return 'remove_stencil(\'' + name + '\')\n';
 };

@@ -35,8 +35,16 @@ Blockly.Blocks['monster_body'] = {
   /** @this Blockly.Block */
   init: function() {
     this.setColours(BODY_COLOR, TRIM_COLOR);
-    this.interpolateMsg('body', Blockly.ALIGN_RIGHT);
-    this.setTooltip('body');
+    this.interpolateMsg(
+      'Draw %1 body',
+      ['name', new Blockly.FieldDropdown([
+        ['an alien', 'alien'],
+        ['a monster', 'monster'],
+        ['a strange', 'strange'],
+      ]), Blockly.ALIGN_RIGHT],
+      Blockly.ALIGN_RIGHT
+    );
+    this.setTooltip('Draw the body of the monster.');
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setInputsInline(true);
@@ -47,8 +55,16 @@ Blockly.Blocks['monster_eyes'] = {
   /** @this Blockly.Block */
   init: function() {
     this.setColours(BODY_COLOR, TRIM_COLOR);
-    this.interpolateMsg('eyes', Blockly.ALIGN_RIGHT);
-    this.setTooltip('eyes');
+    this.interpolateMsg(
+      'Draw %1 eyes',
+      ['name', new Blockly.FieldDropdown([
+        ['angry', 'angry'],
+        ['tired', 'tired'],
+        ['open', 'open'],
+      ]), Blockly.ALIGN_RIGHT],
+      Blockly.ALIGN_RIGHT
+    );
+    this.setTooltip('Draw the eyes of the monster.');
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setInputsInline(true);
@@ -59,8 +75,16 @@ Blockly.Blocks['monster_mouth'] = {
   /** @this Blockly.Block */
   init: function() {
     this.setColours(BODY_COLOR, TRIM_COLOR);
-    this.interpolateMsg('mouth', Blockly.ALIGN_RIGHT);
-    this.setTooltip('mouth');
+    this.interpolateMsg(
+      'Draw %1 mouth',
+      ['name', new Blockly.FieldDropdown([
+        ['a scary', 'fangs'],
+        ['a silly', 'tongue'],
+        ['a smiley', 'smily'],
+      ]), Blockly.ALIGN_RIGHT],
+      Blockly.ALIGN_RIGHT
+    );
+    this.setTooltip('Draw the mouth of the monster.');
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setInputsInline(true);
@@ -71,32 +95,113 @@ Blockly.Blocks['monster_hat'] = {
   /** @this Blockly.Block */
   init: function() {
     this.setColours(BODY_COLOR, TRIM_COLOR);
-    this.interpolateMsg('hat', Blockly.ALIGN_RIGHT);
-    this.setTooltip('hat');
+    this.interpolateMsg(
+      'Draw %1 hat',
+      ['name', new Blockly.FieldDropdown([
+        ['a baseball', 'baseball'],
+      ]), Blockly.ALIGN_RIGHT],
+      Blockly.ALIGN_RIGHT
+    );
+    this.setTooltip('Draw a hat on the monster.');
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setInputsInline(true);
   }
 };
 
-Blockly.Blocks['monster_horn'] = {
+Blockly.Blocks['monster_horns'] = {
   /** @this Blockly.Block */
   init: function() {
     this.setColours(BODY_COLOR, TRIM_COLOR);
-    this.interpolateMsg('horn', Blockly.ALIGN_RIGHT);
-    this.setTooltip('horn');
+    this.interpolateMsg(
+      'Draw %1 horns',
+      ['name', new Blockly.FieldDropdown([
+        ['upright', 'upright'],
+      ]), Blockly.ALIGN_RIGHT],
+      Blockly.ALIGN_RIGHT
+    );
+    this.setTooltip('Draw horns on the monster.');
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setInputsInline(true);
   }
 };
 
-Blockly.Blocks['monster_stencil'] = {
+Blockly.Blocks['monster_paint'] = {
   /** @this Blockly.Block */
   init: function() {
     this.setColours(BODY_COLOR, TRIM_COLOR);
-    this.interpolateMsg('stencil', Blockly.ALIGN_RIGHT);
-    this.setTooltip('stencil');
+    this.appendDummyInput()
+        .appendField('Paint')
+        .appendField(new Blockly.FieldColour('#7ED321'), 'colour');
+    this.setTooltip('Paint the drawing.');
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setInputsInline(true);
+  }
+};
+
+Blockly.Blocks['monster_stencil_add_remove'] = {
+  /** @this Blockly.Block */
+  init: function() {
+    this.setColours(BODY_COLOR, TRIM_COLOR);
+    this.interpolateMsg(
+      'Apply a %1 stencil',
+      ['name', new Blockly.FieldDropdown([
+        ['polka dots', 'dots'],
+        ['diagonal NE-SW lines', 'lines-nesw'],
+        ['diagonal SW-NE lines', 'lines-swne'],
+        ['stomach blob', 'stomach-blob'],
+        ['triangles', 'triangles'],
+      ]), Blockly.ALIGN_RIGHT],
+      Blockly.ALIGN_RIGHT
+    );
+    this.setTooltip('Apply a stencil over the drawing.');
+    this.appendStatementInput('DO');
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setInputsInline(true);
+  }
+};
+
+Blockly.Blocks['monster_stencil_add'] = {
+  /** @this Blockly.Block */
+  init: function() {
+    this.setColours(BODY_COLOR, TRIM_COLOR);
+    this.interpolateMsg(
+      'Add a %1 stencil',
+      ['name', new Blockly.FieldDropdown([
+        ['polka dots', 'dots'],
+        ['diagonal NE-SW lines', 'lines-nesw'],
+        ['diagonal SW-NE lines', 'lines-swne'],
+        ['stomach blob', 'stomach-blob'],
+        ['triangles', 'triangles'],
+      ]), Blockly.ALIGN_RIGHT],
+      Blockly.ALIGN_RIGHT
+    );
+    this.setTooltip('Add stencil');
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setInputsInline(true);
+  }
+};
+
+Blockly.Blocks['monster_stencil_remove'] = {
+  /** @this Blockly.Block */
+  init: function() {
+    this.setColours(BODY_COLOR, TRIM_COLOR);
+    this.interpolateMsg(
+      'Remove a %1 stencil',
+      ['name', new Blockly.FieldDropdown([
+        ['polka dots', 'dots'],
+        ['diagonal NE-SW lines', 'lines-nesw'],
+        ['diagonal SW-NE lines', 'lines-swne'],
+        ['stomach blob', 'stomach-blob'],
+        ['triangles', 'triangles'],
+      ]), Blockly.ALIGN_RIGHT],
+      Blockly.ALIGN_RIGHT
+    );
+    this.setTooltip('Remove stencil');
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setInputsInline(true);
