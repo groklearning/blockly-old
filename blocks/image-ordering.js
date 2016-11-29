@@ -58,9 +58,9 @@ Blockly.Blocks['image_ordering_eyes'] = {
     this.interpolateMsg(
       'Draw %1 eyes',
       ['name', new Blockly.FieldDropdown([
-        ['angry', 'angry'],
-        ['tired', 'tired'],
-        ['open', 'open'],
+        ['two angry', 'angry-two'],
+        ['two tired', 'tired-two'],
+        ['two open', 'open-two'],
       ]), Blockly.ALIGN_RIGHT],
       Blockly.ALIGN_RIGHT
     );
