@@ -80,7 +80,7 @@ Blockly.Blocks['image_ordering_mouth'] = {
       ['name', new Blockly.FieldDropdown([
         ['a scary', 'fangs'],
         ['a silly', 'tongue'],
-        ['a smiley', 'smily'],
+        ['a smiley', 'smile'],
       ]), Blockly.ALIGN_RIGHT],
       Blockly.ALIGN_RIGHT
     );
