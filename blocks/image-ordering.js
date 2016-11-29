@@ -1,6 +1,6 @@
 /**
  * @license
- * Visual Blocks Editor - Grok SVG monsters library extension
+ * Visual Blocks Editor - Grok SVG image ordering library extension
  *
  * Copyright 2016 Grok Learning
  * https://groklearning.com
@@ -19,11 +19,11 @@
  */
 
 /**
- * @fileoverview Blocks for Grok SVG monsters library.
+ * @fileoverview Blocks for Grok SVG image ordering library.
  */
 'use strict';
 
-goog.provide('Blockly.Blocks.monsters');
+goog.provide('Blockly.Blocks.image_ordering');
 
 goog.require('Blockly.Blocks');
 
@@ -31,7 +31,7 @@ goog.require('Blockly.Blocks');
 var BODY_COLOR = '#00BFBA';
 var TRIM_COLOR = '#00858F';
 
-Blockly.Blocks['monster_body'] = {
+Blockly.Blocks['image_ordering_body'] = {
   /** @this Blockly.Block */
   init: function() {
     this.setColours(BODY_COLOR, TRIM_COLOR);
@@ -51,7 +51,7 @@ Blockly.Blocks['monster_body'] = {
   }
 };
 
-Blockly.Blocks['monster_eyes'] = {
+Blockly.Blocks['image_ordering_eyes'] = {
   /** @this Blockly.Block */
   init: function() {
     this.setColours(BODY_COLOR, TRIM_COLOR);
@@ -71,7 +71,7 @@ Blockly.Blocks['monster_eyes'] = {
   }
 };
 
-Blockly.Blocks['monster_mouth'] = {
+Blockly.Blocks['image_ordering_mouth'] = {
   /** @this Blockly.Block */
   init: function() {
     this.setColours(BODY_COLOR, TRIM_COLOR);
@@ -91,7 +91,7 @@ Blockly.Blocks['monster_mouth'] = {
   }
 };
 
-Blockly.Blocks['monster_hat'] = {
+Blockly.Blocks['image_ordering_hat'] = {
   /** @this Blockly.Block */
   init: function() {
     this.setColours(BODY_COLOR, TRIM_COLOR);
@@ -109,7 +109,7 @@ Blockly.Blocks['monster_hat'] = {
   }
 };
 
-Blockly.Blocks['monster_horns'] = {
+Blockly.Blocks['image_ordering_horns'] = {
   /** @this Blockly.Block */
   init: function() {
     this.setColours(BODY_COLOR, TRIM_COLOR);
@@ -127,7 +127,7 @@ Blockly.Blocks['monster_horns'] = {
   }
 };
 
-Blockly.Blocks['monster_paint'] = {
+Blockly.Blocks['image_ordering_paint'] = {
   /** @this Blockly.Block */
   init: function() {
     this.setColours(BODY_COLOR, TRIM_COLOR);
@@ -141,7 +141,7 @@ Blockly.Blocks['monster_paint'] = {
   }
 };
 
-Blockly.Blocks['monster_stencil_add_remove'] = {
+Blockly.Blocks['image_ordering_stencil_add_remove'] = {
   /** @this Blockly.Block */
   init: function() {
     this.setColours(BODY_COLOR, TRIM_COLOR);
@@ -149,7 +149,7 @@ Blockly.Blocks['monster_stencil_add_remove'] = {
       'Apply a %1 stencil',
       ['name', new Blockly.FieldDropdown([
         ['polka dots', 'dots'],
-        ['diagonal NE-SW lines', 'lines-nesw'],
+        ['diagonal NW-SE lines', 'lines-nwse'],
         ['diagonal SW-NE lines', 'lines-swne'],
         ['stomach blob', 'stomach-blob'],
         ['triangles', 'triangles'],
@@ -164,7 +164,7 @@ Blockly.Blocks['monster_stencil_add_remove'] = {
   }
 };
 
-Blockly.Blocks['monster_stencil_add'] = {
+Blockly.Blocks['image_ordering_stencil_add'] = {
   /** @this Blockly.Block */
   init: function() {
     this.setColours(BODY_COLOR, TRIM_COLOR);
@@ -186,7 +186,7 @@ Blockly.Blocks['monster_stencil_add'] = {
   }
 };
 
-Blockly.Blocks['monster_stencil_remove'] = {
+Blockly.Blocks['image_ordering_stencil_remove'] = {
   /** @this Blockly.Block */
   init: function() {
     this.setColours(BODY_COLOR, TRIM_COLOR);

@@ -1,6 +1,6 @@
 /**
  * @license
- * Visual Blocks Language - Grok SVG monsters library extension
+ * Visual Blocks Language - Grok SVG image ordering library extension
  *
  * Copyright 2016 Grok Learning
  * https://groklearning.com
@@ -19,60 +19,60 @@
  */
 
 /**
- * @fileoverview Generating Python for Grok SVG monster library blocks.
+ * @fileoverview Generating Python for Grok SVG image ordering library blocks.
  */
 'use strict';
 
-goog.provide('Blockly.Python.monsters');
+goog.provide('Blockly.Python.image_ordering');
 
 goog.require('Blockly.Python');
 
 // Any imports need to be reserved words
-Blockly.Python.addReservedWords('grok', 'monsters');
+Blockly.Python.addReservedWords('grok', 'image_ordering');
 
 
 function addImport() {
-  Blockly.Python.definitions_['import_monster'] = 'from grok.monsters import *'
+  Blockly.Python.definitions_['import_image_ordering'] = 'from grok.image_ordering import *'
 }
 
 
-Blockly.Python['monster_body'] = function(block) {
+Blockly.Python['image_ordering_body'] = function(block) {
   addImport();
   var name = block.getFieldValue('name');
   return 'add_body(\'' + name + '\')\n';
 };
 
-Blockly.Python['monster_eyes'] = function(block) {
+Blockly.Python['image_ordering_eyes'] = function(block) {
   addImport();
   var name = block.getFieldValue('name');
   return 'add_eyes(\'' + name + '\')\n';
 };
 
-Blockly.Python['monster_mouth'] = function(block) {
+Blockly.Python['image_ordering_mouth'] = function(block) {
   addImport();
   var name = block.getFieldValue('name');
   return 'add_mouth(\'' + name + '\')\n';
 };
 
-Blockly.Python['monster_hat'] = function(block) {
+Blockly.Python['image_ordering_hat'] = function(block) {
   addImport();
   var name = block.getFieldValue('name');
   return 'add_hat(\'' + name + '\')\n';
 };
 
-Blockly.Python['monster_horns'] = function(block) {
+Blockly.Python['image_ordering_horns'] = function(block) {
   addImport();
   var name = block.getFieldValue('name');
   return 'add_horns(\'' + name + '\')\n';
 };
 
-Blockly.Python['monster_paint'] = function(block) {
+Blockly.Python['image_ordering_paint'] = function(block) {
   addImport();
   var colour = block.getFieldValue('colour');
   return 'paint(\'' + colour + '\')\n';
 };
 
-Blockly.Python['monster_stencil_add_remove'] = function(block) {
+Blockly.Python['image_ordering_stencil_add_remove'] = function(block) {
   addImport();
   var name = block.getFieldValue('name');
   var targetBlock = block.getInputTargetBlock('DO');
@@ -80,13 +80,13 @@ Blockly.Python['monster_stencil_add_remove'] = function(block) {
   return 'overlay_stencil(\'' + name + '\')\n' + code + 'remove_stencil(\'' + name + '\')\n';
 };
 
-Blockly.Python['monster_stencil_add'] = function(block) {
+Blockly.Python['image_ordering_stencil_add'] = function(block) {
   addImport();
   var name = block.getFieldValue('name');
   return 'overlay_stencil(\'' + name + '\')\n';
 };
 
-Blockly.Python['monster_stencil_remove'] = function(block) {
+Blockly.Python['image_ordering_stencil_remove'] = function(block) {
   addImport();
   var name = block.getFieldValue('name');
   return 'remove_stencil(\'' + name + '\')\n';
