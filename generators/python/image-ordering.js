@@ -39,37 +39,37 @@ function addImport() {
 Blockly.Python['image_ordering_body'] = function(block) {
   addImport();
   var name = block.getFieldValue('name');
-  return 'add_body(\'' + name + '\')\n';
+  return 'add_body(\'' + name + '\', block=\'' + block.id + '\')\n';
 };
 
 Blockly.Python['image_ordering_eyes'] = function(block) {
   addImport();
   var name = block.getFieldValue('name');
-  return 'add_eyes(\'' + name + '\')\n';
+  return 'add_eyes(\'' + name + '\', block=\'' + block.id + '\')\n';
 };
 
 Blockly.Python['image_ordering_mouth'] = function(block) {
   addImport();
   var name = block.getFieldValue('name');
-  return 'add_mouth(\'' + name + '\')\n';
+  return 'add_mouth(\'' + name + '\', block=\'' + block.id + '\')\n';
 };
 
 Blockly.Python['image_ordering_hat'] = function(block) {
   addImport();
   var name = block.getFieldValue('name');
-  return 'add_hat(\'' + name + '\')\n';
+  return 'add_hat(\'' + name + '\', block=\'' + block.id + '\')\n';
 };
 
 Blockly.Python['image_ordering_horns'] = function(block) {
   addImport();
   var name = block.getFieldValue('name');
-  return 'add_horns(\'' + name + '\')\n';
+  return 'add_horns(\'' + name + '\', block=\'' + block.id + '\')\n';
 };
 
 Blockly.Python['image_ordering_paint'] = function(block) {
   addImport();
   var colour = block.getFieldValue('colour');
-  return 'paint(\'' + colour + '\')\n';
+  return 'paint(\'' + colour + '\', block=\'' + block.id + '\')\n';
 };
 
 Blockly.Python['image_ordering_stencil_add_remove'] = function(block) {
@@ -77,17 +77,17 @@ Blockly.Python['image_ordering_stencil_add_remove'] = function(block) {
   var name = block.getFieldValue('name');
   var targetBlock = block.getInputTargetBlock('DO');
   var code = Blockly.Python.blockToCode(targetBlock) || '\n';
-  return 'overlay_stencil(\'' + name + '\')\n' + code + 'remove_stencil(\'' + name + '\')\n';
+  return 'overlay_stencil(\'' + name + '\', block=\'' + block.id + '\')\n' + code + 'remove_stencil(\'' + name + '\', block=\'' + block.id + '\')\n';
 };
 
 Blockly.Python['image_ordering_stencil_add'] = function(block) {
   addImport();
   var name = block.getFieldValue('name');
-  return 'overlay_stencil(\'' + name + '\')\n';
+  return 'overlay_stencil(\'' + name + '\', block=\'' + block.id + '\')\n';
 };
 
 Blockly.Python['image_ordering_stencil_remove'] = function(block) {
   addImport();
   var name = block.getFieldValue('name');
-  return 'remove_stencil(\'' + name + '\')\n';
+  return 'remove_stencil(\'' + name + '\', block=\'' + block.id + '\')\n';
 };
