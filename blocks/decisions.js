@@ -137,3 +137,69 @@ Blockly.Blocks['decisions_if_elif_elif_else'] = {
     this.elseCount_ = 1;
   }
 };
+
+Blockly.Blocks['decisions_image_ordering_if_boolean'] = {
+  /**
+   * Block for if/elseif/else condition.
+   * @this Blockly.Block
+   */
+  init: function() {
+    var dropdown = new Blockly.FieldDropdown([
+      ['yes', 'true'],
+      ['no', 'false'],
+    ]);
+    this.setHelpUrl(Blockly.Msg.CONTROLS_IF_HELPURL);
+    this.setColours('#ff7700', '#C05900');
+    this.appendDummyInput()
+        .appendField('Ask ');
+    this.appendValueInput('TEXT')
+        .setCheck('String')
+    this.appendDummyInput()
+        .setNewRow(true);
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.CONTROLS_IF_MSG_IF);
+    this.appendDummyInput()
+        .appendField(dropdown, 'CHOICE');
+    this.appendStatementInput('DO')
+        .appendField(Blockly.Msg.CONTROLS_IF_MSG_THEN);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setInputsInline(true);
+
+    this.elseCount_ = 0;
+  }
+};
+
+Blockly.Blocks['decisions_image_ordering_if_else_boolean'] = {
+  /**
+   * Block for if/elseif/else condition.
+   * @this Blockly.Block
+   */
+  init: function() {
+    var dropdown = new Blockly.FieldDropdown([
+      ['yes', 'true'],
+      ['no', 'false'],
+    ]);
+    this.setHelpUrl(Blockly.Msg.CONTROLS_IF_HELPURL);
+    this.setColours('#ff7700', '#C05900');
+    this.appendDummyInput()
+        .appendField('Ask ');
+    this.appendValueInput('TEXT')
+        .setCheck('String')
+    this.appendDummyInput()
+        .setNewRow(true);
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.CONTROLS_IF_MSG_IF);
+    this.appendDummyInput()
+        .appendField(dropdown, 'CHOICE');
+    this.appendStatementInput('DO')
+        .appendField(Blockly.Msg.CONTROLS_IF_MSG_THEN);
+      this.appendStatementInput('ELSE')
+          .appendField(Blockly.Msg.CONTROLS_IF_MSG_ELSE);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setInputsInline(true);
+
+    this.elseCount_ = 1;
+  }
+};

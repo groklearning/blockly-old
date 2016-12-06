@@ -52,3 +52,25 @@ function(block) {
   }
   return code;
 };
+
+
+Blockly.Python['decisions_image_ordering_if_boolean'] =
+Blockly.Python['decisions_image_ordering_if_else_boolean'] =
+function(block) {
+  Blockly.Python.definitions_['import_image_ordering'] = 'from grok.image_ordering import *';
+
+  var choice = block.getFieldValue('CHOICE');
+  var code = 'if ' + (choice === 'true' ? '' : 'not ');
+
+  var string = Blockly.Python.valueToCode(block, 'TEXT', Blockly.Python.ORDER_NONE) || '\'\'';
+  code += 'prompt(\'boolean\', ' + string + ')';
+
+  var branch = Blockly.Python.statementToCode(block, 'DO') || '  pass\n';
+  code += ':\n' + branch;
+  if (block.elseCount_) {
+    branch = Blockly.Python.statementToCode(block, 'ELSE') || '  pass\n';
+    code += 'else:\n' + branch;
+  }
+
+  return code;
+};
