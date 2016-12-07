@@ -31,16 +31,29 @@ goog.require('Blockly.Blocks');
 var BODY_COLOR = '#00BFBA';
 var TRIM_COLOR = '#00858F';
 
+var STENCIL_OPTIONS = [
+    ['animal stripes', 'animalstripes'],
+    ['belly', 'belly'],
+    ['face', 'face'],
+    ['furry', 'furry'],
+    ['polka dot', 'polkadots'],
+    ['tiny zig-zag', 'tinyzigzag'],
+    ['wiggly', 'wiggly'],
+    ['zig-zag', 'zigzag'],
+];
+
 Blockly.Blocks['image_ordering_body'] = {
   /** @this Blockly.Block */
   init: function() {
     this.setColours(BODY_COLOR, TRIM_COLOR);
     this.interpolateMsg(
-      'Draw %1 body',
+      'Draw a %1 body',
       ['NAME', new Blockly.FieldDropdown([
-        ['an alien', 'alien'],
-        ['a monster', 'monster'],
-        ['a strange', 'strange'],
+        ['big-headed', 'bighead'],
+        ['blobby', 'blobby'],
+        ['monster', 'monster'],
+        ['slug-like', 'slug'],
+        ['squid-like', 'squid'],
       ]), Blockly.ALIGN_RIGHT],
       Blockly.ALIGN_RIGHT
     );
@@ -56,11 +69,17 @@ Blockly.Blocks['image_ordering_eyes'] = {
   init: function() {
     this.setColours(BODY_COLOR, TRIM_COLOR);
     this.interpolateMsg(
-      'Draw %1 eyes',
+      'Draw %1',
       ['NAME', new Blockly.FieldDropdown([
-        ['two angry', 'angry-two'],
-        ['two tired', 'tired-two'],
-        ['two open', 'open-two'],
+        ['one almond eye', 'almond-1'],
+        ['one cresent eye', 'cresent-1'],
+        ['one round eye', 'round-1'],
+        ['two almond eyes', 'almond-2'],
+        ['two cresent eyes', 'cresent-2'],
+        ['two round eyes', 'round-2'],
+        ['three almond eyes', 'almond-3'],
+        ['three cresent eyes', 'cresent-3'],
+        ['three round eyes', 'round-3'],
       ]), Blockly.ALIGN_RIGHT],
       Blockly.ALIGN_RIGHT
     );
@@ -76,15 +95,76 @@ Blockly.Blocks['image_ordering_mouth'] = {
   init: function() {
     this.setColours(BODY_COLOR, TRIM_COLOR);
     this.interpolateMsg(
-      'Draw %1 mouth',
+      'Draw a %1 mouth',
       ['NAME', new Blockly.FieldDropdown([
-        ['a scary', 'fangs'],
-        ['a silly', 'tongue'],
-        ['a smiley', 'smile'],
+        ['scared', 'scared'],
+        ['small', 'small'],
+        ['smile', 'smile'],
+        ['sweet', 'sweet'],
+        ['wide', 'wide'],
       ]), Blockly.ALIGN_RIGHT],
       Blockly.ALIGN_RIGHT
     );
     this.setTooltip('Draw the mouth of the monster.');
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setInputsInline(true);
+  }
+};
+
+Blockly.Blocks['image_ordering_nose'] = {
+  /** @this Blockly.Block */
+  init: function() {
+    this.setColours(BODY_COLOR, TRIM_COLOR);
+    this.interpolateMsg(
+      'Draw %1 nose',
+      ['NAME', new Blockly.FieldDropdown([
+        ['an animal', 'animal'],
+        ['a bumb', 'bumb'],
+        ['a cute', 'cute'],
+        ['a pink', 'pink'],
+      ]), Blockly.ALIGN_RIGHT],
+      Blockly.ALIGN_RIGHT
+    );
+    this.setTooltip('Draw the nose of the monster.');
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setInputsInline(true);
+  }
+};
+
+Blockly.Blocks['image_ordering_ears'] = {
+  /** @this Blockly.Block */
+  init: function() {
+    this.setColours(BODY_COLOR, TRIM_COLOR);
+    this.interpolateMsg(
+      'Draw %1 ears',
+      ['NAME', new Blockly.FieldDropdown([
+        ['bear', 'bear'],
+        ['bunny', 'bunny'],
+      ]), Blockly.ALIGN_RIGHT],
+      Blockly.ALIGN_RIGHT
+    );
+    this.setTooltip('Draw ears on the monster.');
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setInputsInline(true);
+  }
+};
+
+Blockly.Blocks['image_ordering_extra'] = {
+  /** @this Blockly.Block */
+  init: function() {
+    this.setColours(BODY_COLOR, TRIM_COLOR);
+    this.interpolateMsg(
+      'Draw %1',
+      ['NAME', new Blockly.FieldDropdown([
+        ['a beard', 'beard'],
+        ['freckles', 'freckles'],
+      ]), Blockly.ALIGN_RIGHT],
+      Blockly.ALIGN_RIGHT
+    );
+    this.setTooltip('Draw extra details on the monster.');
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setInputsInline(true);
@@ -96,9 +176,11 @@ Blockly.Blocks['image_ordering_hat'] = {
   init: function() {
     this.setColours(BODY_COLOR, TRIM_COLOR);
     this.interpolateMsg(
-      'Draw %1 hat',
+      'Draw a %1',
       ['NAME', new Blockly.FieldDropdown([
-        ['a baseball', 'baseball'],
+        ['beanie', 'beanie'],
+        ['lettuce-like hat', 'lettuce'],
+        ['square hat', 'squarehat'],
       ]), Blockly.ALIGN_RIGHT],
       Blockly.ALIGN_RIGHT
     );
@@ -114,9 +196,11 @@ Blockly.Blocks['image_ordering_horns'] = {
   init: function() {
     this.setColours(BODY_COLOR, TRIM_COLOR);
     this.interpolateMsg(
-      'Draw %1 horns',
+      'Draw %1',
       ['NAME', new Blockly.FieldDropdown([
-        ['upright', 'upright'],
+        ['one horn', 'horns-1'],
+        ['two horns', 'horns-2'],
+        ['three horns', 'horns-3'],
       ]), Blockly.ALIGN_RIGHT],
       Blockly.ALIGN_RIGHT
     );
@@ -147,14 +231,7 @@ Blockly.Blocks['image_ordering_stencil_add_remove'] = {
     this.setColours(BODY_COLOR, TRIM_COLOR);
     this.interpolateMsg(
       'Apply a %1 stencil',
-      ['NAME', new Blockly.FieldDropdown([
-        ['polka dots', 'dots'],
-        ['diagonal NW-SE lines', 'lines-nwse'],
-        ['diagonal SW-NE lines', 'lines-swne'],
-        ['lightning', 'lightning'],
-        ['stomach blob', 'stomach-blob'],
-        ['triangles', 'triangles'],
-      ]), Blockly.ALIGN_RIGHT],
+      ['NAME', new Blockly.FieldDropdown(STENCIL_OPTIONS), Blockly.ALIGN_RIGHT],
       Blockly.ALIGN_RIGHT
     );
     this.setTooltip('Apply a stencil over the drawing.');
@@ -171,14 +248,7 @@ Blockly.Blocks['image_ordering_stencil_add'] = {
     this.setColours(BODY_COLOR, TRIM_COLOR);
     this.interpolateMsg(
       'Add a %1 stencil',
-      ['NAME', new Blockly.FieldDropdown([
-        ['polka dots', 'dots'],
-        ['diagonal NE-SW lines', 'lines-nesw'],
-        ['diagonal SW-NE lines', 'lines-swne'],
-        ['lightning', 'lightning'],
-        ['stomach blob', 'stomach-blob'],
-        ['triangles', 'triangles'],
-      ]), Blockly.ALIGN_RIGHT],
+      ['NAME', new Blockly.FieldDropdown(STENCIL_OPTIONS), Blockly.ALIGN_RIGHT],
       Blockly.ALIGN_RIGHT
     );
     this.setTooltip('Add stencil');
@@ -194,13 +264,7 @@ Blockly.Blocks['image_ordering_stencil_remove'] = {
     this.setColours(BODY_COLOR, TRIM_COLOR);
     this.interpolateMsg(
       'Remove a %1 stencil',
-      ['NAME', new Blockly.FieldDropdown([
-        ['polka dots', 'dots'],
-        ['diagonal NE-SW lines', 'lines-nesw'],
-        ['diagonal SW-NE lines', 'lines-swne'],
-        ['stomach blob', 'stomach-blob'],
-        ['triangles', 'triangles'],
-      ]), Blockly.ALIGN_RIGHT],
+      ['NAME', new Blockly.FieldDropdown(STENCIL_OPTIONS), Blockly.ALIGN_RIGHT],
       Blockly.ALIGN_RIGHT
     );
     this.setTooltip('Remove stencil');

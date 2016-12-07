@@ -60,6 +60,30 @@ Blockly.Python['image_ordering_mouth'] = function(block) {
   return 'add_mouth(' + pyName + ', block=' + pyBlock + ')\n';
 };
 
+Blockly.Python['image_ordering_nose'] = function(block) {
+  addImport();
+  var name = block.getFieldValue('NAME');
+  var pyName = Blockly.Python.quote_(name);
+  var pyBlock = Blockly.Python.quote_(block.id);
+  return 'add_nose(' + pyName + ', block=' + pyBlock + ')\n';
+};
+
+Blockly.Python['image_ordering_ears'] = function(block) {
+  addImport();
+  var name = block.getFieldValue('NAME');
+  var pyName = Blockly.Python.quote_(name);
+  var pyBlock = Blockly.Python.quote_(block.id);
+  return 'add_ears(' + pyName + ', block=' + pyBlock + ')\n';
+};
+
+Blockly.Python['image_ordering_extra'] = function(block) {
+  addImport();
+  var name = block.getFieldValue('NAME');
+  var pyName = Blockly.Python.quote_(name);
+  var pyBlock = Blockly.Python.quote_(block.id);
+  return 'add_extra(' + pyName + ', block=' + pyBlock + ')\n';
+};
+
 Blockly.Python['image_ordering_hat'] = function(block) {
   addImport();
   var name = block.getFieldValue('NAME');
