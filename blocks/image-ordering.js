@@ -198,9 +198,9 @@ Blockly.Blocks['image_ordering_horns'] = {
     this.interpolateMsg(
       'Draw %1',
       ['NAME', new Blockly.FieldDropdown([
-        ['one horn', 'horns-1'],
-        ['two horns', 'horns-2'],
-        ['three horns', 'horns-3'],
+        ['one horn', '1'],
+        ['two horns', '2'],
+        ['three horns', '3'],
       ]), Blockly.ALIGN_RIGHT],
       Blockly.ALIGN_RIGHT
     );
