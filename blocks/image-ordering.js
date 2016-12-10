@@ -72,13 +72,13 @@ Blockly.Blocks['image_ordering_eyes'] = {
       'Draw %1',
       ['NAME', new Blockly.FieldDropdown([
         ['one almond eye', 'almond-1'],
-        ['one cresent eye', 'cresent-1'],
+        ['one crescent eye', 'crescent-1'],
         ['one round eye', 'round-1'],
         ['two almond eyes', 'almond-2'],
-        ['two cresent eyes', 'cresent-2'],
+        ['two crescent eyes', 'crescent-2'],
         ['two round eyes', 'round-2'],
         ['three almond eyes', 'almond-3'],
-        ['three cresent eyes', 'cresent-3'],
+        ['three crescent eyes', 'crescent-3'],
         ['three round eyes', 'round-3'],
       ]), Blockly.ALIGN_RIGHT],
       Blockly.ALIGN_RIGHT
