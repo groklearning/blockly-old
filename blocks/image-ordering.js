@@ -120,7 +120,7 @@ Blockly.Blocks['image_ordering_nose'] = {
       'Draw %1 nose',
       ['NAME', new Blockly.FieldDropdown([
         ['an animal', 'animal'],
-        ['a bumb', 'bumb'],
+        ['a bump', 'bump'],
         ['a cute', 'cute'],
         ['a pink', 'pink'],
       ]), Blockly.ALIGN_RIGHT],
